@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission - Saraswati Gyan Mandir Inter College</title>
+    <link rel="icon" href="image/Logo/Favicon.webp" type="image/webp">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header-styles.css">
+    <link rel="stylesheet" href="css/admission-styles.css">
+    <link rel="stylesheet" href="css/footer-styles.css">
+    <link rel="stylesheet" href="css/loading-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add this to ensure proper spacing for the content */
+        body {
+            padding-top: 130px; /* Adjusted for taller header (top bar + navbar) */
+        }
+        
+        @media (max-width: 992px) {
+            body {
+                padding-top: 80px; /* Only navbar height since top bar is hidden */
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                padding-top: 70px; /* Smaller navbar height on mobile */
+            }
+        }
+        
+        /* Logo animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        /* Override any animations on the logo */
+        .logo-container {
+            animation: none !important;
+        }
+        
+        .school-logo {
+            animation: none !important;
+            transform: none !important;
+            transition: none !important;
+        }
+    </style>
+    <style>
+    /* Stylish How it Works Section */
+    .admission-steps-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        margin-top: 40px;
+    }
+    .admission-step {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(10,35,66,0.08);
+        padding: 32px 24px;
+        max-width: 340px;
+        flex: 1 1 300px;
+        min-width: 260px;
+        position: relative;
+        transition: transform 0.2s, box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .admission-step:hover {
+        transform: translateY(-8px) scale(1.03);
+        box-shadow: 0 8px 32px rgba(10,35,66,0.15);
+    }
+    .step-number {
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, #0a2342 60%, #f5a623 100%);
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 18px;
+        box-shadow: 0 2px 8px rgba(10,35,66,0.10);
+        border: 3px solid #fff;
+        position: absolute;
+        top: -24px;
+        left: 24px;
+        z-index: 2;
+    }
+    .step-info {
+        margin-top: 32px;
+        width: 100%;
+    }
+    .admission-step h3 {
+        color: #0a2342;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+    .admission-step p {
+        color: #555;
+        font-size: 1rem;
+        margin-bottom: 12px;
+    }
+    .required-docs {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .required-docs li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #444;
+        font-size: 0.98rem;
+        margin-bottom: 6px;
+    }
+    .required-docs i {
+        color: #f5a623;
+        font-size: 1.1rem;
+    }
+    @media (max-width: 900px) {
+        .admission-steps-container {
+            flex-direction: column;
+            align-items: center;
+        }
+        .admission-step {
+            max-width: 100%;
+            min-width: 0;
+        }
+    }
+</style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Replace the header with the header container div -->
+    <div id="header-container"></div>
+
+    <div class="page-banner">
+        <div class="banner-content">
+            <h1>Admission</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> / <a href="academics.html">Academics</a> / <span>Admission</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="admission-intro">
+        <div class="container">
+            <div class="section-title center">
+                <span class="subtitle">Join Our School</span>
+                <h2>Admission Process</h2>
+            </div>
+            <p class="intro-text">Saraswati Gyan Mandir welcomes applications from students who are eager to learn and grow in a nurturing educational environment. Our admission process is designed to be transparent and straightforward.</p>
+        </div>
+    </section>
+
+    <section class="admission-process">
+        <div class="container">
+            <div class="process-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <h3>Application Submission</h3>
+                        <p>Collect and submit the application form along with required documents at the school office during working hours.</p>
+                        <div class="timeline-details">
+                            <h4>Required Documents:</h4>
+                            <ul>
+                                <li>Completed application form</li>
+                                <li>Aadhar Card Copy</li>
+                                <li>Previous school's transfer certificate (Manadatory)</li>
+                                <li>Report card of the previous academic year (Photocopy)</li>
+                                <li>Passport-sized photographs (1 copies)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <h3>Entrance Assessment</h3>
+                        <p>Students applying for classes 6 and above may be required to take an entrance assessment to evaluate their academic readiness.</p>
+                        <div class="timeline-details">
+                            <h4>Assessment Areas:</h4>
+                            <ul>
+                                <li>Mathematics</li>
+                                <li>English Language Skills</li>
+                                <li>Basic Science Concepts (for higher classes)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <h3>Admission Confirmation</h3>
+                        <p>Successful candidates will receive an admission offer letter. Admission is confirmed upon payment of the required fees within the specified timeframe.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="admission-steps">
+        <div class="container">
+            <div class="section-title center">
+                <span class="subtitle">Admission Steps</span>
+                <h2>How it Works</h2>
+            </div>
+            
+            <div class="admission-steps-container">
+                <div class="admission-step">
+                    <div class="step-number">
+                        <span>1</span>
+                    </div>
+                    <div class="step-info">
+                        <h3>Step 1: Application Submission</h3>
+                        <p>Collect and submit the application form along with required documents at the school office during working hours.</p>
+                        <ul class="required-docs">
+                            <li><i class="fas fa-file-alt"></i> Completed application form</li>
+                            <li><i class="fas fa-id-card"></i> Aadhar Card Copy</li>
+                            <li><i class="fas fa-graduation-cap"></i> Previous school's transfer certificate (Manadatory)</li>
+                            <li><i class="fas fa-image"></i> Report card of the previous academic year (Photocopy)</li>
+                            <li><i class="fas fa-image"></i> Passport-sized photographs (1 copies)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="admission-step">
+                    <div class="step-number">
+                        <span>2</span>
+                    </div>
+                    <div class="step-info">
+                        <h3>Step 2: Entrance Assessment</h3>
+                        <p>Students applying for classes 6 and above may be required to take an entrance assessment to evaluate their academic readiness.</p>
+                    </div>
+                </div>
+                
+                <div class="admission-step">
+                    <div class="step-number">
+                        <span>3</span>
+                    </div>
+                    <div class="step-info">
+                        <h3>Step 3: Submit Application</h3>
+                        <p>Submit the completed application form along with all required documents to the school office. Ensure all information is accurate and complete to avoid delays in processing.</p>
+                        <ul class="required-docs">
+                            <li><i class="fas fa-file-alt"></i> Completed application form</li>
+                            <li><i class="fas fa-id-card"></i> Birth certificate</li>
+                            <li><i class="fas fa-graduation-cap"></i> Previous academic records</li>
+                            <li><i class="fas fa-image"></i> Recent passport-sized photographs</li>
+                            <li><i class="fas fa-id-badge"></i> Transfer Certificate (for students from other schools)</li>
+                            <li><i class="fas fa-address-card"></i> Address proof</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="admission-step">
+                    <div class="step-number">
+                        <span>4</span>
+                    </div>
+                    <div class="step-info">
+                        <h3>Step 4: Entrance Test & Interview</h3>
+                        <p>Shortlisted candidates will be called for an entrance test and/or interview. The test evaluates the student's knowledge level in core subjects appropriate for their age group.</p>
+                    </div>
+                </div>
+                
+                <div class="admission-step">
+                    <div class="step-number">
+                        <span>5</span>
+                    </div>
+                    <div class="step-info">
+                        <h3>Step 5: Admission Confirmation</h3>
+                        <p>Selected students will receive an admission offer letter. Complete the admission by paying the required fees within the specified timeframe to secure your child's place.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="admission-faq">
+        <div class="container">
+            <div class="section-title center">
+                <span class="subtitle">Common Questions</span>
+                <h2>Admission FAQs</h2>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is the age requirement for admission?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For Class 6, students should be 10-11 years old as of April 1st of the admission year. For other classes, the age requirement increases accordingly.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is there a waiting list if seats are filled?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we maintain a waiting list for each class. If a seat becomes available, candidates on the waiting list will be contacted in order of merit.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Are there any scholarships available?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer merit-based scholarships to deserving students. Additionally, financial aid is available for students from economically disadvantaged backgrounds. Please inquire at the admission office for details.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can students join in the middle of an academic year?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Mid-session admissions are considered only in special circumstances such as transfer of parents or guardians. This is subject to seat availability and the student meeting our academic requirements.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is the student-teacher ratio in classes?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We maintain a student-teacher ratio of approximately 30:1 to ensure personalized attention to each student.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="admission-contact">
+        <div class="container">
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3>Have Questions?</h3>
+                <p>Our admission team is here to help you with any queries regarding the admission process.</p>
+                <div class="contact-details">
+                    <p><strong>Phone:</strong> +91 9839148124</p>
+                    <p><strong>Email:</strong> sgmazadnagarkanpur@rediffmail.com</p>
+                    <p><strong>Office Hours:</strong> Monday to Friday, 9:00 AM to 2:00 PM</p>
+                </div>
+                <a href="contact.html" class="contact-btn">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Replace the footer with the footer container div -->
+    <div id="footer-container"></div>
+
+    <!-- Add this before the closing body tag -->
+    <div id="comingSoonPopup" class="popup-overlay">
+        <div class="popup-content">
+            <div class="popup-icon">
+                <i class="fas fa-clock"></i>
+            </div>
+            <h3>Coming Soon!</h3>
+            <p>The admission forms are currently under preparation. We'll notify you when they're ready for download.</p>
+            <div class="popup-buttons">
+                <button class="popup-close-btn" onclick="closePopup()">Close</button>
+                <button class="popup-notify-btn" onclick="requestNotification()">
+                    <i class="fas fa-bell"></i> Notify Me
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .popup-overlay.active {
+            opacity: 1;
+        }
+
+        .popup-content {
+            background: linear-gradient(145deg, #ffffff, #f5f5f5);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transform: scale(0.7);
+            transition: transform 0.3s ease;
+        }
+
+        .popup-overlay.active .popup-content {
+            transform: scale(1);
+        }
+
+        .popup-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(145deg, #0a2342, #126e82);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 5px 15px rgba(10, 35, 66, 0.3);
+        }
+
+        .popup-icon i {
+            font-size: 36px;
+            color: white;
+        }
+
+        .popup-content h3 {
+            color: #0a2342;
+            margin-bottom: 15px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        .popup-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .popup-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .popup-close-btn, .popup-notify-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .popup-close-btn {
+            background-color: #f0f0f0;
+            color: #666;
+        }
+
+        .popup-notify-btn {
+            background: linear-gradient(145deg, #0a2342, #126e82);
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .popup-close-btn:hover {
+            background-color: #e0e0e0;
+            transform: translateY(-2px);
+        }
+
+        .popup-notify-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(10, 35, 66, 0.2);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .popup-icon {
+            animation: pulse 2s infinite;
+        }
+    </style>
+
+    <script>
+        // Get popup elements
+        const popup = document.getElementById('comingSoonPopup');
+        const closeBtn = document.querySelector('.popup-close-btn');
+
+        function showComingSoonPopup(event) {
+            event.preventDefault();
+            popup.style.display = 'flex';
+            // Trigger reflow
+            popup.offsetHeight;
+            popup.classList.add('active');
+        }
+
+        function closePopup() {
+            popup.classList.remove('active');
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 300);
+        }
+
+        // Add event listeners
+        closeBtn.addEventListener('click', closePopup);
+        
+        // Close when clicking outside
+        popup.addEventListener('click', function(event) {
+            if (event.target === popup) {
+                closePopup();
+            }
+        });
+
+        function requestNotification() {
+            // Check if browser supports notifications
+            if (!("Notification" in window)) {
+                alert("This browser does not support desktop notifications");
+                return;
+            }
+
+            // Request permission
+            Notification.requestPermission().then(function(permission) {
+                if (permission === "granted") {
+                    alert("You will be notified when the admission forms are available!");
+                }
+            });
+        }
+    </script>
+
+    <script src="js/script.js"></script>
+    <script src="js/admission.js"></script>
+    <script src="js/loading.js"></script>
+    <script src="js/header-loader.js"></script>
+    <script>
+        // Load footer only; header handled by header-loader.js
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('Footer/footer.html')
+                .then(response => response.text())
+                .then(data => { document.getElementById('footer-container').innerHTML = data; });
+        });
+    </script>
+
+    
+</body>
+</html> 

@@ -1,0 +1,368 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap - Saraswati Gyan Mandir Inter College</title>
+    <link rel="icon" href="image/Logo/Favicon.webp" type="image/webp">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header-styles.css">
+    <link rel="stylesheet" href="css/footer-styles.css">
+    <link rel="stylesheet" href="css/loading-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add this to ensure proper spacing for the content */
+        body {
+            padding-top: 130px; /* Adjusted for taller header (top bar + navbar) */
+        }
+        
+        @media (max-width: 992px) {
+            body {
+                padding-top: 80px; /* Only navbar height since top bar is hidden */
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                padding-top: 70px; /* Smaller navbar height on mobile */
+            }
+        }
+        
+        .sitemap-section {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .sitemap-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('image/Patterns/pattern-light.png');
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        
+        .intro-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            color: #555;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        
+        .sitemap-group {
+            margin-bottom: 50px;
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-top: 4px solid #126e82;
+        }
+        
+        .sitemap-group:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .sitemap-group h3 {
+            color: #0a2342;
+            font-size: 22px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .sitemap-group h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            width: 100%;
+            background: linear-gradient(to right, #126e82, #ff8c42);
+            border-radius: 2px;
+        }
+        
+        .sitemap-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .sitemap-list li {
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .sitemap-list li:hover {
+            transform: translateX(5px);
+        }
+        
+        .sitemap-list a {
+            text-decoration: none;
+            color: #444;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            border-radius: 8px;
+            background: rgba(18, 110, 130, 0.05);
+        }
+        
+        .sitemap-list a:hover {
+            color: #126e82;
+            background: rgba(18, 110, 130, 0.1);
+        }
+        
+        .sitemap-list a i {
+            margin-right: 12px;
+            font-size: 18px;
+            color: #126e82;
+            width: 30px;
+            height: 30px;
+            background: rgba(18, 110, 130, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .sitemap-list a:hover i {
+            color: #fff;
+            background: #126e82;
+            transform: rotate(360deg);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #126e82;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(18, 110, 130, 0.3);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(18, 110, 130, 0.4);
+        }
+        
+        .sitemap-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .gallery-links, .info-links, .academic-links {
+            animation-duration: 0.8s;
+            animation-fill-mode: both;
+            opacity: 0;
+        }
+        
+        .gallery-links {
+            animation-name: fadeInRight;
+            animation-delay: 0.3s;
+        }
+        
+        .academic-links {
+            animation-name: fadeInLeft;
+            animation-delay: 0.1s;
+        }
+        
+        .info-links {
+            animation-name: fadeInUp;
+            animation-delay: 0.5s;
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translate3d(-50px, 0, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translate3d(50px, 0, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 50px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Replace the header with the header container div -->
+    <div id="header-container"></div>
+
+    <div class="page-banner">
+        <div class="banner-content">
+            <h1>Sitemap</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> / <span>Sitemap</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="sitemap-section">
+        <div class="container">
+            <div class="section-title center">
+                <span class="subtitle">Navigation Guide</span>
+                <h2>Website Sitemap</h2>
+            </div>
+            
+            <p class="intro-text">
+                Below is a complete list of all pages available on the Saraswati Gyan Mandir Inter College website. Use this sitemap to easily navigate to any page you're looking for.
+            </p>
+            
+            <div class="sitemap-container">
+                <div class="sitemap-group academic-links">
+                    <h3>Main Pages</h3>
+                    <ul class="sitemap-list">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                        <li><a href="academics.html"><i class="fas fa-book"></i> Academics</a></li>
+                        <li><a href="admission.html"><i class="fas fa-user-plus"></i> Admission</a></li>
+                        <li><a href="fees.html"><i class="fas fa-rupee-sign"></i> Fees</a></li>
+                        <li><a href="syllabus.html"><i class="fas fa-list-alt"></i> Syllabus</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                        <li><a href="payment.html"><i class="fas fa-credit-card"></i> Fee Payment</a></li>
+                        <li><a href="achievements.html"><i class="fas fa-trophy"></i> Achievements</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sitemap-group gallery-links">
+                    <h3>Gallery & Media</h3>
+                    <ul class="sitemap-list">
+                        <li><a href="gallery.html"><i class="fas fa-images"></i> Photo Gallery</a></li>
+                        <li><a href="video-gallery.html"><i class="fas fa-video"></i> Video Gallery</a></li>
+                        <li><a href="press-coverage.html"><i class="fas fa-newspaper"></i> Press Coverage</a></li>
+                        <li><a href="pages/gallery1.html"><i class="fas fa-image"></i> Gallery 1</a></li>
+                        <li><a href="pages/gallery2.html"><i class="fas fa-image"></i> Gallery 2</a></li>
+                        <li><a href="pages/gallery3.html"><i class="fas fa-image"></i> Gallery 3</a></li>
+                        <li><a href="pages/gallery4.html"><i class="fas fa-image"></i> Gallery 4</a></li>
+                        <li><a href="pages/gallery5.html"><i class="fas fa-image"></i> Gallery 5</a></li>
+                        <li><a href="pages/gallery6.html"><i class="fas fa-image"></i> Gallery 6</a></li>
+                        <li><a href="pages/gallery7.html"><i class="fas fa-image"></i> Gallery 7</a></li>
+                        <li><a href="pages/gallery8.html"><i class="fas fa-image"></i> Gallery 8</a></li>
+                        <li><a href="pages/gallery9.html"><i class="fas fa-image"></i> Gallery 9</a></li>
+                        <li><a href="pages/gallery10.html"><i class="fas fa-image"></i> Gallery 10</a></li>
+                        <li><a href="pages/gallery11.html"><i class="fas fa-image"></i> Gallery 11</a></li>
+                        <li><a href="pages/gallery12.html"><i class="fas fa-image"></i> Gallery 12</a></li>
+                        <li><a href="pages/gallery13.html"><i class="fas fa-image"></i> Gallery 13</a></li>
+                        <li><a href="pages/gallery14.html"><i class="fas fa-image"></i> Gallery 14</a></li>
+                        <li><a href="pages/gallery15.html"><i class="fas fa-image"></i> Gallery 15</a></li>
+                        <li><a href="pages/gallery16.html"><i class="fas fa-image"></i> Summer Party Gallery</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sitemap-group academic-links">
+                    <h3>Academic Information</h3>
+                    <ul class="sitemap-list">
+                        <li><a href="pages/manager-message.html"><i class="fas fa-comment-alt"></i> Manager's Message</a></li>
+                        <li><a href="pages/junior-intermediate-fees.html"><i class="fas fa-rupee-sign"></i> Junior & Intermediate Fees</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sitemap-group info-links">
+                    <h3>Legal Information</h3>
+                    <ul class="sitemap-list">
+                        <li><a href="privacy-policy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html"><i class="fas fa-gavel"></i> Terms of Service</a></li>
+                        <li><a href="sitemap.html"><i class="fas fa-sitemap"></i> Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to top button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Include Footer -->
+    <div id="footer-container"></div>
+
+    <script src="js/script.js"></script>
+    <script src="js/loading.js"></script>
+    <script src="js/header-loader.js"></script>
+    <script>
+        // Load footer and handle back-to-top button
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                });
+
+            const backToTopButton = document.querySelector('.back-to-top');
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            });
+
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
+
+

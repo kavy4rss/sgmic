@@ -1,0 +1,598 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holi Celebration - Saraswati Gyan Mandir Inter College</title>
+    <link rel="icon" href="../image/Logo/favicon.webp" type="image/png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header-styles.css">
+    <link rel="stylesheet" href="../css/gallery-styles.css">
+    <link rel="stylesheet" href="../css/footer-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add this to ensure proper spacing for the content */
+        body {
+            padding-top: 130px; /* Adjusted for taller header (top bar + navbar) */
+        }
+        
+        @media (max-width: 992px) {
+            body {
+                padding-top: 80px; /* Only navbar height since top bar is hidden */
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                padding-top: 70px; /* Smaller navbar height on mobile */
+            }
+        }
+        
+        /* Fix for logo display */
+        .logo-container img {
+            height: 60px !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+        
+        /* Fix for navigation path issues */
+        .navbar-container .nav-links a {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Header -->
+    <div id="header-container"></div>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="banner-content">
+            <h1>Holi Celebration</h1>
+            <div class="breadcrumbs">
+                <a href="../index.html">Home</a> &gt; <a href="../gallery.html">Gallery</a> &gt; Holi Celebration
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Intro -->
+    <section class="gallery-intro">
+        <div class="container">
+            <div class="section-title center">
+                <span class="subtitle">Festival of Colors</span>
+                <h2>Holi Celebration</h2>
+            </div>
+            <p class="intro-text">
+                Our school celebrated the vibrant festival of Holi with great enthusiasm and joy. Students and staff participated in a colorful event that showcased the spirit of this traditional celebration through cultural performances, music, dance, and safe color play. The celebration emphasized the festival's message of unity, harmony, and the triumph of good over evil.
+            </p>
+        </div>
+        <p class="intro-text">
+            Date: 11 March, 2025
+        </p>
+        <div class="back-to-gallery">
+            <a href="../gallery.html"><i class="fas fa-arrow-left"></i> Back to All Categories</a>
+        </div>
+    </section>
+
+
+
+
+                
+
+
+    <!-- Holi Significance Section -->
+    <section class="holi-significance">
+        <div class="container">
+            <div class="section-title center">
+                <h2>The Significance of Holi</h2>
+            </div>
+            <div class="significance-content">
+                <div class="significance-text">
+                    <p>Holi, known as the festival of colors, is one of India's most vibrant and joyous celebrations. It marks the arrival of spring and the triumph of good over evil. Our school celebration highlighted the following aspects of this important cultural festival:</p>
+                    
+                    <ul class="significance-list">
+                        <li><strong>Cultural Heritage:</strong> Students learned about the rich traditions and mythology behind Holi</li>
+                        <li><strong>Unity and Togetherness:</strong> The festival brought our entire school community together in celebration</li>
+                        <li><strong>Traditional Arts:</strong> Performances included classical and folk dances associated with Holi</li>
+                        <li><strong>Safe Celebration:</strong> We emphasized the use of natural colors and safe practices</li>
+                        <li><strong>Environmental Awareness:</strong> Students learned about eco-friendly ways to celebrate</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Styles for Holi Significance Section -->
+    <style>
+        .holi-significance {
+            padding: 50px 0;
+            background: linear-gradient(to right, #fef9e7, #fcf3cf);
+        }
+        
+        .significance-content {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-top: 20px;
+        }
+        
+        .significance-text p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .significance-list {
+            margin: 0;
+            padding: 0 0 0 20px;
+        }
+        
+        .significance-list li {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .significance-list li strong {
+            color: #e91e63;
+        }
+    </style>
+
+    <!-- Add styles for maintaining original image aspect ratios -->
+    <style>
+        /* Fix for gallery thumbnails to maintain original aspect ratio */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background-color: #f5f5f5;
+            height: 0;
+            padding-bottom: 66.67%; /* Standard 3:2 aspect ratio container */
+        }
+        
+        .gallery-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Fill the container while maintaining aspect ratio */
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+    </style>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <div class="section-title center">
+                <h2>Colorful Moments</h2>
+            </div>
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- Gallery Items -->
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482014985_2975247632632179_2259631150647280727_n.webp" data-src="../image/gallery9/482014985_2975247632632179_2259631150647280727_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482253247_2975248655965410_60586256417694429_n.webp" data-src="../image/gallery9/482253247_2975248655965410_60586256417694429_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482015605_2975246722632270_178949759205080230_n.webp" data-src="../image/gallery9/482015605_2975246722632270_178949759205080230_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482020927_2975248325965443_854455003584171779_n.webp" data-src="../image/gallery9/482020927_2975248325965443_854455003584171779_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482253647_2975248519298757_789665698310807762_n.webp" data-src="../image/gallery9/482253647_2975248519298757_789665698310807762_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/483875428_2975246105965665_711531029922627617_n.webp" data-src="../image/gallery9/483875428_2975246105965665_711531029922627617_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/483921072_2975249009298708_236080400771088797_n.webp" data-src="../image/gallery9/483921072_2975249009298708_236080400771088797_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/484067163_2975246469298962_980299054998207644_n.webp" data-src="../image/gallery9/484067163_2975246469298962_980299054998207644_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482015400_2975248579298751_4690709922366325480_n.webp" data-src="../image/gallery9/482015400_2975248579298751_4690709922366325480_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482056974_2975249332632009_8077587358051302279_n.webp" data-src="../image/gallery9/482056974_2975249332632009_8077587358051302279_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482268654_2975249265965349_3116967221406539238_n.webp" data-src="../image/gallery9/482268654_2975249265965349_3116967221406539238_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/484092957_2975249189298690_6903188650396325443_n.webp" data-src="../image/gallery9/484092957_2975249189298690_6903188650396325443_n.webp">
+                    <div class="gallery-overlay"></div>
+                    </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482081244_2975249102632032_2845843565622148172_n.webp" data-src="../image/gallery9/482081244_2975249102632032_2845843565622148172_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/483852717_2975248895965386_6390695522012145550_n.webp" data-src="../image/gallery9/483852717_2975248895965386_6390695522012145550_n.webp">
+                    <div class="gallery-overlay"></div>
+                    </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/483861038_2975248829298726_2861802032423803508_n.webp" data-src="../image/gallery9/483861038_2975248829298726_2861802032423803508_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482016439_2975248705965405_5559735028343203619_n.webp" data-src="../image/gallery9/482016439_2975248705965405_5559735028343203619_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482828051_2975253665964909_4704384313789976962_n.webp" data-src="../image/gallery9/482828051_2975253665964909_4704384313789976962_n.webp">
+                    <div class="gallery-overlay"></div>
+                    </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/484137262_2975253579298251_4467049885900218961_n.webp" data-src="../image/gallery9/484137262_2975253579298251_4467049885900218961_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/483825663_2975253485964927_8020707674856823301_n.webp" data-src="../image/gallery9/483825663_2975253485964927_8020707674856823301_n.webp">
+                    <div class="gallery-overlay"></div>
+                    </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482850348_2975253315964944_7359078383243570359_n.webp" data-src="../image/gallery9/482850348_2975253315964944_7359078383243570359_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/484355449_2975253175964958_3503457743250061547_n.webp" data-src="../image/gallery9/484355449_2975253175964958_3503457743250061547_n.webp">
+                    <div class="gallery-overlay"></div>
+                    </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/483783625_2975253032631639_7107060507376688870_n.webp" data-src="../image/gallery9/483783625_2975253032631639_7107060507376688870_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482829679_2975252835964992_8637507780508989665_n.webp" data-src="../image/gallery9/482829679_2975252835964992_8637507780508989665_n.webp">
+                    <div class="gallery-overlay"></div>
+                    </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/483411140_2975252762631666_5259157512447476025_n.webp" data-src="../image/gallery9/483411140_2975252762631666_5259157512447476025_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482828991_2975251152631827_2300538271319352847_n.webp" data-src="../image/gallery9/482828991_2975251152631827_2300538271319352847_n.webp">
+                    <div class="gallery-overlay"></div>
+                    </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/484268835_2975250945965181_2897484326921538558_n.webp" data-src="../image/gallery9/484268835_2975250945965181_2897484326921538558_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/484030158_2975250785965197_2684497156405953928_n.webp" data-src="../image/gallery9/484030158_2975250785965197_2684497156405953928_n.webp">
+                    <div class="gallery-overlay"></div>
+                    </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/484045523_2975250422631900_3619166567436789632_n.webp" data-src="../image/gallery9/484045523_2975250422631900_3619166567436789632_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/483873435_2975250269298582_2042216666707831724_n.webp" data-src="../image/gallery9/483873435_2975250269298582_2042216666707831724_n.webp">
+                    <div class="gallery-overlay"></div>
+                    </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482810317_2975250082631934_7530945858529837550_n.webp" data-src="../image/gallery9/482810317_2975250082631934_7530945858529837550_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/483913734_2975246832632259_3813834914649001473_n.webp" data-src="../image/gallery9/483913734_2975246832632259_3813834914649001473_n.webp">
+                    <div class="gallery-overlay"></div>
+                    </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482021724_2975246782632264_7806237573717492844_n.webp" data-src="../image/gallery9/482021724_2975246782632264_7806237573717492844_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482252572_2975246665965609_6631645197666661119_n.webp" data-src="../image/gallery9/482252572_2975246665965609_6631645197666661119_n.webp">
+                    <div class="gallery-overlay"></div>
+                    </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/483873970_2975246609298948_7869276527100417445_n.webp" data-src="../image/gallery9/483873970_2975246609298948_7869276527100417445_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482019902_2975246549298954_4085446835364713552_n.webp" data-src="../image/gallery9/482019902_2975246549298954_4085446835364713552_n.webp">
+                    <div class="gallery-overlay"></div>
+                    </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482249605_2975246399298969_3077921554292012485_n.webp" data-src="../image/gallery9/482249605_2975246399298969_3077921554292012485_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/483970762_2975246352632307_4778992750120658488_n.webp" data-src="../image/gallery9/483970762_2975246352632307_4778992750120658488_n.webp">
+                    <div class="gallery-overlay"></div>
+                    </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482253903_2975246309298978_5733816364097510214_n.webp" data-src="../image/gallery9/482253903_2975246309298978_5733816364097510214_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482275321_2975246245965651_8585895537544303861_n.webp" data-src="../image/gallery9/482275321_2975246245965651_8585895537544303861_n.webp">
+                    <div class="gallery-overlay"></div>
+                    </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482210240_2975246169298992_3845161441391790125_n.webp" data-src="../image/gallery9/482210240_2975246169298992_3845161441391790125_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482023613_2975247872632155_3327763848832640037_n.webp" data-src="../image/gallery9/482023613_2975247872632155_3327763848832640037_n.webp">
+                    <div class="gallery-overlay"></div>
+                    </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/484004219_2975247825965493_5873669576490157543_n.webp" data-src="../image/gallery9/484004219_2975247825965493_5873669576490157543_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/483863439_2975247745965501_2968868569234779058_n.webp" data-src="../image/gallery9/483863439_2975247745965501_2968868569234779058_n.webp">
+                    <div class="gallery-overlay"></div>
+                    </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/483916980_2975247549298854_7755027372711550376_n.webp" data-src="../image/gallery9/483916980_2975247549298854_7755027372711550376_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482018705_2975247492632193_5343131023485412657_n.webp" data-src="../image/gallery9/482018705_2975247492632193_5343131023485412657_n.webp">
+                    <div class="gallery-overlay"></div>
+                    </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482020230_2975247429298866_3713151885345617764_n.webp" data-src="../image/gallery9/482020230_2975247429298866_3713151885345617764_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482019105_2975247382632204_8349467794908399718_n.webp" data-src="../image/gallery9/482019105_2975247382632204_8349467794908399718_n.webp">
+                    <div class="gallery-overlay"></div>
+                    </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482016889_2975248072632135_3079596189246728084_n.webp" data-src="../image/gallery9/482016889_2975248072632135_3079596189246728084_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/483911429_2975247992632143_8529875610691906033_n.webp" data-src="../image/gallery9/483911429_2975247992632143_8529875610691906033_n.webp">
+                    <div class="gallery-overlay"></div>
+                    </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482016535_2975247915965484_6079326804787890492_n.webp" data-src="../image/gallery9/482016535_2975247915965484_6079326804787890492_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482020522_2975248165965459_2788973587521041838_n.webp" data-src="../image/gallery9/482020522_2975248165965459_2788973587521041838_n.webp">
+                    <div class="gallery-overlay"></div>
+                    </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482203913_2975248242632118_8018031178687000821_n.webp" data-src="../image/gallery9/482203913_2975248242632118_8018031178687000821_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/483847585_2975248392632103_8420556325878966802_n.webp" data-src="../image/gallery9/483847585_2975248392632103_8420556325878966802_n.webp">
+                    <div class="gallery-overlay"></div>
+                    </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery9/482062841_2975248469298762_7663819865590277126_n.webp" data-src="../image/gallery9/482062841_2975248469298762_7663819865590277126_n.webp">
+                    <div class="gallery-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add styles for lightbox images to maintain original aspect ratio -->
+    <style>
+        /* Lightbox fixes for aspect ratio */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        .lightbox-image {
+            max-width: 90%;
+            max-height: 85vh;
+            object-fit: contain;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            background-color: #000;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 10000;
+        }
+        
+        .lightbox-navigation {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .lightbox-nav-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            font-size: 20px;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 20px;
+            transition: background 0.3s;
+        }
+        
+        .lightbox-nav-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .lightbox-caption {
+            color: white;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+    </style>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <div class="lightbox-close">&times;</div>
+        <div class="lightbox-navigation">
+            <button class="lightbox-nav-btn lightbox-prev">&laquo;</button>
+            <button class="lightbox-nav-btn lightbox-next">&raquo;</button>
+        </div>
+        <img class="lightbox-image" src="" alt="">
+        <div class="lightbox-caption"></div>
+    </div>
+
+    <!-- Back to Gallery -->
+    <div class="back-to-gallery">
+        <a href="../gallery.html"><i class="fas fa-arrow-left"></i> Back to All Galleries</a>
+    </div>
+
+    <!-- Include Footer -->
+    <div id="footer-container"></div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/lightbox.js"></script>
+    <script src="../js/gallery-basic.js"></script>
+    <script src="../js/header-loader.js"></script>
+    <script>
+        // Load footer only; header handled by header-loader.jsdocument.addEventListener('DOMContentLoaded', function() {
+            fetch('../Footer/footer.html')
+                .then(r => r.text())
+                .then(html => {
+                    const fixed = html.replace(/src="(?!http|\/\/|#)/g, 'src="../');
+                    document.getElementById('footer-container').innerHTML = fixed;
+                });
+        });
+    </script>
+</body>
+</html> 
+
+

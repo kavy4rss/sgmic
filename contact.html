@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Saraswati Gyan Mandir Inter College</title>
+    <link rel="icon" href="image/Logo/Favicon.webp" type="image/webp">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header-styles.css">
+    <link rel="stylesheet" href="css/footer-styles.css">
+    <link rel="stylesheet" href="css/contact-styles.css">
+    <link rel="stylesheet" href="css/loading-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add this to ensure proper spacing for the content */
+        body {
+            padding-top: 130px; /* Adjusted for taller header (top bar + navbar) */
+        }
+        
+        @media (max-width: 992px) {
+            body {
+                padding-top: 80px; /* Only navbar height since top bar is hidden */
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                padding-top: 70px; /* Smaller navbar height on mobile */
+            }
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #126e82;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(18, 110, 130, 0.3);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(18, 110, 130, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <div id="header-container"></div>
+
+    <main class="contact-page">
+        <section class="contact-hero">
+            <h1>Contact Us</h1>
+            <p>We'd Love to Hear from You</p>
+        </section>
+
+        <section class="contact-content">
+                <div class="contact-info">
+                <div class="info-card">
+                                <i class="fas fa-map-marker-alt"></i>
+                    <h3>Visit Us</h3>
+                    <p>3A/193 Azad Nagar<br>Kanpur, Uttar Pradesh - 208002</p>
+                            </div>
+                <div class="info-card">
+                    <i class="fas fa-phone"></i>
+                                <h3>Call Us</h3>
+                    <p>Tel: +91 9839148124</p>
+                            </div>
+                <div class="info-card">
+                                <i class="fas fa-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p>sgmazadnagarkanpur@rediffmail.com</p>
+                            </div>
+                        </div>
+
+            <div class="contact-form-container">
+                <h2>Send Us a Message</h2>
+                <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+                    <input type="hidden" name="access_key" value="2aac45c4-70d3-4a5f-a1ae-45c7d050f0a9">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <select id="subject" name="subject" required>
+                            <option value="" selected disabled>Subject</option>
+                            <option value="admission">Admission Inquiry</option>
+                            <option value="general">General Information</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" id="submitBtn" name="submitBtn">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <h2>Our Location</h2>
+            <div class="map-container">
+                <!-- Google Maps embed code for Saraswati Gyan Mandir Inter College -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3570.2661286410445!2d80.30414421502402!3d26.504343983302534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c47829a64bde7%3A0x1d421952933e4d0c!2sSaraswati%20Gyan%20Mandir%20Inter%20College%20Azad%20Nagar%20Kanpur!5e0!3m2!1sen!2sin!4v1655118234955!5m2!1sen!2sin"
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+        </div>
+    </section>
+
+        <!-- Office Hours Section -->
+        <section class="school-hours">
+            <h2>School & Office Hours</h2>
+            <div class="hours-grid">
+                <div class="hours-item">
+                    <h3><i class="fas fa-school"></i> School Hours</h3>
+                    <p>Monday - Saturday: 8:30 AM - 3:00 PM<br>
+                       Sunday: Closed<br>
+                       <small>* School timings may vary for pre-primary classes and during exams.</small></p>
+                </div>
+                <div class="hours-item">
+                    <h3><i class="fas fa-briefcase"></i> Administrative Office</h3>
+                    <p>Monday - Saturday: 9:00 AM - 3:00 PM<br>
+                       Sunday: Closed<br>
+                       <small>* Office remains closed on public holidays.</small></p>
+                </div>
+                <div class="hours-item">
+                    <h3><i class="fas fa-money-check-alt"></i> Fee Counter</h3>
+                    <p>Monday - Saturday 9:00 AM - 3:00 PM<br>
+                       Sunday: Closed<br>
+                       <small>* Extended hours during fee submission periods.</small></p>
+                </div>
+            </div>
+        </section>
+    
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>How can I schedule a meeting with the principal?</h3>
+                <p>To schedule a meeting with the principal, please call our office at +91 9839148124 during working hours or email us at sgmazadnagarkanpur@rediffmail.com with your request. Please mention the purpose of your meeting to help us schedule it appropriately. The principal is available for parent meetings on Monday, Wednesday, and Friday between 11:00 AM - 1:00 PM by appointment only.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Who should I contact for admission-related queries?</h3>
+                <p>For admission-related queries, please contact our Admission Office at the main contact number. You can also visit the Admission section on our website for detailed information about the admission process, required documents, and important dates. During the admission season, our dedicated admission helpdesk is available from 9:00 AM to 3:00 PM on all working days.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do I contact my child's class teacher?</h3>
+                <p>You can request a meeting with your child's class teacher through the school diary or by calling our office. Teachers are available for parent meetings on designated parent-teacher meeting days or by appointment after school hours from 3:15 PM to 4:00 PM. Please make appointments at least one day in advance to ensure the teacher's availability.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What is the best way to report a student's absence?</h3>
+                <p>To report a student's absence, please call the school office before 9:00 AM on the day of absence. You can also send a note in advance through the school diary if the absence is planned. For extended absences due to illness or other reasons, a written application along with supporting documents (such as medical certificates) should be submitted to the class teacher or school office.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How can I provide feedback or suggestions to the school?</h3>
+                <p>We welcome feedback and suggestions from parents and community members. You can submit your feedback using the contact form on this page, or email us directly. You may also drop your written suggestions in the suggestion box located near the school office. The school management reviews all feedback regularly and takes appropriate action to continuously improve our services.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Back to top button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <div id="footer-container"></div>
+
+    <div id="form-message"></div>
+
+    <script src="js/script.js"></script>
+    <script src="js/loading.js"></script>
+    <script src="js/header-loader.js"></script>
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const header = item.querySelector('.faq-header');
+            
+            header.addEventListener('click', () => {
+                item.classList.toggle('active');
+                
+                // Close other open items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+            });
+        });
+        
+        // Back to top button functionality
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html> 

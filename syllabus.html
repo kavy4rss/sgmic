@@ -1,0 +1,1024 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syllabus - Saraswati Gyan Mandir Inter College</title>
+    <link rel="icon" href="image/Logo/Favicon.webp" type="image/webp">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header-styles.css">
+    <link rel="stylesheet" href="css/footer-styles.css">
+    <link rel="stylesheet" href="css/academics-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add this to ensure proper spacing for the content */
+        body {
+            padding-top: 130px; /* Adjusted for taller header (top bar + navbar) */
+        }
+        
+        @media (max-width: 992px) {
+            body {
+                padding-top: 80px; /* Only navbar height since top bar is hidden */
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                padding-top: 70px; /* Smaller navbar height on mobile */
+            }
+        }
+        
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .preloader.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .loader {
+            width: 80px;
+            height: 80px;
+            border: 5px solid #f5f5f5;
+            border-top: 5px solid #f5a623;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* PDF Link Styles */
+        .pdf-link {
+            color: #f5a623;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 2px;
+        }
+        
+        .pdf-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #f5a623;
+            transition: width 0.3s ease;
+        }
+        
+        .pdf-link:hover {
+            color: #e09213;
+        }
+        
+        .pdf-link:hover:after {
+            width: 100%;
+        }
+
+        /* Stream Cards */
+        .stream-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .stream-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+            border: 1px solid #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .stream-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+        
+        .stream-card:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+        
+        .stream-card:nth-child(3) {
+            animation-delay: 0.5s;
+        }
+        
+        .stream-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: #f5a623;
+        }
+        
+        .stream-card:before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 150px;
+            height: 150px;
+            background: rgba(245, 166, 35, 0.05);
+            border-radius: 50%;
+            z-index: 0;
+            transition: all 0.4s ease;
+        }
+        
+        .stream-card:hover:before {
+            transform: scale(2);
+        }
+        
+        .stream-icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f5a623 0%, #f5890e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 10px 20px rgba(245, 166, 35, 0.2);
+            transition: all 0.4s ease;
+        }
+        
+        .stream-card:hover .stream-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 15px 30px rgba(245, 166, 35, 0.3);
+        }
+        
+        .stream-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+        
+        .stream-card h4 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stream-card p {
+            color: #666;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            line-height: 1.6;
+        }
+        
+        .stream-pdf-btn {
+            background: #f5a623;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(245, 166, 35, 0.2);
+        }
+        
+        .stream-pdf-btn:hover {
+            background: #e09213;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(245, 166, 35, 0.3);
+        }
+        
+        .stream-pdf-btn i {
+            font-size: 1.2rem;
+        }
+        
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Syllabus Page Specific Styles */
+        .syllabus-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .syllabus-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+
+        .syllabus-filter {
+            padding: 12px 25px;
+            background-color: #f5f5f5;
+            border-radius: 30px;
+            border: none;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            outline: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .syllabus-filter:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: #f5a623;
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .syllabus-filter:hover:before {
+            width: 100%;
+        }
+
+        .syllabus-filter.active, .syllabus-filter:hover {
+            color: white;
+        }
+        
+        .syllabus-filter.active {
+            background-color: #f5a623;
+        }
+        
+        .syllabus-filter.active:before {
+            width: 100%;
+        }
+
+        .syllabus-content {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            transform: translateY(0);
+        }
+        
+        .syllabus-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .syllabus-tab {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .syllabus-tab.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .syllabus-header {
+            background: linear-gradient(135deg, #f5a623 0%, #f5890e 100%);
+            color: white;
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px 15px 0 0;
+        }
+        
+        .syllabus-header:before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -75px;
+            right: -75px;
+        }
+        
+        .syllabus-header:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            bottom: -50px;
+            left: 30%;
+        }
+
+        .syllabus-header h3 {
+            font-size: 1.6rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .syllabus-header h3 i {
+            font-size: 1.3rem;
+        }
+
+        .download-syllabus {
+            background-color: white;
+            color: #f5a623;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+            font-size: 0.95rem;
+            text-decoration: none;
+        }
+
+        .download-syllabus i {
+            transition: transform 0.3s ease;
+        }
+
+        .download-syllabus:hover {
+            background-color: #333;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        .download-syllabus:hover i {
+            transform: translateY(2px);
+        }
+
+        .syllabus-body {
+            padding: 30px;
+            background-color: white;
+        }
+
+        .syllabus-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .syllabus-table th, .syllabus-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .syllabus-table th {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .syllabus-table td {
+            color: #666;
+        }
+
+        .syllabus-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .syllabus-table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        /* Coming Soon Popup Styles */
+        .coming-soon-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .coming-soon-popup.active {
+            display: flex;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+            animation: popupFadeIn 0.3s ease;
+        }
+
+        @keyframes popupFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .popup-content i {
+            font-size: 3rem;
+            color: #f5a623;
+            margin-bottom: 20px;
+        }
+
+        .popup-content h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .popup-content p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .popup-close {
+            background: #f5a623;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .popup-close:hover {
+            background: #e09213;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Coming Soon Popup -->
+    <div class="coming-soon-popup" id="comingSoonPopup">
+        <div class="popup-content">
+            <i class="fas fa-clock"></i>
+            <h3>Coming Soon!</h3>
+            <p>The syllabus download feature will be available soon. Please check back later.</p>
+            <button class="popup-close" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+        
+    <!-- Replace the header with the header container div -->
+    <div id="header-container"></div>
+
+    <div class="page-banner">
+        <div class="banner-content">
+            <h1>School Syllabus</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> / <a href="academics.html">Academics</a> / <span>Syllabus</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Syllabus Intro Section -->
+    <section class="academics-intro">
+        <div class="container">
+            <div class="section-title center">
+                <span class="subtitle">Academic Year 2024-25</span>
+                <h2>UP Board Curriculum & Syllabus</h2>
+            </div>
+            <p class="intro-text">Our curriculum follows the guidelines prescribed by the Uttar Pradesh Board of High School and Intermediate Education. We offer classes from 1st to 8th standard. The syllabus is designed to provide a comprehensive understanding of subjects while promoting critical thinking, creativity, and practical application of knowledge.</p>
+        </div>
+    </section>
+
+    <!-- Class-wise Syllabus Section -->
+    <section class="syllabus-section">
+        <div class="container">
+            <div class="section-title center">
+                <span class="subtitle">Class-wise Curriculum</span>
+                <h2>Detailed Syllabus by Class</h2>
+            </div>
+            
+            <div class="syllabus-filters">
+                <button class="syllabus-filter" data-target="class1">Class 1</button>
+                <button class="syllabus-filter" data-target="class2">Class 2</button>
+                <button class="syllabus-filter" data-target="class3">Class 3</button>
+                <button class="syllabus-filter" data-target="class4">Class 4</button>
+                <button class="syllabus-filter" data-target="class5">Class 5</button>
+                <button class="syllabus-filter" data-target="class6">Class 6</button>
+                <button class="syllabus-filter" data-target="class7">Class 7</button>
+                <button class="syllabus-filter" data-target="class8">Class 8</button>
+            </div>
+            
+            <div class="syllabus-content">
+                <!-- Class 1 Syllabus -->
+                <div id="class1" class="syllabus-tab">
+                    <div class="syllabus-header">
+                        <h3><i class="fas fa-child"></i> Class 1</h3>
+                        <a href="#" class="download-syllabus" onclick="showPopup(event)">
+                            Download Complete Syllabus <i class="fas fa-download"></i>
+                        </a>
+                    </div>
+                    <div class="syllabus-body">
+                        <table class="syllabus-table">
+                            <tr>
+                                <th>Subject</th>
+                                <th>Key Topics</th>
+                                <th>Books/Resources</th>
+                            </tr>
+                            <tr>
+                                <td>Hindi</td>
+                                <td>Basic alphabet, simple words, rhymes, basic sentences</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>English</td>
+                                <td>Alphabet, phonics, sight words, simple sentences</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Mathematics</td>
+                                <td>Numbers 1-100, basic addition/subtraction, shapes</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Environmental Studies</td>
+                                <td>Family, school, plants, animals, basic hygiene</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Art & Craft</td>
+                                <td>Drawing, coloring, basic craft activities</td>
+                                <td>School-provided materials</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Class 2 Syllabus -->
+                <div id="class2" class="syllabus-tab">
+                    <div class="syllabus-header">
+                        <h3><i class="fas fa-child"></i> Class 2</h3>
+                        <a href="#" class="download-syllabus" onclick="showPopup(event)">
+                            Download Complete Syllabus <i class="fas fa-download"></i>
+                        </a>
+                    </div>
+                    <div class="syllabus-body">
+                        <table class="syllabus-table">
+                            <tr>
+                                <th>Subject</th>
+                                <th>Key Topics</th>
+                                <th>Books/Resources</th>
+                            </tr>
+                            <tr>
+                                <td>Hindi</td>
+                                <td>Simple grammar, short stories, poems, writing practice</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>English</td>
+                                <td>Basic grammar, reading comprehension, vocabulary</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Mathematics</td>
+                                <td>Numbers up to 1000, addition/subtraction, time</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Environmental Studies</td>
+                                <td>Neighborhood, food, water, air, transport</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Art & Craft</td>
+                                <td>Advanced coloring, paper craft, clay modeling</td>
+                                <td>School-provided materials</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Class 3 Syllabus -->
+                <div id="class3" class="syllabus-tab">
+                    <div class="syllabus-header">
+                        <h3><i class="fas fa-child"></i> Class 3</h3>
+                        <a href="#" class="download-syllabus" onclick="showPopup(event)">
+                            Download Complete Syllabus <i class="fas fa-download"></i>
+                        </a>
+                    </div>
+                    <div class="syllabus-body">
+                        <table class="syllabus-table">
+                            <tr>
+                                <th>Subject</th>
+                                <th>Key Topics</th>
+                                <th>Books/Resources</th>
+                            </tr>
+                            <tr>
+                                <td>Hindi</td>
+                                <td>Grammar, creative writing, comprehension, poetry</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>English</td>
+                                <td>Grammar, writing skills, reading comprehension</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Mathematics</td>
+                                <td>Multiplication, division, fractions introduction</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Environmental Studies</td>
+                                <td>Plants, animals, human body, weather</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Computer</td>
+                                <td>Basic computer parts, MS Paint</td>
+                                <td>School-provided materials</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Continue with similar structure for Classes 4-10 -->
+                <!-- Class 4 Syllabus -->
+                <div id="class4" class="syllabus-tab">
+                    <div class="syllabus-header">
+                        <h3><i class="fas fa-child"></i> Class 4</h3>
+                        <a href="#" class="download-syllabus" onclick="showPopup(event)">
+                            Download Complete Syllabus <i class="fas fa-download"></i>
+                        </a>
+                    </div>
+                    <div class="syllabus-body">
+                        <table class="syllabus-table">
+                            <tr>
+                                <th>Subject</th>
+                                <th>Key Topics</th>
+                                <th>Books/Resources</th>
+                            </tr>
+                            <tr>
+                                <td>Hindi</td>
+                                <td>Advanced grammar, literature, essay writing</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>English</td>
+                                <td>Advanced grammar, creative writing, literature</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Mathematics</td>
+                                <td>Fractions, decimals, measurements, geometry</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Environmental Studies</td>
+                                <td>Solar system, states of matter, ecosystems</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Computer</td>
+                                <td>MS Word basics, typing skills</td>
+                                <td>School-provided materials</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Class 5 Syllabus -->
+                <div id="class5" class="syllabus-tab">
+                    <div class="syllabus-header">
+                        <h3><i class="fas fa-child"></i> Class 5</h3>
+                        <a href="#" class="download-syllabus" onclick="showPopup(event)">
+                            Download Complete Syllabus <i class="fas fa-download"></i>
+                        </a>
+                    </div>
+                    <div class="syllabus-body">
+                        <table class="syllabus-table">
+                            <tr>
+                                <th>Subject</th>
+                                <th>Key Topics</th>
+                                <th>Books/Resources</th>
+                            </tr>
+                            <tr>
+                                <td>Hindi</td>
+                                <td>Complex grammar, advanced literature, creative writing</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>English</td>
+                                <td>Complex grammar, literature analysis, composition</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Mathematics</td>
+                                <td>Decimals, percentages, advanced geometry</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Environmental Studies</td>
+                                <td>Natural resources, pollution, conservation</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Computer</td>
+                                <td>MS Word advanced, MS PowerPoint basics</td>
+                                <td>School-provided materials</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Class 6 Syllabus -->
+                <div id="class6" class="syllabus-tab">
+                    <div class="syllabus-header">
+                        <h3><i class="fas fa-book"></i> Class 6</h3>
+                        <a href="#" class="download-syllabus" onclick="showPopup(event)">
+                            Download Complete Syllabus <i class="fas fa-download"></i>
+                        </a>
+                    </div>
+                    <div class="syllabus-body">
+                        <table class="syllabus-table">
+                            <tr>
+                                <th>Subject</th>
+                                <th>Key Topics</th>
+                                <th>Books/Resources</th>
+                            </tr>
+                            <tr>
+                                <td>Hindi</td>
+                                <td>Advanced literature, grammar, composition</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>English</td>
+                                <td>Literature, grammar, writing skills</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Mathematics</td>
+                                <td>Integers, algebra basics, geometry</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Science</td>
+                                <td>Basic physics, chemistry, biology concepts</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Social Science</td>
+                                <td>History, geography, civics basics</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Sanskrit</td>
+                                <td>Basic grammar and translation</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Class 7 Syllabus -->
+                <div id="class7" class="syllabus-tab">
+                    <div class="syllabus-header">
+                        <h3><i class="fas fa-book"></i> Class 7</h3>
+                        <a href="#" class="download-syllabus" onclick="showPopup(event)">
+                            Download Complete Syllabus <i class="fas fa-download"></i>
+                        </a>
+                    </div>
+                    <div class="syllabus-body">
+                        <table class="syllabus-table">
+                            <tr>
+                                <th>Subject</th>
+                                <th>Key Topics</th>
+                                <th>Books/Resources</th>
+                            </tr>
+                            <tr>
+                                <td>Hindi</td>
+                                <td>Advanced grammar, literature analysis</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>English</td>
+                                <td>Advanced grammar, literature, composition</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Mathematics</td>
+                                <td>Algebra, geometry, data handling</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Science</td>
+                                <td>Physics, chemistry, biology with experiments</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Social Science</td>
+                                <td>Medieval history, geography, civics</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Sanskrit</td>
+                                <td>Grammar, translation, simple texts</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Class 8 Syllabus -->
+                <div id="class8" class="syllabus-tab">
+                    <div class="syllabus-header">
+                        <h3><i class="fas fa-book"></i> Class 8</h3>
+                        <a href="#" class="download-syllabus" onclick="showPopup(event)">
+                            Download Complete Syllabus <i class="fas fa-download"></i>
+                        </a>
+                    </div>
+                    <div class="syllabus-body">
+                        <table class="syllabus-table">
+                            <tr>
+                                <th>Subject</th>
+                                <th>Key Topics</th>
+                                <th>Books/Resources</th>
+                            </tr>
+                            <tr>
+                                <td>Hindi</td>
+                                <td>Complex literature, advanced grammar</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>English</td>
+                                <td>Advanced literature, writing skills</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Mathematics</td>
+                                <td>Advanced algebra, geometry, mensuration</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Science</td>
+                                <td>Advanced concepts in physics, chemistry, biology</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Social Science</td>
+                                <td>Modern history, geography, civics</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                            <tr>
+                                <td>Sanskrit</td>
+                                <td>Advanced grammar, literature</td>
+                                <td>UP Board prescribed textbooks</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Replace the footer with the footer container div -->
+    <div id="footer-container"></div>
+
+    <script src="js/script.js"></script>
+    <script src="js/syllabus.js"></script>
+    <script src="js/header-loader.js"></script>
+    <script>
+        // Load footer
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                });
+
+            // Add click event to all download buttons
+            document.querySelectorAll('.download-syllabus, .stream-pdf-btn').forEach(button => {
+                button.addEventListener('click', showPopup);
+            });
+
+            // Syllabus filter functionality
+            const syllabusFilters = document.querySelectorAll('.syllabus-filter');
+            const syllabusTabs = document.querySelectorAll('.syllabus-tab');
+            
+            // Initialize with class 1 active
+            document.getElementById('class1').classList.add('active');
+            syllabusFilters[0].classList.add('active');
+            
+            syllabusFilters.forEach(filter => {
+                filter.addEventListener('click', function() {
+                    // Remove active class from all filters
+                    syllabusFilters.forEach(f => f.classList.remove('active'));
+                    
+                    // Add active class to clicked filter
+                    this.classList.add('active');
+                    
+                    // Get target tab
+                    const targetTab = this.getAttribute('data-target');
+                    
+                    // Hide all tabs
+                    syllabusTabs.forEach(tab => tab.classList.remove('active'));
+                    
+                    // Show target tab
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+        });
+
+        // Show popup function
+        function showPopup(event) {
+            event.preventDefault();
+            document.getElementById('comingSoonPopup').classList.add('active');
+        }
+
+        // Close popup function
+        function closePopup() {
+            document.getElementById('comingSoonPopup').classList.remove('active');
+        }
+
+        // Close popup when clicking outside
+        document.getElementById('comingSoonPopup').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closePopup();
+            }
+        });
+
+        // Close popup when pressing Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closePopup();
+            }
+        });
+
+        // Hide preloader after page loads
+        window.addEventListener('load', function() {
+            const preloader = document.querySelector('.preloader');
+            preloader.classList.add('fade-out');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
+    </script>
+    
+</body>
+</html> 
+

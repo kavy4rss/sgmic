@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Function Test - SGMIC</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header-styles.css">
+    <link rel="stylesheet" href="css/footer-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/shared-components.js"></script>
+    <style>
+        .test-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .test-title {
+            text-align: center;
+            color: #0a2342;
+            margin-bottom: 30px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px solid #f0f0f0;
+            border-radius: 10px;
+        }
+        .test-section h3 {
+            color: #f5a623;
+            margin-bottom: 15px;
+        }
+        .email-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #4285f4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        .email-link:hover {
+            background: #3367d6;
+            transform: translateY(-2px);
+        }
+        .info-box {
+            background: #e8f4fd;
+            border-left: 4px solid #4285f4;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Container -->
+    <div id="header-container"></div>
+    
+    <!-- Main Content -->
+    <div class="test-container">
+        <h1 class="test-title">ðŸ“§ Email Function Test Page</h1>
+        
+        <div class="test-section">
+            <h3>ðŸŽ¯ How It Works</h3>
+            <div class="info-box">
+                <p><strong>Mobile Devices:</strong> Automatically tries to open Gmail, Outlook, Yahoo Mail, or default email app in order.</p>
+                <p><strong>Desktop:</strong> Shows a popup with options to choose your preferred email app.</p>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>ðŸ“± Test Email Links</h3>
+            <p>Click on any of these email links to test the functionality:</p>
+            
+            <a href="#" onclick="openEmailApp('sgmazadnagarkanpur@rediffmail.com'); return false;" class="email-link">
+                <i class="fas fa-envelope"></i> School Email
+            </a>
+            
+            <a href="#" onclick="openEmailApp('test@gmail.com'); return false;" class="email-link">
+                <i class="fas fa-envelope"></i> Test Gmail
+            </a>
+            
+            <a href="#" onclick="openEmailApp('info@example.com'); return false;" class="email-link">
+                <i class="fas fa-envelope"></i> Example Email
+            </a>
+        </div>
+        
+        <div class="test-section">
+            <h3>ðŸ“‹ Features</h3>
+            <ul>
+                <li>âœ… Automatically detects mobile vs desktop</li>
+                <li>âœ… Tries multiple email apps (Gmail, Outlook, Yahoo)</li>
+                <li>âœ… Fallback to default mailto if needed</li>
+                <li>âœ… User-friendly popup on desktop</li>
+                <li>âœ… Works across all pages</li>
+            </ul>
+        </div>
+        
+        <div class="test-section">
+            <h3>ðŸ”§ Technical Details</h3>
+            <div class="info-box">
+                <p><strong>Function:</strong> <code>openEmailApp(emailAddress)</code></p>
+                <p><strong>Location:</strong> <code>js/shared-components.js</code></p>
+                <p><strong>Usage:</strong> <code>onclick="openEmailApp('email@example.com'); return false;"</code></p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
+    
+    <script src="js/header-loader.js"></script>
+    <script>
+        // Load footer only (header handled by header-loader.js)
+        $(function(){ $("#footer-container").load("Footer/footer.html"); });
+    </script>
+</body>
+</html> 
+

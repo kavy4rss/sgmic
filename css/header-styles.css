@@ -1,0 +1,719 @@
+/* Enhanced Header Styles */
+:root {
+    --header-primary: #0a2342;
+    --header-secondary: #126e82;
+    --header-accent: #ff8c42;
+    --header-text: #ffffff;
+    --header-light: rgba(255, 255, 255, 0.9);
+    --header-dark: #061a33;
+    --header-border: rgba(255, 255, 255, 0.1);
+    --transition-slow: 0.5s ease;
+    --transition-medium: 0.3s ease;
+    --transition-fast: 0.2s ease;
+    --header-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    --item-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    --menu-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Animation Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Main Header Styles */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all var(--transition-medium);
+}
+
+/* Top Bar */
+.top-bar {
+    background: linear-gradient(90deg, var(--header-primary), var(--header-secondary));
+    padding: 8px 0;
+    color: var(--header-text);
+    font-size: 14px;
+}
+
+.top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.top-contact {
+    display: flex;
+    gap: 20px;
+}
+
+.top-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    animation: fadeIn 0.5s ease-out forwards;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.top-contact-item:nth-child(1) { animation-delay: 0.1s; }
+.top-contact-item:nth-child(2) { animation-delay: 0.2s; }
+.top-contact-item:nth-child(3) { animation-delay: 0.3s; }
+
+.top-contact-item i {
+    color: var(--header-accent);
+    font-size: 12px;
+}
+
+.top-contact-item a {
+    color: var(--header-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.top-contact-item a:hover {
+    color: var(--header-accent);
+}
+
+.top-social {
+    display: flex;
+    gap: 12px;
+}
+
+.top-social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--header-text);
+    font-size: 14px;
+    transition: all var(--transition-fast);
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.top-social-icon:nth-child(1) { animation-delay: 0.1s; }
+.top-social-icon:nth-child(2) { animation-delay: 0.2s; }
+.top-social-icon:nth-child(3) { animation-delay: 0.3s; }
+.top-social-icon:nth-child(4) { animation-delay: 0.4s; }
+
+.top-social-icon:hover {
+    background: var(--header-accent);
+    transform: translateY(-3px);
+}
+
+/* Main Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    background-color: var(--header-text);
+    box-shadow: var(--header-shadow);
+    transition: all var(--transition-medium);
+    position: relative;
+    height: 100px;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.school-logo {
+    height: 60px;
+    width: auto;
+    margin-right: 15px;
+    display: block;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--header-primary);
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    background: linear-gradient(90deg, var(--header-primary), var(--header-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo-text p {
+    font-size: 14px;
+    color: var(--header-secondary);
+    margin: 5px 0 0;
+    font-weight: 400;
+}
+
+/* Navigation Links */
+.nav-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    height: 100%;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: var(--header-dark);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.nav-links a:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--header-accent);
+    transition: all var(--transition-medium);
+    transform: translateX(-50%);
+}
+
+.nav-links a:hover {
+    color: var(--header-accent);
+}
+
+.nav-links a:hover:before {
+    width: 70%;
+}
+
+.nav-links a.active {
+    color: var(--header-accent);
+    font-weight: 600;
+}
+
+.nav-links a.active:before {
+    width: 80%;
+    height: 3px;
+}
+
+/* Dropdown Menu */
+.nav-links li.has-dropdown {
+    position: relative;
+}
+
+.nav-links li.has-dropdown > a:after {
+    content: '\f107';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-left: 6px;
+    transition: transform 0.3s ease;
+}
+
+.nav-links li.has-dropdown:hover > a:after {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 220px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+    border-top: 3px solid var(--header-accent);
+    padding: 5px 0;
+}
+
+.nav-links li.has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--header-primary);
+    font-size: 14px;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(245, 166, 35, 0.1);
+    color: var(--header-accent);
+    padding-left: 25px;
+}
+
+.dropdown-menu a:before {
+    display: none;
+}
+
+/* Mobile Dropdown Style */
+@media (max-width: 992px) {
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.03);
+        box-shadow: none;
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        transform: none;
+        transition: all 0.3s ease;
+        margin-top: 0;
+        border-radius: 0;
+        border-top: none;
+        overflow: hidden;
+        padding: 0;
+    }
+    
+    .nav-links li.has-dropdown.open > a:after {
+        transform: rotate(180deg);
+    }
+    
+    .nav-links li.has-dropdown.open .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+        padding: 5px 0;
+    }
+    
+    .dropdown-menu a {
+        padding-left: 30px;
+    }
+    
+    .dropdown-menu a:hover {
+        padding-left: 35px;
+    }
+}
+
+/* CTA Button */
+.header-cta {
+    margin-left: 20px;
+    animation: scaleIn 1s ease-out forwards;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, var(--header-accent), #ff7830);
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    border: 2px solid transparent;
+    box-shadow: 0 5px 15px rgba(255, 140, 66, 0.4);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cta-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0));
+    transition: left 0.7s;
+    z-index: -1;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 140, 66, 0.6);
+}
+
+.cta-button:hover:before {
+    left: 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Mobile Navigation Toggle */
+.nav-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--header-primary);
+    transition: all var(--transition-fast);
+    z-index: 200;
+}
+
+.nav-toggle:hover {
+    color: var(--header-accent);
+}
+
+/* Shrink Header on Scroll */
+.main-header.shrink .navbar {
+    padding: 12px 20px;
+    height: 75px;
+}
+
+.main-header.shrink .school-logo {
+    height: 70px;
+    max-width: 340px;
+}
+
+.main-header.shrink .logo-text h1 {
+    font-size: 18px;
+}
+
+.main-header.shrink .logo-text p {
+    font-size: 12px;
+}
+
+/* Animation for page load */
+.main-header {
+    animation: slideInDown 0.8s ease-out forwards;
+}
+
+/* Add this to ensure the hero slider is positioned correctly */
+.hero {
+    margin-top: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .nav-links a {
+        padding: 10px 12px;
+        font-size: 15px;
+    }
+    
+    .cta-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    
+    .logo-text h1 {
+        font-size: 20px;
+    }
+    
+    .logo-text p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 992px) {
+    .top-contact {
+        display: none;
+    }
+    
+    .top-bar-container {
+        justify-content: center;
+    }
+    
+    .nav-toggle {
+        display: block;
+    }
+    
+    .nav-container {
+        position: fixed;
+        top: 0;
+        right: -280px;
+        width: 280px;
+        height: 100vh;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        padding: 80px 20px 30px;
+        transition: right var(--transition-medium);
+        box-shadow: var(--menu-shadow);
+        z-index: 100;
+        overflow-y: auto;
+    }
+    
+    .nav-container.open {
+        right: 0;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .nav-links li {
+        width: 100%;
+    }
+    
+    .nav-links a {
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .nav-links a:before {
+        display: none;
+    }
+    
+    .header-cta {
+        margin: 20px 0 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .cta-button {
+        display: block;
+        width: 100%;
+    }
+    
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-medium);
+        z-index: 90;
+    }
+    
+    .overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .has-dropdown > a:after {
+        content: '\f107';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        margin-left: 8px;
+        transition: transform var(--transition-fast);
+    }
+    
+    .has-dropdown.open > a:after {
+        transform: rotate(180deg);
+    }
+    
+    .hero {
+        margin-top: 0;
+    }
+    
+    .navbar {
+        padding: 15px 20px;
+        height: 80px;
+    }
+    
+    .school-logo {
+        height: 75px;
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 576px) {
+    .top-bar {
+        display: none;
+    }
+    
+    .navbar {
+        padding: 12px 15px;
+        height: 70px;
+    }
+    
+    .school-logo {
+        height: 65px;
+        max-width: 280px;
+    }
+    
+    .logo-text h1 {
+        font-size: 16px;
+    }
+    
+    .logo-text p {
+        font-size: 10px;
+    }
+    
+    .footer-logo {
+        height: 100px;
+    }
+}
+
+/* Footer Logo Size */
+.footer-logo {
+    height: 120px;
+    width: auto;
+    margin-bottom: 15px;
+}
+
+.top-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    animation: fadeIn 0.5s ease-out forwards;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.top-contact-item:nth-child(1) { animation-delay: 0.1s; }
+.top-contact-item:nth-child(2) { animation-delay: 0.2s; }
+.top-contact-item:nth-child(3) { animation-delay: 0.3s; }
+
+.top-contact-item i {
+    color: var(--header-accent);
+    font-size: 12px;
+}
+
+.top-contact-item a {
+    color: var(--header-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.top-contact-item a:hover {
+    color: var(--header-accent);
+}
+
+/* Add highlight styling for the payment nav link */
+.highlight-nav {
+    background-color: #1cc88a;
+    color: #fff !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.highlight-nav:hover {
+    background-color: #169b6b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+ 

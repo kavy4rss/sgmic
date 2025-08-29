@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Press Coverage - Saraswati Gyan Mandir Inter College</title>
+    <link rel="icon" href="image/Logo/Favicon.webp" type="image/webp">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header-styles.css">
+    <link rel="stylesheet" href="css/academics-styles.css">
+    <link rel="stylesheet" href="css/footer-styles.css">
+    <link rel="stylesheet" href="css/loading-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+        }
+        .press-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin: 40px auto;
+            max-width: 700px;
+        }
+        .press-card-horizontal {
+            display: flex;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+            border: 1px solid #eee;
+            transition: box-shadow 0.3s, border-color 0.3s;
+        }
+        .press-card-horizontal:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: #f5a623;
+        }
+        .press-thumb {
+            flex: 0 0 120px;
+            max-width: 120px;
+            height: 90px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f9f9f9;
+        }
+        .press-thumb-img {
+            width: 100px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+        .press-thumb-img:hover {
+            transform: scale(1.05);
+        }
+        .press-info {
+            flex: 1;
+            padding: 20px 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .press-date {
+            color: #f5a623;
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+        .press-title {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #0a2342;
+            font-weight: 600;
+        }
+        .press-source {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+        .press-excerpt {
+            color: #555;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .read-more {
+            color: #f5a623;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.98rem;
+        }
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        /* Lightbox styles */
+        .press-lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.85);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .press-lightbox.active {
+            display: flex;
+        }
+        .press-lightbox-img {
+            max-width: 90vw;
+            max-height: 85vh;
+            border-radius: 10px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+        }
+        .press-lightbox-close {
+            color: #fff;
+            font-size: 2.5rem;
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            cursor: pointer;
+            z-index: 10000;
+        }
+        @media (max-width: 700px) {
+            .press-card-horizontal {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .press-thumb {
+                max-width: 100%;
+                width: 100%;
+                height: 120px;
+                border-radius: 10px 10px 0 0;
+            }
+            .press-thumb-img {
+                width: 100%;
+                height: 100px;
+                border-radius: 10px 10px 0 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Replace the header with the header container div -->
+    <div id="header-container"></div>
+
+    <div class="page-banner">
+        <div class="banner-content">
+            <h1>Press Coverage</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> / <a href="gallery.html">Gallery</a> / <span>Press Coverage</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="press-coverage-section">
+        <div class="container">
+            <div class="section-title center">
+                <span class="subtitle">Media Recognition</span>
+                <h2>Press Coverage & News Articles</h2>
+            </div>
+            <p class="intro-text">Stay updated with the latest news and media coverage about Saraswati Gyan Mandir Inter College. Our school's achievements, events, and contributions to education have been featured in various media outlets.</p>
+            
+            <div class="press-list">
+                <div class="press-card-horizontal">
+                    <div class="press-thumb">
+                        <img src="image/press-coverage/press1.webp" alt="Dainik Times Article" class="press-thumb-img" onclick="openLightbox('image/press-coverage/press1.webp')">
+                    </div>
+                    <div class="press-info">
+                        <div class="press-date">17 April 2025</div>
+                        <h3 class="press-title">विधायक नीलिमा कटियार ने किया उद्घाटन</h3>
+                        <div class="press-source">Dainik Times</div>
+                        <p class="press-excerpt">सामाजिक नवाचार के अंतर्गत सुकृतम फाउंडेशन द्वारा डेफोडिल स्कूल प्रांगण का उद्घाटन मुख्य अतिथि विधायक नीलिमा कटियार द्वारा किया गया...</p>
+                        <a href="image/press-coverage/press1.webp" class="read-more" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> View Full Article</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>      
+    <!-- Replace the footer with the footer container div -->
+    <div id="footer-container"></div>
+
+    <div id="pressLightbox" class="press-lightbox">
+        <span class="press-lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img class="press-lightbox-img" id="pressLightboxImg" src="" alt="Press Image Large">
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/loading.js"></script>
+    <script src="js/header-loader.js"></script>
+
+        function openLightbox(imgSrc) {
+            document.getElementById('pressLightboxImg').src = imgSrc;
+            document.getElementById('pressLightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            document.getElementById('pressLightbox').classList.remove('active');
+            document.getElementById('pressLightboxImg').src = '';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+    
+</body>
+</html> 

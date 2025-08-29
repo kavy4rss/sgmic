@@ -1,0 +1,87 @@
+<!-- Hamburger Menu Navigation Header (Mobile) -->
+<div class="mobile-header">
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-contact">
+                <div class="top-contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+919839148124">+91 9839148124</a>
+                </div>
+                <div class="top-contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="#" onclick="openEmailApp('sgmazadnagarkanpur@rediffmail.com'); return false;">sgmazadnagarkanpur@rediffmail.com</a>
+                </div>
+                <div class="top-contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Mon - Sat: 8:30 AM - 3:00 PM</span>
+                </div>
+            </div>
+            <div class="top-social">
+                <a href="https://facebook.com/sgmican" class="top-social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/sgmicazadnagarkanpur" class="top-social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/sgmickan" class="top-social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Header (Logo + Hamburger) -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="image/Logo/Header_Logo.png" alt="School Logo" class="school-logo">
+                </a>
+            </div>
+            <button type="button" 
+                   class="nav-toggle" 
+                   id="hamburgerToggle" 
+                   aria-label="Toggle navigation menu" 
+                   aria-expanded="false" 
+                   aria-controls="mobileNavMenu" 
+                   tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation Menu with overlay and submenus -->
+        <ul class="nav-menu" id="mobileNavMenu" aria-labelledby="hamburgerToggle" style="right: -100%; position: fixed; top: 65px; width: 80%; max-width: 300px; height: calc(100vh - 65px); background: #fff; display: flex; flex-direction: column; z-index: 9998; box-shadow: -5px 0 15px rgba(0,0,0,0.1); overflow-y: auto; margin: 0; padding: 20px 0; list-style: none;">
+            <li><a href="index.html">Home</a></li>
+            
+            <li class="has-children"><a href="#">About</a>
+                <ul class="submenu">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="pages/manager-message.html">Manager's Message</a></li>
+                </ul>
+            </li>
+            
+            <li class="has-children"><a href="#">Academics</a>
+                <ul class="submenu">
+                    <li><a href="academics.html">Academic Programs</a></li>
+                    <li><a href="syllabus.html">Syllabus</a></li>
+                    <li><a href="fees.html">Fee Structure</a></li>
+                </ul>
+            </li>
+            
+            <li class="has-children"><a href="#">Gallery</a>
+                <ul class="submenu">
+                    <li><a href="gallery.html">Photo Gallery</a></li>
+                    <li><a href="pages/livestreams.html">Livestreams</a></li>
+                    <li><a href="video-gallery.html">Video Gallery</a></li>
+                    <li><a href="press-coverage.html">Press Coverage</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="admission.html">Admission</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="payment.html" class="highlight-nav">Fee Payment</a></li>
+        </ul>
+        <div class="menu-overlay" id="menuOverlay"></div>
+    </nav>
+    
+    <!-- Removed menu overlay completely -->
+</div>
+
+<!-- Inline emergency script removed; controlled by Header/mobile-menu.js -->

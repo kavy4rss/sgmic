@@ -1,0 +1,496 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements - Saraswati Gyan Mandir Inter College</title>
+    <link rel="icon" href="image/Logo/Favicon.webp" type="image/webp">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header-styles.css">
+    <link rel="stylesheet" href="css/gallery-styles.css">
+    <link rel="stylesheet" href="css/footer-styles.css">
+    <link rel="stylesheet" href="css/loading-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 130px;
+        }
+        
+        @media (max-width: 992px) {
+            body {
+                padding-top: 80px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                padding-top: 70px;
+            }
+        }
+
+        .achievements-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+
+        .timeline-container {
+            max-width: 900px;
+            margin: 60px auto 0;
+            position: relative;
+        }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #f5a623;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            background-color: white;
+            border: 4px solid #f5a623;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -17px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -17px;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid #f5a623;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            border-left: none;
+            border-right: 4px solid #f5a623;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .timeline-year {
+            position: absolute;
+            top: -10px;
+            font-size: 14px;
+            line-height: 1;
+            padding: 5px 15px;
+            background: #f5a623;
+            color: white;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-year {
+            right: 15px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-year {
+            left: 15px;
+        }
+
+        .timeline-content h3 {
+            margin: 25px 0 15px;
+            color: #333;
+            font-size: 1.3rem;
+        }
+
+        .timeline-content p {
+            margin-bottom: 15px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .timeline-content .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            margin-right: 5px;
+            background: rgba(245, 166, 35, 0.1);
+            color: #f5a623;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+        }
+
+        .achievement-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .achievement-category {
+            padding: 15px 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-bottom: 3px solid #f5a623;
+            transition: all 0.3s ease;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .achievement-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .achievement-category i {
+            display: block;
+            font-size: 2rem;
+            color: #f5a623;
+            margin-bottom: 10px;
+        }
+
+        .achievement-category h3 {
+            color: #333;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .achievement-category p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .stat-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(245, 166, 35, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .stat-icon i {
+            font-size: 2rem;
+            color: #f5a623;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-container::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd)::after,
+            .timeline-item:nth-child(even)::after {
+                left: 18px;
+                right: auto;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-year,
+            .timeline-item:nth-child(even) .timeline-year {
+                left: 15px;
+                right: auto;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-content {
+                border-right: none;
+                border-left: 4px solid #f5a623;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Replace the header with the header container div -->
+    <div id="header-container"></div>
+
+    <div class="page-banner">
+        <div class="banner-content">
+            <h1>Our Achievements</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> / <span>Achievements</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="achievements-section">
+        <div class="container">
+            <div class="section-title center">
+                <span class="subtitle">Excellence & Recognition</span>
+                <h2>Academic & Co-curricular Achievements</h2>
+            </div>
+            <p class="intro-text">
+                At Saraswati Gyan Mandir Inter College, we take pride in the outstanding accomplishments of our students and faculty across various domains. Our commitment to excellence has resulted in numerous accolades and achievements throughout our illustrious history.
+            </p>
+            
+            <div class="achievement-categories">
+                <div class="achievement-category" data-category="academic">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Academic</h3>
+                    <p>Board exam toppers & scholarships</p>
+                </div>
+                
+                <div class="achievement-category" data-category="sports">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Sports</h3>
+                    <p>District & state level champions</p>
+                </div>
+                
+                <div class="achievement-category" data-category="cultural">
+                    <i class="fas fa-music"></i>
+                    <h3>Cultural</h3>
+                    <p>Dance, music & drama awards</p>
+                </div>
+                
+                <div class="achievement-category" data-category="competitions">
+                    <i class="fas fa-medal"></i>
+                    <h3>Competitions</h3>
+                    <p>Science, math & literary events</p>
+                </div>
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="stat-number" data-count="95">95%</div>
+                    <div class="stat-label">Pass Percentage in Board Exams</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-number" data-count="120">120+</div>
+                    <div class="stat-label">Sports Medals Won</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="stat-number" data-count="75">75+</div>
+                    <div class="stat-label">District/State Toppers</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <div class="stat-number" data-count="50">50+</div>
+                    <div class="stat-label">Science Exhibition Awards</div>
+                </div>
+            </div>
+            
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2023</div>
+                        <h3>UP Board Examination Excellence</h3>
+                        <p>Our students achieved outstanding results with 15 students scoring above 90% and three students ranking in the district top 10.</p>
+                        <span class="tag">Academic</span>
+                        <span class="tag">Board Results</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2023</div>
+                        <h3>District Sports Championship</h3>
+                        <p>Our school's cricket team won the district championship, and athletics team secured 12 medals in various track and field events.</p>
+                        <span class="tag">Sports</span>
+                        <span class="tag">Cricket</span>
+                        <span class="tag">Athletics</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2022</div>
+                        <h3>National Science Olympiad</h3>
+                        <p>Five students qualified for the National Level Science Olympiad, with two securing medals and certificates of excellence.</p>
+                        <span class="tag">Academic</span>
+                        <span class="tag">Science</span>
+                        <span class="tag">Olympiad</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2022</div>
+                        <h3>Cultural Excellence Award</h3>
+                        <p>Our school received the Cultural Excellence Award at the Inter-School Cultural Festival for outstanding performances in dance, music, and drama.</p>
+                        <span class="tag">Cultural</span>
+                        <span class="tag">Dance</span>
+                        <span class="tag">Music</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2021</div>
+                        <h3>District Level Science Exhibition</h3>
+                        <p>Our students won first prize for their innovative project on renewable energy at the District Level Science Exhibition.</p>
+                        <span class="tag">Academic</span>
+                        <span class="tag">Science</span>
+                        <span class="tag">Innovation</span>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2021</div>
+                        <h3>State Mathematics Competition</h3>
+                        <p>Three students secured top positions in the State Mathematics Competition, demonstrating exceptional problem-solving skills.</p>
+                        <span class="tag">Academic</span>
+                        <span class="tag">Mathematics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Replace the footer with the footer container div -->
+    <div id="footer-container"></div>
+
+    <script src="js/script.js"></script>
+    <script src="js/loading.js"></script>
+    <script src="js/header-loader.js"></script>
+
+        // Animate stats counter
+        const stats = document.querySelectorAll('.stat-number');
+        
+        function animateStats() {
+            stats.forEach(stat => {
+                const target = stat.getAttribute('data-count');
+                const hasPercentage = stat.textContent.includes('%');
+                
+                let count = 0;
+                const duration = 2000; // 2 seconds
+                const interval = Math.floor(duration / target);
+                
+                const counter = setInterval(() => {
+                    count += 1;
+                    if (hasPercentage) {
+                        stat.textContent = count + '%';
+                    } else {
+                        stat.textContent = count + '+';
+                    }
+                    
+                    if (count >= target) {
+                        clearInterval(counter);
+                    }
+                }, interval);
+            });
+        }
+        
+        // Trigger animation when element is in viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+        
+        // Check if stats are in viewport and trigger animation
+        function checkScrollPosition() {
+            if (stats.length > 0 && isInViewport(stats[0])) {
+                animateStats();
+                window.removeEventListener('scroll', checkScrollPosition);
+            }
+        }
+        
+        // Add scroll event listener
+        window.addEventListener('scroll', checkScrollPosition);
+        
+        // Check on page load as well
+        checkScrollPosition();
+    </script>
+    
+</body>
+</html> 
+

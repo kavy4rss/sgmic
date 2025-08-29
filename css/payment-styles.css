@@ -1,0 +1,729 @@
+/* Payment Styles for Saraswati Gyan Mandir Inter College */
+
+/* Payment Options */
+.payment-options {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.payment-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.payment-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.payment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.payment-card-header {
+    background-color: #f0f4f8;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.payment-card-header h3 {
+    margin: 0 0 5px;
+    color: #343a40;
+    font-size: 22px;
+}
+
+.payment-card-header p {
+    margin: 0;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.payment-card-body {
+    padding: 20px;
+}
+
+.payment-card-body p {
+    margin-bottom: 15px;
+    color: #495057;
+}
+
+.payment-card-body ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.payment-card-body ul li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+    color: #6c757d;
+}
+
+.payment-card-body ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #28a745;
+}
+
+.payment-card-footer {
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #e9ecef;
+}
+
+.payment-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background-color: #4e73df;
+    color: #fff;
+}
+
+.primary-btn:hover {
+    background-color: #2e59d9;
+}
+
+.secondary-btn {
+    background-color: #1cc88a;
+    color: #fff;
+}
+
+.secondary-btn:hover {
+    background-color: #169b6b;
+}
+
+.other-btn {
+    background-color: #f6c23e;
+    color: #fff;
+}
+
+.other-btn:hover {
+    background-color: #dda20a;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 24px;
+    color: #adb5bd;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.close-modal:hover {
+    color: #dc3545;
+}
+
+.payment-form-container {
+    padding: 30px;
+}
+
+.payment-form-container h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #343a40;
+    text-align: center;
+}
+
+/* Step Indicator */
+#payment-step-indicator {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+#payment-step-indicator:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #e9ecef;
+    z-index: 1;
+}
+
+.step {
+    background-color: #fff;
+    color: #6c757d;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+    border: 2px solid #e9ecef;
+}
+
+.step.active {
+    background-color: #4e73df;
+    color: #fff;
+    border-color: #4e73df;
+}
+
+.step.completed {
+    background-color: #1cc88a;
+    color: #fff;
+    border-color: #1cc88a;
+}
+
+/* Form Styles */
+.step-form {
+    display: none;
+}
+
+.active-form {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #495057;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #495057;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #4e73df;
+    outline: none;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-group.half {
+    flex: 1;
+}
+
+/* Button Styles */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.cancel-btn,
+.back-btn,
+.next-btn,
+.pay-btn,
+.download-btn,
+.close-btn {
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.cancel-btn {
+    background-color: #f8f9fa;
+    color: #6c757d;
+}
+
+.cancel-btn:hover {
+    background-color: #e9ecef;
+}
+
+.back-btn {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.back-btn:hover {
+    background-color: #dee2e6;
+}
+
+.next-btn {
+    background-color: #4e73df;
+    color: #fff;
+}
+
+.next-btn:hover {
+    background-color: #2e59d9;
+}
+
+.pay-btn {
+    background-color: #1cc88a;
+    color: #fff;
+}
+
+.pay-btn:hover {
+    background-color: #169b6b;
+}
+
+.download-btn {
+    background-color: #4e73df;
+    color: #fff;
+}
+
+.download-btn:hover {
+    background-color: #2e59d9;
+}
+
+.close-btn {
+    background-color: #adb5bd;
+    color: #fff;
+}
+
+.close-btn:hover {
+    background-color: #6c757d;
+}
+
+/* Payment Summary */
+.payment-summary,
+.payment-final-summary {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.payment-summary h3,
+.payment-final-summary h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #343a40;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.summary-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Payment Method Options */
+.payment-method-options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.payment-method {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+.payment-method i {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #6c757d;
+}
+
+.payment-method span {
+    display: block;
+    font-weight: 500;
+    color: #495057;
+}
+
+.payment-method.active {
+    background-color: #4e73df;
+}
+
+.payment-method.active i,
+.payment-method.active span {
+    color: #fff;
+}
+
+.payment-method:hover:not(.active) {
+    background-color: #e9ecef;
+}
+
+/* Payment Method Forms */
+.payment-method-form {
+    display: none;
+}
+
+.active-payment-form {
+    display: block;
+}
+
+/* UPI Apps */
+.upi-apps {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.upi-app {
+    width: 23%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.upi-app img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+}
+
+.upi-app span {
+    display: block;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+/* Success Message */
+.payment-success {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.success-icon {
+    font-size: 60px;
+    color: #1cc88a;
+    margin-bottom: 20px;
+}
+
+.receipt-info {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 25px 0;
+    text-align: left;
+}
+
+.receipt-detail {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.receipt-detail:last-child {
+    margin-bottom: 0;
+}
+
+/* UPI QR Code */
+.upi-qr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.upi-qr-code {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #e9ecef;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.upi-id-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.upi-id-text {
+    margin: 0 10px 0 0;
+    font-size: 16px;
+}
+
+.copy-upi-btn,
+.copy-text-btn {
+    background-color: #e9ecef;
+    color: #495057;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.copy-upi-btn:hover,
+.copy-text-btn:hover {
+    background-color: #dee2e6;
+}
+
+/* Payment Instructions */
+.payment-instructions {
+    background-color: #f0f4f8;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.payment-instructions h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #343a40;
+    font-size: 16px;
+}
+
+.payment-instructions ol {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.payment-instructions li {
+    margin-bottom: 8px;
+    color: #495057;
+    font-size: 14px;
+}
+
+.payment-instructions li:last-child {
+    margin-bottom: 0;
+}
+
+/* Bank Details */
+.bank-details {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.bank-details h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #343a40;
+    font-size: 16px;
+}
+
+.bank-detail-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #dee2e6;
+}
+
+.bank-detail-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.bank-detail-item span:first-child {
+    width: 140px;
+    font-weight: 500;
+    color: #495057;
+}
+
+.bank-detail-item button {
+    margin-left: 10px;
+}
+
+/* Receipt Upload */
+.file-preview {
+    margin-top: 10px;
+    min-height: 100px;
+    background-color: #f8f9fa;
+    border: 1px dashed #ced4da;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.file-preview img {
+    max-width: 100%;
+    max-height: 200px;
+}
+
+.file-preview.empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+}
+
+/* Payment Note */
+.payment-note {
+    margin-top: 15px;
+}
+
+.payment-note p {
+    margin: 0;
+    font-size: 14px;
+    color: #6c757d;
+    display: flex;
+    align-items: flex-start;
+}
+
+.payment-note i {
+    color: #4e73df;
+    margin-right: 8px;
+    margin-top: 3px;
+}
+
+/* Status Labels */
+.pending-status {
+    color: #f6c23e;
+    font-weight: 500;
+}
+
+.success-status {
+    color: #1cc88a;
+    font-weight: 500;
+}
+
+.failed-status {
+    color: #e74a3b;
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .payment-method-options {
+        flex-direction: column;
+    }
+    
+    .payment-method {
+        margin: 5px 0;
+    }
+    
+    .upi-app {
+        width: 48%;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .form-actions button {
+        width: 100%;
+    }
+    
+    .back-btn {
+        order: 2;
+    }
+    
+    .next-btn, .pay-btn {
+        order: 1;
+    }
+    
+    .cancel-btn {
+        order: 3;
+    }
+    
+    .upi-qr-code {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .bank-detail-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .bank-detail-item span:first-child {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .bank-detail-item button {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+    
+    .upi-id-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .upi-id-text {
+        margin: 0 0 10px 0;
+    }
+} 

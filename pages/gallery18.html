@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guru Pujan Celebration - Saraswati Gyan Mandir Inter College</title>
+    <link rel="icon" href="../image/Logo/favicon.webp" type="image/png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header-styles.css">
+    <link rel="stylesheet" href="../css/gallery-styles.css">
+    <link rel="stylesheet" href="../css/footer-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { padding-top: 130px; }
+        @media (max-width: 992px) { body { padding-top: 80px; } }
+        @media (max-width: 576px) { body { padding-top: 70px; } }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 20px;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background-color: #f5f5f5;
+            height: 0;
+            padding-bottom: 66.67%;
+        }
+        .gallery-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        @media (max-width: 600px) {
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 8px;
+            }
+            .gallery-item {
+                padding-bottom: 90%;
+            }
+        }
+        .gallery-videos {
+            padding: 30px 0 50px;
+            background-color: #f7f9fc;
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .video-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .video-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+        .video-container {
+            width: 100%;
+            background-color: #000;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            aspect-ratio: 16/9;
+            max-height: 340px;
+        }
+        .video-item video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            max-height: 340px;
+        }
+        @media (max-width: 900px) {
+            .video-container, .video-item video {
+                max-height: 220px;
+            }
+        }
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 20px;
+            }
+        }
+        @media (max-width: 600px) {
+            .video-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .video-container, .video-item video {
+                max-height: 180px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+    <section class="page-banner">
+        <div class="banner-content">
+            <h1>Guru Pujan Celebration</h1>
+            <div class="breadcrumbs">
+                <a href="../index.html">Home</a> &gt; <a href="../gallery.html">Gallery</a> &gt; Guru Pujan Celebration
+            </div>
+        </div>
+    </section>
+    <section class="gallery-intro">
+        <div class="container">
+            <div class="section-title center">
+                <span class="subtitle">Guru Pujan</span>
+                <h2>Guru Pujan Celebration 2025</h2>
+            </div>
+            <p class="intro-text">
+                <strong>Date:</strong> 10 July 2025
+            </p>
+            <p class="intro-text">
+                Guru Pujan was celebrated with great devotion and respect at Saraswati Gyan Mandir Inter College. Students paid tribute to their teachers and gurus through various cultural programs, traditional rituals, and heartfelt performances. The event highlighted the importance of guru-shishya relationship and the role of teachers in shaping young minds.
+            </p>
+            <div class="back-to-gallery">
+                <a href="../gallery.html"><i class="fas fa-arrow-left"></i> Back to All Categories</a>
+            </div>
+        </div>
+    </section>
+    <section id="gallery">
+        <div class="container">
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="../image/gallery18/516038918_3106990316124576_4123337920626472072_n.webp" alt="Guru Pujan 1"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/516620916_3106989602791314_3904015758349995198_n.webp" alt="Guru Pujan 2"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/516777913_3106990416124566_1688817487091645609_n.webp" alt="Guru Pujan 3"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/516874595_3106990059457935_4981631047433106446_n.webp" alt="Guru Pujan 4"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/517342297_3106990799457861_7204180847224442237_n.webp" alt="Guru Pujan 5"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/517467864_3106990609457880_4655917269969353657_n.webp" alt="Guru Pujan 6"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/517811377_3106988969458044_243734226008728720_n.webp" alt="Guru Pujan 7"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/518199546_3106990562791218_4670011983417695326_n.webp" alt="Guru Pujan 8"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/518279298_3106989222791352_5623559622295252166_n.webp" alt="Guru Pujan 9"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/518279767_3106988899458051_6060918319954265758_n.webp" alt="Guru Pujan 10"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/518281756_3106990229457918_2313793427161447084_n.webp" alt="Guru Pujan 11"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/518289402_3106989122791362_7040706420078873621_n.webp" alt="Guru Pujan 12"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/518289413_3106989042791370_5910075158757477650_n.webp" alt="Guru Pujan 13"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/518291261_3106989499457991_2703784532506825116_n.webp" alt="Guru Pujan 14"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/518291391_3106989446124663_5031918165254901590_n.webp" alt="Guru Pujan 15"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/518294639_3106989662791308_931503407761843791_n.webp" alt="Guru Pujan 16"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/518308211_3106990879457853_3730242602215071476_n.webp" alt="Guru Pujan 17"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/518309861_3106989272791347_1192229651859793608_n.webp" alt="Guru Pujan 18"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/518325120_3106988839458057_8688999713334772792_n.webp" alt="Guru Pujan 19"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/518326921_3106990739457867_3849916360134564986_n.webp" alt="Guru Pujan 20"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/518327198_3106990669457874_4552434361198129818_n.webp" alt="Guru Pujan 21"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/518327824_3106989336124674_42793934737426788_n.webp" alt="Guru Pujan 22"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/518337934_3106990506124557_7180816259696648765_n.webp" alt="Guru Pujan 23"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/518270990_3106989769457964_8657026603096234108_n.webp" alt="Guru Pujan 24"><div class="gallery-overlay"></div></div>
+                <div class="gallery-item"><img src="../image/gallery18/Thumbnail.webp" alt="Guru Pujan Thumbnail"><div class="gallery-overlay"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="back-to-gallery">
+        <a href="../gallery.html"><i class="fas fa-arrow-left"></i> Back to All Galleries</a>
+    </div>
+    <div id="footer-container"></div>
+    <script src="../js/script.js"></script>
+    <script src="../js/lightbox.js"></script>
+    <script src="../js/gallery-basic.js"></script>
+    <script src="../js/header-loader.js"></script>
+    <script>
+        // Load footer only; header handled by header-loader.jsdocument.addEventListener('DOMContentLoaded', function() {
+            fetch('../Footer/footer.html')
+                .then(r => r.text())
+                .then(html => {
+                    const fixed = html.replace(/src="(?!http|\/\/|#)/g, 'src="../');
+                    document.getElementById('footer-container').innerHTML = fixed;
+                });
+        });
+    </script>
+    <script src="../Header/header.js"></script>
+</body>
+</html> 
+
+

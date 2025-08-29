@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Saraswati Gyan Mandir Inter College</title>
+    <link rel="icon" href="image/Logo/Favicon.webp" type="image/webp">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header-styles.css">
+    <link rel="stylesheet" href="css/gallery-styles.css">
+    <link rel="stylesheet" href="css/footer-styles.css">
+    <link rel="stylesheet" href="css/loading-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add this to ensure proper spacing for the content */
+        body {
+            padding-top: 130px; /* Adjusted for taller header (top bar + navbar) */
+        }
+        
+        @media (max-width: 992px) {
+            body {
+                padding-top: 80px; /* Only navbar height since top bar is hidden */
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                padding-top: 70px; /* Smaller navbar height on mobile */
+            }
+        }
+        
+        /* Fix for category thumbnails to maintain proper aspect ratio */
+        .category-card {
+            display: block;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .category-image {
+            position: relative;
+            height: 0;
+            padding-bottom: 66.67%; /* Standard 3:2 aspect ratio container */
+            overflow: hidden;
+        }
+        
+        .category-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .category-card:hover .category-image img {
+            transform: scale(1.05);
+        }
+        
+        .category-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+            color: white;
+            transition: opacity 0.3s ease;
+        }
+        
+        .category-overlay h3 {
+            margin: 0 0 10px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .category-overlay p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #126e82;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(18, 110, 130, 0.3);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(18, 110, 130, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Replace the header with the header container div -->
+    <div id="header-container"></div>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="banner-content">
+            <h1>School Gallery</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> &gt; Gallery
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Intro -->
+    <section class="gallery-intro">
+        <div class="container">
+            <div class="section-title center">
+                <span class="subtitle">Our Memories</span>
+                <h2>Explore School Life Through Images</h2>
+            </div>
+            <p class="intro-text">
+                Welcome to our school's photo gallery, showcasing the vibrant moments, achievements, and activities that make our institution special. From academic excellence to sports victories, cultural celebrations to educational trips, this visual journey captures the essence of our school's rich heritage and dynamic environment.
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <!-- Gallery Categories Grid -->
+            <div class="category-grid">
+                <a href="pages/Gallery1.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/Gallery1/HealthCheckupESIC1.webp" alt="Independence Day Celebration">
+                        <div class="category-overlay">
+                            <h3>ESIC Teacher Health Screening Camp</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pages/gallery2.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/Gallery2/Thumbnail.webp" alt="Shri Ram Janmbhoomi Anniversary Celebration">
+                        <div class="category-overlay">
+                            <h3>Shri Ram Janmbhoomi Anniversary Celebration</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pages/gallery3.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/Gallery3/474871972_2932904293533180_5165744029817611097_n.webp" alt="Biology Experiment to Students in the Lab">
+                        <div class="category-overlay">
+                            <h3>Biology Experiment to Students in the Lab</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pages/gallery4.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/gallery4/474758674_2934281723395437_1815323789884104355_n.webp" alt="Voter's Day">
+                        <div class="category-overlay">
+                            <h3>Voter's Day</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pages/gallery5.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/gallery5/475075308_2935142143309395_1070869682154131315_n.webp" alt="Republic Day Celebration">
+                        <div class="category-overlay">
+                            <h3>Republic Day Celebration</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pages/gallery6.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/gallery6/475590661_2938542302969379_1318484217991176416_n.webp" alt="Honourable Founder's Memorial Tribute">
+                        <div class="category-overlay">
+                            <h3>Honourable Founder's Memorial Tribute</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pages/gallery7.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/gallery7/Thumbnail.webp" alt="Basant Panchami Celebration">
+                        <div class="category-overlay">
+                            <h3>Basant Panchami Celebration</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pages/gallery8.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/gallery8/477197816_2947367222086887_8361654767049879430_n.webp" alt="Discussion on Exams with PM Modi">
+                        <div class="category-overlay">
+                            <h3>Discussion on Exams with PM Modi</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pages/gallery9.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/gallery9/482014985_2975247632632179_2259631150647280727_n.webp" alt="Holi Celebration">
+                        <div class="category-overlay">
+                            <h3>Holi Celebration</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pages/gallery10.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/gallery10/Thumbnail.webp" alt="Prize Distribution Ceremony">
+                        <div class="category-overlay">
+                            <h3>Prize Distribution Ceremony</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pages/gallery11.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/gallery11/Thumbnail.webp" alt="Inauguration of Smile Kanpur's Happiness School Initiative">
+                        <div class="category-overlay">
+                            <h3>Inauguration of Smile Kanpur's Happiness School Initiative</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pages/gallery12.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/gallery12/491996596_3020232501467025_5879397083915841764_n.webp" alt="Earth Day Celebration">
+                        <div class="category-overlay">
+                            <h3>Earth Day Celebration</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pages/gallery13.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/gallery13/Thumbnail.webp" alt="Health Awareness and Vaccination Program at School">
+                        <div class="category-overlay">
+                            <h3>Health Awareness and Vaccination Program at School</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pages/gallery14.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/gallery14/494876911_3031530333670575_3179458710789085983_n.webp" alt="A Day of Fun and Film">
+                        <div class="category-overlay">
+                            <h3>A Day of Fun and Film</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pages/gallery15.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/gallery15/494622885_3032683220221953_1598461882746247910_n.webp" alt="Namami Gange Awareness Drive">
+                        <div class="category-overlay">
+                            <h3>Namami Gange Awareness Drive</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pages/gallery16.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/gallery16/thumbnail.webp" alt="Summer Party Celebration">
+                        <div class="category-overlay">
+                            <h3>Summer Party Celebration</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pages/gallery17.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/gallery17/518349258_3106982186125389_5345638986874259408_n.webp" alt="Annual Event 2025">
+                        <div class="category-overlay">
+                            <h3>Annual Event 2025</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pages/gallery18.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/gallery18/Thumbnail.webp" alt="Guru Pujan Celebration">
+                        <div class="category-overlay">
+                            <h3>Guru Pujan Celebration</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pages/gallery19.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/gallery19/519671360_3118016665021941_3093684702937585661_n.webp" alt="Women Health Awareness Seminar">
+                        <div class="category-overlay">
+                            <h3>Women Health Awareness Seminar</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pages/gallery20.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/gallery20/524380442_3125026000987674_8489918433252315643_n.webp" alt="Motivational Session">
+                        <div class="category-overlay">
+                            <h3>Motivational Session By Shri Sanjeev Chaturvedi</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                <a href="pages/gallery21.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/gallery21/524158724_3126279807528960_5440834550317832203_n.webp" alt="Jyoti Kalash Rath Yatra">
+                        <div class="category-overlay">
+                            <h3>Jyoti Kalash Rath Yatra</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pages/gallery22.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/gallery22/529312410_3136737259816548_1069862830894657886_n.webp" alt="Raksha Bandhan Celebration">
+                        <div class="category-overlay">
+                            <h3>Raksha Bandhan Celebration</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pages/gallery23.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/gallery23/533024082_3143666952456912_6112736824390001270_n.webp" alt="Independence Day 2025 Celebration">
+                        <div class="category-overlay">
+                            <h3>Independence Day 2025 Celebration</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="pages/gallery24.html" class="category-card">
+                    <div class="category-image">
+                        <img src="image/gallery24/533153261_3144972268993047_4938668695624016916_n.webp" alt="Shri Krishna Janmashtami">
+                        <div class="category-overlay">
+                            <h3>Shri Krishna Janmashtami</h3>
+                            <p>View all photos <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <div class="lightbox-close">&times;</div>
+        <div class="lightbox-navigation">
+            <button class="lightbox-nav-btn lightbox-prev">&laquo;</button>
+            <button class="lightbox-nav-btn lightbox-next">&raquo;</button>
+        </div>
+        <img class="lightbox-image" src="" alt="">
+        <div class="lightbox-caption"></div>
+    </div>
+
+    <!-- Back to top button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Replace the footer with the footer container div -->
+    <div id="footer-container"></div>
+
+    <script src="js/script.js"></script>
+    <script src="js/loading.js"></script>
+    <script src="js/header-loader.js"></script>
+    <script>
+        // Load footer only; header handled by header-loader.js
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('Footer/footer.html')
+                .then(response => response.text())
+                .then(data => { document.getElementById('footer-container').innerHTML = data; });
+
+            const backToTopButton = document.querySelector('.back-to-top');
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) backToTopButton.classList.add('visible');
+                else backToTopButton.classList.remove('visible');
+            });
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html> 

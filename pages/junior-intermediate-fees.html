@@ -1,0 +1,452 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junior & Intermediate Fees - Saraswati Gyan Mandir Inter College</title>
+    <link rel="icon" href="../image/Logo/Favicon.webp" type="image/webp">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header-styles.css">
+    <link rel="stylesheet" href="../css/fees-styles.css">
+    <link rel="stylesheet" href="../css/footer-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add this to ensure proper spacing for the content */
+        body {
+            padding-top: 130px; /* Adjusted for taller header (top bar + navbar) */
+        }
+        
+        @media (max-width: 992px) {
+            body {
+                padding-top: 80px; /* Only navbar height since top bar is hidden */
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                padding-top: 70px; /* Smaller navbar height on mobile */
+            }
+        }
+        
+        /* Fee cards grid specifically for classes 6-12 */
+        .fee-classes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .fee-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .fee-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .fee-card-header {
+            background: linear-gradient(135deg, #0a2342, #126e82);
+            color: #fff;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        
+        .fee-card-header h3 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .fee-card-body {
+            padding: 20px;
+        }
+        
+        .fee-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #eee;
+        }
+        
+        .fee-item:last-child {
+            border-bottom: none;
+        }
+        
+        .fee-item-label {
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .fee-item-value {
+            font-weight: 600;
+            color: #126e82;
+        }
+        
+        .fee-card-footer {
+            background: #f9f9f9;
+            padding: 15px 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .fee-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .fee-total-label {
+            color: #333;
+        }
+        
+        .fee-total-value {
+            color: #ff8c42;
+        }
+        
+        .fee-note {
+            font-size: 12px;
+            color: #777;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Header -->
+    <div id="header-container"></div>
+
+    <div class="page-banner">
+        <div class="banner-content">
+            <h1>Junior & Intermediate Fees</h1>
+            <div class="breadcrumbs">
+                <a href="../index.html">Home</a> / <a href="../fees.html">Fees</a> / <span>Junior & Intermediate</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="fees-section">
+        <div class="container">
+            <div class="section-title center">
+                <span class="subtitle">Fee Structure</span>
+                <h2>Classes 6 to 12 Fee Details</h2>
+            </div>
+            
+            <p class="intro-text">
+                Below is the detailed fee structure for Junior High School (Class 6-8), High School (Class 9-10), and Intermediate (Class 11-12) levels. The fees are charged quarterly. Any changes to the fee structure will be communicated well in advance.
+            </p>
+            
+            <div class="fee-classes-grid">
+                <!-- Class 6 -->
+                <div class="fee-card">
+                    <div class="fee-card-header">
+                        <h3>Class 6</h3>
+                    </div>
+                    <div class="fee-card-body">
+                        <div class="fee-item">
+                            <span class="fee-item-label">Tuition Fee</span>
+                            <span class="fee-item-value">â‚¹3,800</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Computer Lab</span>
+                            <span class="fee-item-value">â‚¹1,000</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Library Fee</span>
+                            <span class="fee-item-value">â‚¹700</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Sports & Activities</span>
+                            <span class="fee-item-value">â‚¹800</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Development Fee</span>
+                            <span class="fee-item-value">â‚¹2,000</span>
+                        </div>
+                    </div>
+                    <div class="fee-card-footer">
+                        <div class="fee-total">
+                            <span class="fee-total-label">Annual Fee</span>
+                            <span class="fee-total-value">â‚¹33,200</span>
+                        </div>
+                        <p class="fee-note">* One-time admission fee: â‚¹6,000 for new students</p>
+                    </div>
+                </div>
+
+                <!-- Class 7 -->
+                <div class="fee-card">
+                    <div class="fee-card-header">
+                        <h3>Class 7</h3>
+                    </div>
+                    <div class="fee-card-body">
+                        <div class="fee-item">
+                            <span class="fee-item-label">Tuition Fee</span>
+                            <span class="fee-item-value">â‚¹3,800</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Computer Lab</span>
+                            <span class="fee-item-value">â‚¹1,000</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Library Fee</span>
+                            <span class="fee-item-value">â‚¹700</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Sports & Activities</span>
+                            <span class="fee-item-value">â‚¹800</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Development Fee</span>
+                            <span class="fee-item-value">â‚¹2,000</span>
+                        </div>
+                    </div>
+                    <div class="fee-card-footer">
+                        <div class="fee-total">
+                            <span class="fee-total-label">Annual Fee</span>
+                            <span class="fee-total-value">â‚¹33,200</span>
+                        </div>
+                        <p class="fee-note">* One-time admission fee: â‚¹6,000 for new students</p>
+                    </div>
+                </div>
+
+                <!-- Class 8 -->
+                <div class="fee-card">
+                    <div class="fee-card-header">
+                        <h3>Class 8</h3>
+                    </div>
+                    <div class="fee-card-body">
+                        <div class="fee-item">
+                            <span class="fee-item-label">Tuition Fee</span>
+                            <span class="fee-item-value">â‚¹3,800</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Computer Lab</span>
+                            <span class="fee-item-value">â‚¹1,000</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Library Fee</span>
+                            <span class="fee-item-value">â‚¹700</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Sports & Activities</span>
+                            <span class="fee-item-value">â‚¹800</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Development Fee</span>
+                            <span class="fee-item-value">â‚¹2,000</span>
+                        </div>
+                    </div>
+                    <div class="fee-card-footer">
+                        <div class="fee-total">
+                            <span class="fee-total-label">Annual Fee</span>
+                            <span class="fee-total-value">â‚¹33,200</span>
+                        </div>
+                        <p class="fee-note">* One-time admission fee: â‚¹6,000 for new students</p>
+                    </div>
+                </div>
+
+                <!-- Class 9 -->
+                <div class="fee-card">
+                    <div class="fee-card-header">
+                        <h3>Class 9</h3>
+                    </div>
+                    <div class="fee-card-body">
+                        <div class="fee-item">
+                            <span class="fee-item-label">Tuition Fee</span>
+                            <span class="fee-item-value">â‚¹4,200</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Computer Lab</span>
+                            <span class="fee-item-value">â‚¹1,200</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Science Lab</span>
+                            <span class="fee-item-value">â‚¹1,300</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Library Fee</span>
+                            <span class="fee-item-value">â‚¹800</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Sports & Activities</span>
+                            <span class="fee-item-value">â‚¹1,000</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Development Fee</span>
+                            <span class="fee-item-value">â‚¹2,200</span>
+                        </div>
+                    </div>
+                    <div class="fee-card-footer">
+                        <div class="fee-total">
+                            <span class="fee-total-label">Annual Fee</span>
+                            <span class="fee-total-value">â‚¹42,400</span>
+                        </div>
+                        <p class="fee-note">* One-time admission fee: â‚¹7,500 for new students</p>
+                    </div>
+                </div>
+
+                <!-- Class 10 -->
+                <div class="fee-card">
+                    <div class="fee-card-header">
+                        <h3>Class 10</h3>
+                    </div>
+                    <div class="fee-card-body">
+                        <div class="fee-item">
+                            <span class="fee-item-label">Tuition Fee</span>
+                            <span class="fee-item-value">â‚¹4,300</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Computer Lab</span>
+                            <span class="fee-item-value">â‚¹1,200</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Science Lab</span>
+                            <span class="fee-item-value">â‚¹1,400</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Library Fee</span>
+                            <span class="fee-item-value">â‚¹800</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Sports & Activities</span>
+                            <span class="fee-item-value">â‚¹1,000</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Development Fee</span>
+                            <span class="fee-item-value">â‚¹2,300</span>
+                        </div>
+                    </div>
+                    <div class="fee-card-footer">
+                        <div class="fee-total">
+                            <span class="fee-total-label">Annual Fee</span>
+                            <span class="fee-total-value">â‚¹44,000</span>
+                        </div>
+                        <p class="fee-note">* One-time admission fee: â‚¹7,500 for new students</p>
+                    </div>
+                </div>
+
+                <!-- Class 11 -->
+                <div class="fee-card">
+                    <div class="fee-card-header">
+                        <h3>Class 11</h3>
+                    </div>
+                    <div class="fee-card-body">
+                        <div class="fee-item">
+                            <span class="fee-item-label">Tuition Fee</span>
+                            <span class="fee-item-value">â‚¹4,500</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Computer Lab</span>
+                            <span class="fee-item-value">â‚¹1,500</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Science Lab</span>
+                            <span class="fee-item-value">â‚¹1,800</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Library Fee</span>
+                            <span class="fee-item-value">â‚¹900</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Sports & Activities</span>
+                            <span class="fee-item-value">â‚¹1,000</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Development Fee</span>
+                            <span class="fee-item-value">â‚¹2,500</span>
+                        </div>
+                    </div>
+                    <div class="fee-card-footer">
+                        <div class="fee-total">
+                            <span class="fee-total-label">Annual Fee</span>
+                            <span class="fee-total-value">â‚¹49,200</span>
+                        </div>
+                        <p class="fee-note">* One-time admission fee: â‚¹10,000 for new students</p>
+                    </div>
+                </div>
+
+                <!-- Class 12 -->
+                <div class="fee-card">
+                    <div class="fee-card-header">
+                        <h3>Class 12</h3>
+                    </div>
+                    <div class="fee-card-body">
+                        <div class="fee-item">
+                            <span class="fee-item-label">Tuition Fee</span>
+                            <span class="fee-item-value">â‚¹4,600</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Computer Lab</span>
+                            <span class="fee-item-value">â‚¹1,500</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Science Lab</span>
+                            <span class="fee-item-value">â‚¹1,800</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Library Fee</span>
+                            <span class="fee-item-value">â‚¹900</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Sports & Activities</span>
+                            <span class="fee-item-value">â‚¹1,000</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Development Fee</span>
+                            <span class="fee-item-value">â‚¹2,600</span>
+                        </div>
+                    </div>
+                    <div class="fee-card-footer">
+                        <div class="fee-total">
+                            <span class="fee-total-label">Annual Fee</span>
+                            <span class="fee-total-value">â‚¹50,400</span>
+                        </div>
+                        <p class="fee-note">* One-time admission fee: â‚¹10,000 for new students</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="fee-notes">
+                <h3>Important Notes</h3>
+                <ul>
+                    <li>All fees are in Indian Rupees (â‚¹)</li>
+                    <li>Fees are payable quarterly, at the beginning of each quarter</li>
+                    <li>A late fee of â‚¹50 will be charged for payments made after the due date</li>
+                    <li>Annual fee amounts are calculated based on the quarterly payments for the entire academic year</li>
+                    <li>There are additional charges for transportation, uniform, and books that are not included in the above fee structure</li>
+                    <li>For Science stream students in Classes 11-12, there may be additional laboratory fees</li>
+                    <li>The school offers scholarships for students with exceptional academic performance. Please contact the school office for details</li>
+                </ul>
+            </div>
+            
+            <div class="back-to-fees">
+                <a href="../fees.html" class="btn-back"><i class="fas fa-arrow-left"></i> Back to Main Fee Structure</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include Footer -->
+    <div id="footer-container"></div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/header-loader.js"></script>
+    <script>
+        // Load footer only; header handled by header-loader.jsdocument.addEventListener('DOMContentLoaded', function() {
+            fetch('../Footer/footer.html')
+                .then(r => r.text())
+                .then(html => {
+                    const fixed = html.replace(/href="(?!http|#|tel:|mailto:)([^"]+)"/g, 'href="../$1"')
+                                      .replace(/src="(?!http|#)([^"]+)"/g, 'src="../$1"');
+                    document.getElementById('footer-container').innerHTML = fixed;
+                });
+        });
+    </script>
+</body>
+</html> 
+

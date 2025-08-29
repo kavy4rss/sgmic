@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Saraswati Gyan Mandir Inter College</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header-styles.css">
+    <link rel="stylesheet" href="footer-styles.css">
+    <link rel="stylesheet" href="contact-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Add this to ensure proper spacing for the content */
+        body {
+            padding-top: 130px; /* Adjusted for taller header (top bar + navbar) */
+        }
+        
+        @media (max-width: 992px) {
+            body {
+                padding-top: 80px; /* Only navbar height since top bar is hidden */
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                padding-top: 70px; /* Smaller navbar height on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Add this popup div after body tag -->
+    <div class="popup-overlay" id="welcomePopup">
+        <div class="popup-content">
+            <h2>स्वागत है</h2>
+            <p>सरस्वती ज्ञान मन्दिर इण्टर कालेज में आपका स्वागत है</p>
+            <div class="popup-image">
+                <img src="WelcomePopup.gif" alt="Lord Krishna" class="krishna-image">
+            </div>
+            <p>संस्कार क्षम शिक्षा ही वास्तविक शिक्षा है</p>
+            <button class="popup-close" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <!-- New Enhanced Header Structure -->
+    <header class="main-header">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="top-bar-container">
+                <div class="top-contact">
+                    <div class="top-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+919839148124">+91 9839148124</a>
+                    </div>
+                    <div class="top-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:sgmazadnagarkanpur@rediffmail.com">sgmazadnagarkanpur@rediffmail.com</a>
+                    </div>
+                    <div class="top-contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon - Sat: 8:30 AM - 3:00 PM</span>
+                    </div>
+                </div>
+                <div class="top-social">
+                    <a href="https://facebook.com/sgmican" class="top-social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="top-social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="top-social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/sgmickan" class="top-social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Navigation Bar -->
+        <div class="navbar">
+            <div class="navbar-container">
+                <div class="logo-container">
+                    <img src="Header_Logo.png" alt="School Logo" class="school-logo">
+                </div>
+                
+                <div class="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <div class="nav-container">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div class="overlay"></div>
+    </header>
+
+    <main class="contact-page">
+        <!-- Simple Navigation Links -->
+        <div class="simple-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="academics.html" class="nav-link">Academics</a>
+            <a href="admission.html" class="nav-link">Admission</a>
+            <a href="fees.html" class="nav-link">Fees</a>
+            <a href="contact.html" class="nav-link active">Contact</a>
+        </div>
+        
+        <section class="contact-hero">
+            <h1 style="color: #ffffff; font-weight: 700; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);">Contact Us</h1>
+            <p>We'd Love to Hear from You</p>
+        </section>
+
+        <section class="contact-content">
+            <div class="contact-info">
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Visit Us</h3>
+                    <p>3A/193 Azad Nagar<br>Kanpur, Uttar Pradesh - 208002</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Call Us</h3>
+                    <p>Tel: +91 9839148124</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p>sgmazadnagarkanpur@rediffmail.com</p>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <h2>Send Us a Message</h2>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Full Name" required>
+                        <label for="name">Full Name</label>
+                        <div class="error-message">Please enter your name</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                        <label for="email">Email</label>
+                        <div class="error-message">Please enter a valid email address</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+                        <label for="phone">Phone Number</label>
+                        <div class="error-message">Please enter a valid phone number</div>
+                    </div>
+                    <div class="form-group">
+                        <select id="subject" name="subject" required>
+                            <option value="" selected disabled></option>
+                            <option value="admission">Admission Inquiry</option>
+                            <option value="general">General Information</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <label for="subject">Subject</label>
+                        <div class="error-message">Please select a subject</div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        <label for="message">Message</label>
+                        <div class="error-message">Please enter your message</div>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <h2>Our Location</h2>
+            <div class="map-container">
+                <!-- Google Maps embed code for Saraswati Gyan Mandir Inter College -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3570.2661286410445!2d80.30414421502402!3d26.504343983302534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c47829a64bde7%3A0x1d421952933e4d0c!2sSaraswati%20Gyan%20Mandir%20Inter%20College%20Azad%20Nagar%20Kanpur!5e0!3m2!1sen!2sin!4v1655118234955!5m2!1sen!2sin"
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Office Hours Section -->
+        <section class="office-hours">
+            <div class="hours-title">
+                <h2>School & Office Hours</h2>
+                <p>Please check our working hours before visiting us</p>
+            </div>
+            <div class="hours-container">
+                <div class="hours-card">
+                    <h3><i class="fas fa-school"></i> School Hours</h3>
+                    <ul class="hours-list">
+                        <li><span>Monday - Saturday:</span> <span>8:30 AM - 3:00 PM</span></li>
+                        <li><span>Sunday:</span> <span>Closed</span></li>
+                    </ul>
+                    <p class="hours-note">* School timings may vary for pre-primary classes and during exams.</p>
+                </div>
+                <div class="hours-card">
+                    <h3><i class="fas fa-briefcase"></i> Administrative Office</h3>
+                    <ul class="hours-list">
+                        <li><span>Monday - Saturday:</span> <span>9:00 AM - 4:00 PM</span></li>
+                        <li><span>Lunch Break:</span> <span>1:00 PM - 1:30 PM</span></li>
+                        <li><span>Sunday:</span> <span>Closed</span></li>
+                    </ul>
+                    <p class="hours-note">* Office remains closed on public holidays.</p>
+                </div>
+                <div class="hours-card">
+                    <h3><i class="fas fa-money-check-alt"></i> Fee Counter</h3>
+                    <ul class="hours-list">
+                        <li><span>Monday - Friday:</span> <span>9:00 AM - 2:00 PM</span></li>
+                        <li><span>Saturday:</span> <span>9:00 AM - 12:00 PM</span></li>
+                        <li><span>Sunday:</span> <span>Closed</span></li>
+                    </ul>
+                    <p class="hours-note">* Extended hours during fee submission periods.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="contact-faq">
+            <div class="faq-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find quick answers to common queries about contacting us</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How can I schedule a meeting with the principal?
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To schedule a meeting with the principal, please call our office at +91 9839148124 during working hours or email us at sgmazadnagarkanpur@rediffmail.com with your request. Please mention the purpose of your meeting to help us schedule it appropriately. The principal is available for parent meetings on Monday, Wednesday, and Friday between 11:00 AM - 1:00 PM by appointment only.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Who should I contact for admission-related queries?
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For admission-related queries, please contact our Admission Office at the main contact number. You can also visit the Admission section on our website for detailed information about the admission process, required documents, and important dates. During the admission season, our dedicated admission helpdesk is available from 9:00 AM to 3:00 PM on all working days.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How do I contact my child's class teacher?
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can request a meeting with your child's class teacher through the school diary or by calling our office. Teachers are available for parent meetings on designated parent-teacher meeting days or by appointment after school hours from 3:15 PM to 4:00 PM. Please make appointments at least one day in advance to ensure the teacher's availability.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is the best way to report a student's absence?
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To report a student's absence, please call the school office before 9:00 AM on the day of absence. You can also send a note in advance through the school diary if the absence is planned. For extended absences due to illness or other reasons, a written application along with supporting documents (such as medical certificates) should be submitted to the class teacher or school office.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How can I provide feedback or suggestions to the school?
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We welcome feedback and suggestions from parents and community members. You can submit your feedback using the contact form on this page, or email us directly. You may also drop your written suggestions in the suggestion box located near the school office. The school management reviews all feedback regularly and takes appropriate action to continuously improve our services.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-particles-container" id="footer-particles"></div>
+        
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-logo-section">
+                    <img src="FooterSchoolLogo.png" alt="School Logo" class="footer-logo">
+                    <h2>Saraswati Gyan Mandir Inter College</h2>
+                    <p>Azad Nagar, Kanpur</p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com/sgmican" class="social-icon" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/sgmickan" class="social-icon" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-widgets">
+                    <div class="footer-widget">
+                        <h3>Quick Links</h3>
+                        <div class="footer-divider"><span></span></div>
+                        <ul class="footer-links">
+                            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                            <li><a href="academics.html"><i class="fas fa-chevron-right"></i> Academics</a></li>
+                            <li><a href="admission.html"><i class="fas fa-chevron-right"></i> Admission</a></li>
+                            <li><a href="syllabus.html"><i class="fas fa-chevron-right"></i> Syllabus</a></li>
+                            <li><a href="fees.html"><i class="fas fa-chevron-right"></i> Fees Structure</a></li>
+                            <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-widget">
+                        <h3>Contact Information</h3>
+                        <div class="footer-divider"><span></span></div>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h4>Our Location</h4>
+                                    <a href="https://www.google.co.in/maps/place/Saraswati+Gyan+Mandir+Inter+College+Azad+Nagar+Kanpur/@26.504344,80.3041442,17z/data=!3m1!4b1!4m6!3m5!1s0x399c47829a64bde7:0x1d421952933e4d0c!8m2!3d26.504344!4d80.3067191!16s%2Fg%2F11c6djqyvd?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D" target="_blank" class="contact-link">
+                                        <p>3A/193 Azad Nagar, Kanpur Uttar Pradesh - 208002</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <h4>Call Us</h4>
+                                    <a href="tel:+919839148124" class="contact-link">
+                                        <p>+91 9839148124</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h4>Email Us</h4>
+                                    <a href="mailto:sgmazadnagarkanpur@rediffmail.com" class="contact-link">
+                                        <p>sgmazadnagarkanpur@rediffmail.com</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-widget">
+                        <h3>Newsletter</h3>
+                        <div class="footer-divider"><span></span></div>
+                        <p>Subscribe to our newsletter for updates on school events, achievements, and announcements.</p>
+                        <form class="newsletter-form">
+                            <div class="form-group">
+                                <input type="email" placeholder="Your Email" required>
+                                <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </form>
+                        <div class="school-timing">
+                            <h4><i class="far fa-clock"></i> School Hours</h4>
+                            <p>Monday - Saturday: 8:30 AM - 3:00 PM</p>
+                            <p>Office Hours: 9:00 AM - 4:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="copyright">
+                    <p>&copy; <span id="current-year">2024</span> Saraswati Gyan Mandir Inter College. All Rights Reserved.</p>
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="sitemap.html">Sitemap</a>
+                </div>
+                <div class="scroll-top" id="scroll-top">
+                    <i class="fas fa-chevron-up"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="footer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script>
+        // FAQ Accordion Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize GSAP 
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Hero section animations
+            gsap.from('.contact-hero h1', {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out'
+            });
+            
+            gsap.from('.contact-hero p', {
+                y: 30,
+                opacity: 0,
+                duration: 1,
+                delay: 0.3,
+                ease: 'power3.out'
+            });
+            
+            // Contact cards animation
+            gsap.from('.info-card', {
+                scrollTrigger: {
+                    trigger: '.contact-info',
+                    start: 'top 80%'
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: 'back.out(1.7)'
+            });
+            
+            // Form animation with staggered field entrance
+            const formFields = document.querySelectorAll('.form-group');
+            gsap.from(formFields, {
+                scrollTrigger: {
+                    trigger: '.contact-form-container',
+                    start: 'top 80%'
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.6,
+                stagger: 0.1,
+                ease: 'power2.out'
+            });
+            
+            // Submit button animation
+            gsap.from('.submit-btn', {
+                scrollTrigger: {
+                    trigger: '.contact-form-container',
+                    start: 'top 70%'
+                },
+                scale: 0.8,
+                opacity: 0,
+                duration: 0.8,
+                delay: 0.6,
+                ease: 'elastic.out(1, 0.3)'
+            });
+            
+            // Map section animations
+            gsap.from('.map-section h2', {
+                scrollTrigger: {
+                    trigger: '.map-section',
+                    start: 'top 80%'
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.8
+            });
+            
+            gsap.from('.map-container', {
+                scrollTrigger: {
+                    trigger: '.map-section',
+                    start: 'top 80%'
+                },
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                delay: 0.3,
+                ease: 'power3.out'
+            });
+            
+            // Office hours section animations
+            gsap.from('.hours-title', {
+                scrollTrigger: {
+                    trigger: '.office-hours',
+                    start: 'top 80%'
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.8
+            });
+            
+            gsap.from('.hours-card', {
+                scrollTrigger: {
+                    trigger: '.office-hours',
+                    start: 'top 70%'
+                },
+                x: function(i) { return i % 2 === 0 ? -50 : 50; }, // Alternate left and right entrances
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: 'power3.out'
+            });
+            
+            // FAQ section animations
+            gsap.from('.faq-title', {
+                scrollTrigger: {
+                    trigger: '.contact-faq',
+                    start: 'top 80%'
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.8
+            });
+            
+            // Initialize Particles for Hero Section
+            initParticles();
+            
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    // Toggle active class on the question
+                    this.classList.toggle('active');
+                    
+                    // Get the answer element
+                    const answer = this.nextElementSibling;
+                    
+                    // Toggle active class on the answer
+                    answer.classList.toggle('active');
+                });
+            });
+            
+            // Contact Form Submission and Validation
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                // Form validation function
+                const validateInput = (input) => {
+                    let isValid = true;
+                    
+                    if (input.hasAttribute('required') && !input.value.trim()) {
+                        isValid = false;
+                    } else if (input.type === 'email' && input.value.trim()) {
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        isValid = emailRegex.test(input.value.trim());
+                    } else if (input.type === 'tel' && input.value.trim()) {
+                        const phoneRegex = /^[\d\s()+\-]{7,20}$/;
+                        isValid = phoneRegex.test(input.value.trim());
+                    }
+                    
+                    if (!isValid) {
+                        input.classList.add('error');
+                        
+                        // Shake animation for invalid fields
+                        gsap.to(input, {
+                            x: [-5, 5, -5, 5, 0],
+                            duration: 0.4,
+                            ease: 'power2.out'
+                        });
+                    } else {
+                        input.classList.remove('error');
+                    }
+                    
+                    return isValid;
+                };
+                
+                // Real-time validation on blur
+                const formInputs = contactForm.querySelectorAll('input, select, textarea');
+                formInputs.forEach(input => {
+                    input.addEventListener('blur', () => {
+                        validateInput(input);
+                    });
+                    
+                    input.addEventListener('input', () => {
+                        if (input.classList.contains('error')) {
+                            validateInput(input);
+                        }
+                    });
+                });
+                
+                // Form submission
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Validate all fields
+                    let isFormValid = true;
+                    formInputs.forEach(input => {
+                        if (!validateInput(input)) {
+                            isFormValid = false;
+                        }
+                    });
+                    
+                    if (isFormValid) {
+                        // Submit button animation
+                        const btn = this.querySelector('.submit-btn');
+                        const originalText = btn.textContent;
+                        
+                        // Change button text with animation
+                        gsap.to(btn, {
+                            scale: 0.95,
+                            duration: 0.2,
+                            ease: 'power2.out',
+                            onComplete: () => {
+                                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                                
+                                gsap.to(btn, {
+                                    scale: 1,
+                                    duration: 0.2,
+                                    ease: 'power2.out',
+                                    onComplete: () => {
+                                        // Simulate server request
+                                        setTimeout(() => {
+                                            gsap.to(btn, {
+                                                scale: 0.95,
+                                                duration: 0.2,
+                                                ease: 'power2.out',
+                                                onComplete: () => {
+                                                    btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+                                                    
+                                                    gsap.to(btn, {
+                                                        scale: 1,
+                                                        backgroundColor: '#4CAF50',
+                                                        duration: 0.2,
+                                                        ease: 'power2.out'
+                                                    });
+                                                    
+                                                    // Reset form after delay
+                                                    setTimeout(() => {
+                                                        contactForm.reset();
+                                                        gsap.to(btn, {
+                                                            backgroundColor: '#3f51b5',
+                                                            duration: 0.5,
+                                                            onComplete: () => {
+                                                                btn.textContent = originalText;
+                                                            }
+                                                        });
+                                                    }, 2000);
+                                                }
+                                            });
+                                        }, 1500);
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
+            }
+        });
+        
+        // Particles Background for Hero Section
+        function initParticles() {
+            const heroSection = document.querySelector('.contact-hero');
+            const particlesContainer = document.createElement('div');
+            particlesContainer.className = 'particles-container';
+            heroSection.appendChild(particlesContainer);
+            
+            // Create particles
+            for (let i = 0; i < 50; i++) {
+                createParticle(particlesContainer);
+            }
+        }
+        
+        function createParticle(container) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            
+            // Random size between 3px and 8px
+            const size = Math.random() * 5 + 3;
+            
+            // Random opacity between 0.1 and 0.5
+            const opacity = Math.random() * 0.4 + 0.1;
+            
+            // Random position
+            const xPos = Math.random() * 100;
+            const yPos = Math.random() * 100;
+            
+            // Set particle styles
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.opacity = opacity;
+            particle.style.left = `${xPos}%`;
+            particle.style.top = `${yPos}%`;
+            
+            // Add animation with random duration
+            const duration = Math.random() * 40 + 20;
+            particle.style.animation = `float ${duration}s infinite ease-in-out`;
+            
+            // Random delay
+            particle.style.animationDelay = `${Math.random() * 10}s`;
+            
+            // Append to container
+            container.appendChild(particle);
+        }
+    </script>
+    
+    <style>
+        /* Hero Particles */
+        .particles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .contact-hero h1, 
+        .contact-hero p {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .particle {
+            position: absolute;
+            background-color: #fff;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+            25% {
+                transform: translateY(-30px) translateX(15px);
+            }
+            50% {
+                transform: translateY(-15px) translateX(30px);
+            }
+            75% {
+                transform: translateY(-30px) translateX(15px);
+            }
+        }
+        
+        /* Enhanced Form Styles */
+        .contact-form .form-group {
+            position: relative;
+            margin-bottom: 28px;
+        }
+        
+        .contact-form label {
+            position: absolute;
+            left: 16px;
+            top: 15px;
+            color: #666;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            background: transparent;
+            padding: 0 5px;
+            z-index: 1;
+        }
+        
+        .contact-form input:focus ~ label,
+        .contact-form textarea:focus ~ label,
+        .contact-form select:focus ~ label,
+        .contact-form input:not(:placeholder-shown) ~ label,
+        .contact-form textarea:not(:placeholder-shown) ~ label,
+        .contact-form select:not([value=""]) ~ label {
+            top: -12px;
+            left: 12px;
+            font-size: 0.85em;
+            color: #3f51b5;
+            background: #fff;
+        }
+        
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            background: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px 16px;
+            width: 100%;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            outline: none;
+            border-color: #3f51b5;
+            box-shadow: 0 0 0 3px rgba(63, 81, 181, 0.1);
+            background: #fff;
+        }
+        
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: transparent;
+        }
+        
+        /* Input validation styles */
+        .contact-form input.error,
+        .contact-form textarea.error,
+        .contact-form select.error {
+            border-color: #f44336;
+            box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.1);
+        }
+        
+        .error-message {
+            color: #f44336;
+            font-size: 0.8em;
+            margin-top: 5px;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .contact-form input.error + label + .error-message,
+        .contact-form textarea.error + label + .error-message,
+        .contact-form select.error + label + .error-message {
+            display: block;
+        }
+        
+        /* Submit button hover effect */
+        .submit-btn {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s ease;
+            z-index: -1;
+        }
+        
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+    </style>
+</body>
+</html> 

@@ -1,0 +1,910 @@
+/* Fees Page Styles */
+:root {
+    --primary-color: #f5a623;
+    --primary-dark: #e09213;
+    --secondary-color: #3f4b5b;
+    --secondary-dark: #1e2a3a;
+    --light-bg: #f9f9f9;
+    --white: #ffffff;
+    --text-dark: #333333;
+    --text-medium: #666666;
+    --text-light: #999999;
+    --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 15px 30px rgba(0, 0, 0, 0.1);
+    --transition-fast: 0.3s ease;
+    --transition-medium: 0.5s ease;
+    --transition-slow: 0.8s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(245, 166, 35, 0.4);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(245, 166, 35, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(245, 166, 35, 0);
+    }
+}
+
+/* Page Banner */
+.page-banner {
+    position: relative;
+    height: 350px;
+    background: linear-gradient(135deg, rgba(63, 75, 91, 0.9) 0%, rgba(30, 42, 58, 0.9) 100%), url('school-banner.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-align: center;
+    overflow: hidden;
+}
+
+.page-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('pattern.svg');
+    opacity: 0.05;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.page-banner h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.page-banner h1::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.breadcrumbs {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.breadcrumbs a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.breadcrumbs a:hover {
+    color: var(--primary-color);
+}
+
+/* Section Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+    position: relative;
+}
+
+.section-title {
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-title.center {
+    text-align: center;
+}
+
+.section-title .subtitle {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: rgba(245, 166, 35, 0.1);
+    color: var(--primary-color);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    position: relative;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin: 0;
+    position: relative;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.2s forwards;
+}
+
+.section-title h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-medium);
+    max-width: 800px;
+    margin: 0 auto 40px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.4s forwards;
+}
+
+/* Fees Intro Section */
+.fees-intro {
+    background-color: var(--white);
+}
+
+/* Fees Structure Cards */
+.fees-structure {
+    background-color: var(--light-bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.fees-structure::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('pattern-light.svg');
+    opacity: 0.07;
+    z-index: 1;
+}
+
+.fees-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.fee-card {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fee-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.fee-card-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.fee-card-header h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.fee-card-header p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.fee-card-body {
+    padding: 30px 20px;
+}
+
+.fee-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.fee-item:last-child {
+    border-bottom: none;
+}
+
+.fee-item-label {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.fee-item-value {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.fee-card-footer {
+    background: rgba(0, 0, 0, 0.02);
+    padding: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.fee-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.fee-total-label {
+    font-weight: 700;
+    color: var(--secondary-dark);
+    font-size: 16px;
+}
+
+.fee-total-value {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 22px;
+}
+
+.fee-note {
+    font-size: 13px;
+    color: var(--text-medium);
+    margin: 0;
+}
+
+/* Fee Calculator Section */
+.fee-calculator {
+    background-color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.fee-calculator::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(245, 166, 35, 0.03) 0%, rgba(245, 166, 35, 0.03) 100%);
+    z-index: 1;
+}
+
+.calculator-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.calculator-form {
+    flex: 1 1 300px;
+}
+
+.calculator-result {
+    flex: 1 1 400px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    color: var(--text-dark);
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.calc-btn {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.calc-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(245, 166, 35, 0.2);
+}
+
+.result-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.result-card h3 {
+    margin: 0;
+    padding: 20px;
+    background: var(--secondary-color);
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.result-label {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.result-value {
+    font-weight: 600;
+    color: var(--secondary-dark);
+}
+
+.result-item.highlight {
+    background: rgba(245, 166, 35, 0.05);
+}
+
+.result-item.highlight .result-label {
+    font-weight: 600;
+}
+
+.result-item.highlight .result-value {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.result-item.grand-total {
+    background: rgba(63, 75, 91, 0.1);
+}
+
+.result-item.grand-total .result-label {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.result-item.grand-total .result-value {
+    color: var(--secondary-dark);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.result-divider {
+    height: 10px;
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.result-note {
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.result-note p {
+    margin: 5px 0;
+    font-size: 13px;
+    color: var(--text-medium);
+}
+
+/* Fee Information Section */
+.fee-info {
+    background-color: var(--white);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.info-card {
+    background-color: var(--light-bg);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-fast);
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: calc(0.2s * var(--card-index, 1));
+}
+
+.info-card:nth-child(1) { --card-index: 1; }
+.info-card:nth-child(2) { --card-index: 2; }
+.info-card:nth-child(3) { --card-index: 3; }
+.info-card:nth-child(4) { --card-index: 4; }
+
+.info-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-5px);
+}
+
+.info-card-icon {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.info-card h3 {
+    font-size: 1.4rem;
+    margin: 0 0 15px;
+    color: var(--text-dark);
+}
+
+.info-card p {
+    color: var(--text-medium);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.info-card ul {
+    padding-left: 20px;
+    margin-top: 15px;
+}
+
+.info-card li {
+    margin-bottom: 8px;
+    color: var(--text-medium);
+}
+
+/* Payment Methods Section */
+.payment-methods {
+    background-color: var(--light-bg);
+    position: relative;
+}
+
+.methods-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.method-card {
+    flex: 1;
+    min-width: 280px;
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-fast);
+    position: relative;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: calc(0.15s * var(--method-index, 1));
+}
+
+.method-card:nth-child(1) { --method-index: 1; }
+.method-card:nth-child(2) { --method-index: 2; }
+.method-card:nth-child(3) { --method-index: 3; }
+
+.method-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-5px);
+}
+
+.method-icon {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(245, 166, 35, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.method-icon i {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.method-card h3 {
+    font-size: 1.3rem;
+    margin: 0 0 15px;
+    color: var(--text-dark);
+}
+
+.method-card p {
+    color: var(--text-medium);
+    margin: 0 0 20px;
+    line-height: 1.6;
+}
+
+.method-steps {
+    padding-left: 20px;
+}
+
+.method-steps li {
+    margin-bottom: 10px;
+    color: var(--text-medium);
+    position: relative;
+}
+
+.method-steps li::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    position: absolute;
+    left: -20px;
+    top: 8px;
+}
+
+/* FAQ Section */
+.fees-faq {
+    background-color: var(--white);
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: calc(0.1s * var(--faq-index, 1));
+}
+
+.faq-item:nth-child(1) { --faq-index: 1; }
+.faq-item:nth-child(2) { --faq-index: 2; }
+.faq-item:nth-child(3) { --faq-index: 3; }
+.faq-item:nth-child(4) { --faq-index: 4; }
+.faq-item:nth-child(5) { --faq-index: 5; }
+.faq-item:nth-child(6) { --faq-index: 6; }
+
+.faq-question {
+    background-color: var(--light-bg);
+    padding: 20px 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color var(--transition-fast);
+}
+
+.faq-question h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    color: var(--text-dark);
+    transition: color var(--transition-fast);
+}
+
+.faq-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(63, 75, 91, 0.1);
+    color: var(--secondary-color);
+    transition: all var(--transition-fast);
+}
+
+.faq-question:hover {
+    background-color: rgba(245, 166, 35, 0.08);
+}
+
+.faq-question:hover h3 {
+    color: var(--primary-dark);
+}
+
+.faq-question:hover .faq-icon {
+    background-color: var(--primary-color);
+    color: white;
+    transform: rotate(90deg);
+}
+
+.faq-answer {
+    background-color: white;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all var(--transition-medium);
+}
+
+.faq-answer p {
+    padding: 20px 25px;
+    margin: 0;
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+
+.faq-item.active .faq-question {
+    background-color: rgba(245, 166, 35, 0.08);
+}
+
+.faq-item.active .faq-question h3 {
+    color: var(--primary-dark);
+}
+
+.faq-item.active .faq-icon {
+    background-color: var(--primary-color);
+    color: white;
+    transform: rotate(90deg);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    padding: 20px 25px;
+}
+
+/* Call to Action */
+.fees-cta {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--secondary-dark) 100%);
+    color: white;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.fees-cta .section-title h2 {
+    color: white;
+}
+
+.fees-cta .section-title h2::after {
+    margin: 20px auto 0;
+}
+
+.cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-buttons {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.6s forwards;
+}
+
+.cta-btn {
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cta-btn.primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: 2px solid var(--primary-color);
+}
+
+.cta-btn.primary:hover {
+    background-color: transparent;
+    color: white;
+    transform: translateY(-5px);
+}
+
+.cta-btn.secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta-btn.secondary:hover {
+    border-color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .section-title h2 {
+        font-size: 2.2rem;
+    }
+    
+    .fee-card {
+        min-width: 280px;
+    }
+    
+    .info-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+    .page-banner {
+        height: 250px;
+    }
+    
+    .page-banner h1 {
+        font-size: 2.8rem;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    .intro-text {
+        font-size: 1rem;
+    }
+    
+    .fee-card {
+        max-width: 100%;
+    }
+    
+    .methods-container {
+        flex-direction: column;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calculator-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calculator-form,
+    .calculator-result {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-banner h1 {
+        font-size: 2.2rem;
+    }
+    
+    .section-title h2 {
+        font-size: 1.7rem;
+    }
+    
+    .fee-card-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .fee-total-value {
+        font-size: 1.2rem;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .calculator-form {
+        padding: 25px;
+    }
+
+    .result-total span:last-child,
+    .result-annual span:last-child {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .fees-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .calculator-container {
+        flex-direction: column;
+    }
+    
+    .calc-btn {
+        width: 100%;
+    }
+} 

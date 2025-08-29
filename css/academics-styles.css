@@ -1,0 +1,408 @@
+/* Academics Page Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Page Banner (same as about page) */
+.page-banner {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('academics-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: 80px;
+}
+
+.banner-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.breadcrumbs {
+    font-size: 1rem;
+}
+
+.breadcrumbs a {
+    color: #f5a623;
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+/* Section Titles */
+.section-title {
+    margin-bottom: 40px;
+}
+
+.section-title .subtitle {
+    display: block;
+    color: #f5a623;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: 700;
+    position: relative;
+}
+
+.section-title.center {
+    text-align: center;
+}
+
+/* Academics Intro Section */
+.academics-intro {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.intro-text {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 50px;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.academic-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.academic-link-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid #eee;
+}
+
+.academic-link-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: #f5a623;
+}
+
+.card-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(245, 166, 35, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.card-icon i {
+    font-size: 2rem;
+    color: #f5a623;
+}
+
+.academic-link-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.academic-link-card p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.link-arrow {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: #f5a623;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.academic-link-card:hover .link-arrow {
+    transform: translateX(5px);
+}
+
+/* Curriculum Section */
+.curriculum-section {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.curriculum-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.curriculum-content p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.curriculum-list {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.curriculum-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    color: #666;
+}
+
+.curriculum-list li i {
+    color: #f5a623;
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.curriculum-image {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.curriculum-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.curriculum-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Classes Section */
+.classes-section {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.classes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.class-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.class-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: #f5a623;
+}
+
+.class-header {
+    background: #f5a623;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.class-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.class-range {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.class-content {
+    padding: 20px;
+}
+
+.class-content p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.class-subjects, .class-streams {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.class-subjects li, .class-streams li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+    color: #666;
+}
+
+.class-subjects li:before, .class-streams li:before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #f5a623;
+    font-size: 1.2rem;
+}
+
+.class-content h4 {
+    margin: 15px 0 10px;
+    color: #333;
+}
+
+/* Achievements Section */
+.achievements-section {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.achievements-slider {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.achievement-slide {
+    padding: 20px;
+}
+
+.achievement-card {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    position: relative;
+    border-top: 5px solid #f5a623;
+}
+
+.achievement-year {
+    display: inline-block;
+    background: #f5a623;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.achievement-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.achievement-card p {
+    color: #666;
+}
+
+.achievement-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.achievement-prev, .achievement-next {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.achievement-prev:hover, .achievement-next:hover {
+    background: #f5a623;
+    color: white;
+    border-color: #f5a623;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .curriculum-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .curriculum-image {
+        order: -1;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    .academic-links-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .classes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .achievement-card {
+        padding: 20px;
+    }
+    
+    .achievement-card h3 {
+        font-size: 1.3rem;
+    }
+} 

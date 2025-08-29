@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Livestreams - Saraswati Gyan Mandir Inter College</title>
+    <link rel="icon" href="../image/Logo/Favicon.webp" type="image/webp" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/header-styles.css" />
+    <link rel="stylesheet" href="../css/gallery-styles.css" />
+    <link rel="stylesheet" href="../css/youtube-gallery.css" />
+    <link rel="stylesheet" href="../css/footer-styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        body { padding-top: 130px; }
+        @media (max-width: 992px) { body { padding-top: 80px; } }
+        @media (max-width: 576px) { body { padding-top: 70px; } }
+        .page-banner { background: linear-gradient(135deg, #126e82, #0a2342); color: #fff; }
+        .live-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .live-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 22px rgba(0,0,0,.08); display: flex; flex-direction: column; }
+        .live-thumb { position: relative; aspect-ratio: 16/9; background: #000; }
+        .live-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .live-badge { position: absolute; top: 10px; left: 10px; background: #ea4335; color: #fff; padding: 6px 10px; border-radius: 6px; font-weight: 600; font-size: 12px; letter-spacing: .3px; }
+        .live-content { padding: 14px 16px 16px; }
+        .live-title { margin: 0 0 8px; font-size: 16px; line-height: 1.4; }
+        .live-meta { color: #666; font-size: 13px; display: flex; gap: 12px; align-items: center; }
+        .empty-state { text-align: center; padding: 40px 0; color: #666; }
+        .subscribe-btn { display: inline-block; background: #ff0000; color: #fff; padding: 10px 16px; border-radius: 999px; text-decoration: none; font-weight: 600; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+    <section class="page-banner">
+        <div class="banner-content">
+            <h1>Livestreams</h1>
+            <div class="breadcrumbs"><a href="../index.html">Home</a> &gt; <a href="../gallery.html">Gallery</a> &gt; Livestreams</div>
+        </div>
+    </section>
+
+    <section class="gallery-intro">
+        <div class="container">
+            <div class="section-title center">
+                <span class="subtitle">Live Now</span>
+                <h2>Watch our ongoing livestreams</h2>
+            </div>
+            <div id="live-toolbar" class="live-meta" style="justify-content: space-between; margin-bottom: 12px; display:none;">
+                <span id="last-updated"><i class="far fa-clock"></i> Last updated: --</span>
+                <button id="refresh-live" class="subscribe-btn" style="background:#0a2342;"><i class="fas fa-rotate"></i> Refresh</button>
+            </div>
+            <div id="live-loading" class="loading-spinner" style="display:none;"><i class="fas fa-circle-notch"></i> Loading live videosâ€¦</div>
+            <div id="live-grid" class="live-grid"></div>
+            <div id="no-live" class="empty-state" style="display:none;">
+                <p>No livestreams are active right now.</p>
+                <a id="subscribe-link" class="subscribe-btn" href="https://www.youtube.com/sgmickan" target="_blank" rel="noopener">
+                    <i class="fab fa-youtube"></i> Subscribe for updates
+                </a>
+            </div>
+            <div id="live-error" class="empty-state" style="display:none; color:#a00;">
+                <p><i class="fas fa-triangle-exclamation"></i> Unable to load livestreams at the moment. Please try again later.</p>
+            </div>
+            <hr style="margin: 36px 0; border: 0; border-top: 1px solid #eee;"/>
+            <div class="section-title center">
+                <span class="subtitle">Past Livestreams</span>
+                <h2>Recent completed streams</h2>
+            </div>
+            <div id="past-loading" class="loading-spinner" style="display:none;"><i class="fas fa-circle-notch"></i> Loading past livestreamsâ€¦</div>
+            <div id="past-grid" class="live-grid"></div>
+            <div id="no-past" class="empty-state" style="display:none;">
+                <p>No past livestreams found.</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/livestreams.js"></script>
+    <script src="../js/header-loader.js"></script>
+    <script>
+        // Load footer
+        document.addEventListener('DOMContentLoaded', function(){
+            fetch('../Footer/footer.html').then(r=>r.text()).then(html=>{
+                const fixed = html.replace(/src=\"(?!http:\/\/|https:\/\/|#)/g,'src=\"../');
+                document.getElementById('footer-container').innerHTML = fixed;
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saraswati Gyan Mandir Inter College - Welcome</title>
+    <link rel="icon" href="../image/Logo/favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Add this to ensure proper spacing for the content */
+        body {
+            padding-top: 130px; /* Adjusted for taller header (top bar + navbar) */
+        }
+        
+        @media (max-width: 992px) {
+            body {
+                padding-top: 80px; /* Only navbar height since top bar is hidden */
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                padding-top: 70px; /* Smaller navbar height on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Add this popup div after body tag -->
+    <div class="popup-overlay" id="welcomePopup">
+        <div class="popup-content">
+            <h2>स्वागत है</h2>
+            <p>सरस्वती ज्ञान मन्दिर इण्टर कालेज में आपका स्वागत है</p>
+            <div class="popup-image">
+                <img src="WelcomePopup.gif" alt="Lord Krishna" class="krishna-image">
+            </div>
+            <p>संस्कार क्षम शिक्षा ही वास्तविक शिक्षा है</p>
+            <button class="popup-close" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+    
+    <!-- New Enhanced Header Structure -->
+    <header class="main-header">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="top-bar-container">
+                <div class="top-contact">
+                    <div class="top-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+919839148124">+91 9839148124</a>
+                    </div>
+                    <div class="top-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:sgmazadnagarkanpur@rediffmail.com">sgmazadnagarkanpur@rediffmail.com</a>
+                    </div>
+                    <div class="top-contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon - Sat: 8:30 AM - 3:00 PM</span>
+                    </div>
+                </div>
+                <div class="top-social">
+                    <a href="https://facebook.com/sgmican" class="top-social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="top-social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="top-social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/sgmickan" class="top-social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Navigation Bar -->
+        <div class="navbar">
+            <div class="navbar-container">
+                <div class="logo-container">
+                    <img src="Header_Logo.png" alt="School Logo" class="school-logo">
+                </div>
+                
+                <div class="nav-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+                
+                <div class="nav-container">
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div class="overlay"></div>
+    </header>
+
+    <!-- Hero Slider Section - Restored to Original -->
+    <div class="hero">
+        <div class="slider">
+            <div class="slide active">
+                <img src="Slide-1.jpg" alt="School Image 1">
+            </div>
+            <div class="slide">
+                <img src="Slide-2.jpg" alt="School Image 2">
+            </div>
+            <div class="slide">
+                <img src="Slide-3.jpg" alt="School Image 3">
+            </div>
+            
+            <button class="slider-nav prev" onclick="prevSlide()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-nav next" onclick="nextSlide()">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <div class="slider-dots">
+                <span class="dot active" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+            </div>
+            <a href="contact.html" class="fixed-contact-button">Contact Us</a>
+        </div>
+    </div>
+
+    <!-- After messages-section and before features section -->
+    <section class="school-intro">
+        <div class="intro-container">
+            <div class="intro-image">
+                <img src="schoolbuilding.jpg" alt="School Building">
+            </div>
+            <div class="intro-content">
+                <h1>Saraswati Gyan Mandir<br>Inter College Azad Nagar Kanpur</h1>
+                <h2>All human life is education and education is life.</h2>
+                <p>Sanskar ksham education is the real education. But in the present education, there is a neglect of sanskars. Instability, unrest, exploitation, oppression and corruption have become the destiny of the nation due to education devoid of morality, integrity and spirituality. However, progress has been made in many areas which has led to the nation's... But the development results that were expected in this long period could not come. The child is the center of our hope.</p>
+                <p>Education and values are the birthright of every child. Expression of this right of the child Our ancestors had made arrangements for education and values with the motto "Mata Guru" And it is a social responsibility.</p>
+                <a href="about.html" class="read-more-btn">READ MORE!</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add after the school-intro section and before the special-features section -->
+    <section class="founders-section">
+        <div class="section-header">
+            <h2>OUR FOUNDERS</h2>
+            <div class="header-divider">
+                <span class="line"></span>
+                <i class="fas fa-arrow-right"></i>
+                <span class="line"></span>
+            </div>
+        </div>
+        
+        <div class="founders-container">
+            <div class="founders-slider">
+                <div class="founder-card">
+                    <div class="founder-image">
+                        <img src="pitaji.png" alt="Our Founder">
+                    </div>
+                    <div class="founder-content">
+                        <h3 class="founder-title">Late Shri Ram Narayan Agrawal</h3>
+                        <p>In the present century, education is the system of refinement and development of human life. Every experience of life can be called education. In fact, all human life is education and education is life. Whatever practice widens the scope of man's knowledge, deepens his insight.</p>
+                    </div>
+                </div>
+                
+                <div class="founder-card">
+                    <div class="founder-image">
+                        <img src="ManagerMessage2.jpg" alt="Mr. Amit Agrawal">
+                    </div>
+                    <div class="founder-content">
+                        <h3 class="founder-title">Shri Amit Agrawal</h3>
+                        <p class="founder-subtitle">Continuous study is what makes a teacher successful. It can be! "Manager"</p>
+                        <p>Saraswati Gyan Mandir Inter College Azad Nagar Kanpur has resolved to transfer Indian civilization, culture, education and system to the new generation.</p>
+                        <a href="manager-message.html" class="read-more">READ MORE!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="special-features">
+        <div class="features-header">
+            <h2>OUR SPECIAL FEATURES</h2>
+            <p>We Provide Good Educational Environment With All Amenities To Learn And Grow</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-item">
+                <img src="ComputerPhoto.png" alt="Computer Education">
+                <h3>Computer Lab</h3>
+            </div>
+            
+            <div class="feature-item">
+                <img src="LibraryPhoto.png" alt="School Library">
+                <h3>School Library</h3>
+            </div>
+            
+            <div class="feature-item">
+                <img src="GamesPhoto.png" alt="Games & Sports">
+                <h3>Games & Sports</h3>
+            </div>
+            
+            <div class="feature-item">
+                <img src="MusicPhoto.png" alt="Music Room">
+                <h3>Music Room</h3>
+            </div>
+            
+            <div class="feature-item">
+                <img src="AwardPhoto.jpg" alt="Awards & Achievements">
+                <h3>Awards & Achievements</h3>
+            </div>
+            
+            <div class="feature-item">
+                <img src="SchoolBuilding.jpg" alt="School Building">
+                <h3>School Building</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="section-header">
+            <h2>OUR TESTIMONIALS</h2>
+            <div class="header-divider">
+                <span class="line"></span>
+                <i class="fas fa-arrow-right"></i>
+                <span class="line"></span>
+            </div>
+        </div>
+        
+        <div class="testimonials-container">
+            <div class="testimonial-box">
+                <div class="testimonial-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>Attending the prize distribution ceremony of Saraswati Gyan Mandir today is like getting an opportunity to remember the old days of old school education. The contribution of this school and its teachers is immense. I wish this temple of learning a bright future.</p>
+                    <div class="testimonial-author">
+                        <img src="testimonial1.jpg" alt="Parent">
+                        <span>— Akhand Pratap Singh IAS</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-box">
+                <div class="testimonial-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>The school is truly a temple of learning. The atmosphere here is completely conducive to education. I pray to the Lord that this school progresses progressively and the students here are beneficial for the country and society. 
+                    <div class="testimonial-author">
+                        <img src="testimonial2.jpg" alt="Parent">
+                        <span>— Swami Tanmahimanand Ramakrishna Mission Ashram
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-box">
+                <div class="testimonial-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>Today, I got an opportunity to participate in the Fancy Dress Competition organized by the school. Every possible effort is being made for the all-round development of girl students. My heartiest congratulations.</p>
+                    <div class="testimonial-author">
+                        <img src="testimonial3.jpg" alt="Parent">
+                        <span>— Ramsharan Srivastava IAS Retd.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-box">
+                <div class="testimonial-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>In the ancient school, the discipline and the program were very beautiful, all were orderly and regular. The school deserves appreciation. Best wishes for the progress of the school.</p>
+                    <div class="testimonial-author">
+                        <img src="testimonial4.jpg" alt="Parent">
+                        <span>—Shri Ramnath Kovind Ji Rajya Sabha
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-box">
+                <div class="testimonial-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>Saraswati Gyan Mandir Inter College provides many opportunities for inter-college education working sincerely for the bright future of children. Organizing different types of games in the school increases competition within the children, along with which the student develops mentally and physically. </p>
+                    <div class="testimonial-author">
+                        <img src="testimonial5.jpg" alt="Parent">
+                        <span>— Parents</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-box">
+                <div class="testimonial-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>Saraswati Gyan Mandir Inter College is a branch of a renowned school where our children are imbued with knowledge and culture. We have seen a lot of impressive changes that have made us and our families happy. </p>
+                    <div class="testimonial-author">
+                        <img src="testimonial6.jpg" alt="Parent">
+                        <span>— Parents</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-box">
+                <div class="testimonial-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>The Talent Search Examination conducted by the school is of very advanced nature. The high level traditions established by Late Ramnarayan Ji are being nurtured by his sons. The Principal of the school, teachers and students are living examples of Indian culture. I wish them all the very best for the future.</p>
+                    <div class="testimonial-author">
+                        <img src="testimonial7.jpg" alt="Parent">
+                        <span>— Dr. Manoj Mishra 
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-box">
+                <div class="testimonial-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>The Hanumat Shakti Jagran programme at Saraswati Gyan Mandir was well organized.
+                        A unique confluence of holy and devotional juices was performed in Ayodhya and Mathura in a special way.
+                        I have reminded you of the dynamism of the Government. The event was organized as part of the school's systematic planning.
+                        The result is may God grant glory to the school. 
+                    <div class="testimonial-author">
+                        <img src="testimonial8.jpg" alt="Parent">
+                        <span>— Chandra Shekhar, Rashtriya Swayamsevak Sangh
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="news-events">
+        <h2>Latest News & Events</h2>
+        <div class="news-grid">
+            <div class="news-card">
+                <img src="placeholder-news-1.jpg" alt="News 1">
+                <h3>Annual Sports Day</h3>
+                <p>Join us for our annual sports celebration next month.</p>
+            </div>
+            <div class="news-card">
+                <img src="placeholder-news-2.jpg" alt="News 2">
+                <h3>Science Exhibition</h3>
+                <p>Students showcase their innovative projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section End -->
+    
+    <!-- Include the new footer -->
+    <link rel="stylesheet" href="footer-styles.css">
+    <script src="footer.js"></script>
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-particles-container" id="footer-particles"></div>
+        
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-logo-section">
+                    <img src="FooterSchoolLogo.png" alt="School Logo" class="footer-logo">
+                    <h2>Saraswati Gyan Mandir Inter College</h2>
+                    <p>Azad Nagar, Kanpur</p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com/sgmican" class="social-icon" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/sgmickan" class="social-icon" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+            </div>
+                
+                <div class="footer-widgets">
+                    <div class="footer-widget">
+                <h3>Quick Links</h3>
+                        <div class="footer-divider"><span></span></div>
+                        <ul class="footer-links">
+                            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                            <li><a href="academics.html"><i class="fas fa-chevron-right"></i> Academics</a></li>
+                            <li><a href="admission.html"><i class="fas fa-chevron-right"></i> Admission</a></li>
+                            <li><a href="syllabus.html"><i class="fas fa-chevron-right"></i> Syllabus</a></li>
+                            <li><a href="fees.html"><i class="fas fa-chevron-right"></i> Fees Structure</a></li>
+                            <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                </ul>
+            </div>
+                    
+                    <div class="footer-widget">
+                        <h3>Contact Information</h3>
+                        <div class="footer-divider"><span></span></div>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h4>Our Location</h4>
+                                    <a href="https://www.google.co.in/maps/place/Saraswati+Gyan+Mandir+Inter+College+Azad+Nagar+Kanpur/@26.504344,80.3041442,17z/data=!3m1!4b1!4m6!3m5!1s0x399c47829a64bde7:0x1d421952933e4d0c!8m2!3d26.504344!4d80.3067191!16s%2Fg%2F11c6djqyvd?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D" target="_blank" class="contact-link">
+                                        <p>3A/193 Azad Nagar, Kanpur Uttar Pradesh - 208002</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <h4>Call Us</h4>
+                                    <a href="tel:+919839148124" class="contact-link">
+                                        <p>+91 9839148124</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h4>Email Us</h4>
+                                    <a href="mailto:sgmazadnagarkanpur@rediffmail.com" class="contact-link">
+                                        <p>sgmazadnagarkanpur@rediffmail.com</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-widget">
+                        <h3>Newsletter</h3>
+                        <div class="footer-divider"><span></span></div>
+                        <p>Subscribe to our newsletter for updates on school events, achievements, and announcements.</p>
+                        <form class="newsletter-form">
+                            <div class="form-group">
+                                <input type="email" placeholder="Your Email" required>
+                                <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </form>
+                        <div class="school-timing">
+                            <h4><i class="far fa-clock"></i> School Hours</h4>
+                            <p>Monday - Saturday: 8:30 AM - 3:00 PM</p>
+                            <p>Office Hours: 9:00 AM - 4:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="copyright">
+                    <p>&copy; <span id="current-year">2024</span> Saraswati Gyan Mandir Inter College. All Rights Reserved.</p>
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="sitemap.html">Sitemap</a>
+                </div>
+                <div class="scroll-top" id="scroll-top">
+                    <i class="fas fa-chevron-up"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add this at the end of the body tag, before the script tag -->
+    <div class="lightbox" id="imageLightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <img class="lightbox-image" id="lightboxImage" src="" alt="Full size image">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="lightbox.js"></script>
+    <script src="header.js"></script>
+</body>
+</html> 

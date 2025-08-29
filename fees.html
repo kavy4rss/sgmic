@@ -1,0 +1,837 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Structure - Saraswati Gyan Mandir Inter College</title>
+    <link rel="icon" href="image/Logo/Favicon.webp" type="image/webp">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/header-styles.css">
+    <link rel="stylesheet" href="css/fees-styles.css">
+    <link rel="stylesheet" href="css/footer-styles.css">
+    <link rel="stylesheet" href="css/loading-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add this to ensure proper spacing for the content */
+        body {
+            padding-top: 130px; /* Adjusted for taller header (top bar + navbar) */
+        }
+        
+        @media (max-width: 992px) {
+            body {
+                padding-top: 80px; /* Only navbar height since top bar is hidden */
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                padding-top: 70px; /* Smaller navbar height on mobile */
+            }
+        }
+
+        /* Preloader Styles */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .preloader.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .loader {
+            width: 80px;
+            height: 80px;
+            border: 5px solid #f5f5f5;
+            border-top: 5px solid #f5a623;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Page Transition Effects */
+        .page-banner,
+        .fees-intro,
+        .fees-structure,
+        .fee-info,
+        .payment-methods,
+        .fees-faq,
+        .fees-cta {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .page-banner.visible,
+        .fees-intro.visible,
+        .fees-structure.visible,
+        .fee-info.visible,
+        .payment-methods.visible,
+        .fees-faq.visible,
+        .fees-cta.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered Animation for Fee Cards */
+        .fee-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .fee-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Payment Button Styles */
+        .payment-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #f5a623;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(245, 166, 35, 0.2);
+        }
+
+        .payment-btn:hover {
+            background: #e09213;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 166, 35, 0.3);
+            color: white;
+        }
+
+        .payment-btn i {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Replace the header with the header container div -->
+    <div id="header-container"></div>
+
+    <script>
+        function loadHeader() {
+            const isMobile = window.innerWidth <= 900;
+            const headerContainer = document.getElementById('header-container');
+            if (isMobile) {
+                fetch('Header/hamburger-header.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        headerContainer.innerHTML = data;
+                        if (!document.getElementById('hamburger-menu-css')) {
+                            const link = document.createElement('link');
+                            link.rel = 'stylesheet';
+                            link.href = 'css/hamburger-menu.css';
+                            link.id = 'hamburger-menu-css';
+                            document.head.appendChild(link);
+                        }
+                        // Load hamburger menu script
+                        if (!document.getElementById('hamburger-menu-js')) {
+                            const script = document.createElement('script');
+                            script.src = 'Header/hamburger-menu.js';
+                            script.id = 'hamburger-menu-js';
+                            document.body.appendChild(script);
+                        }
+                    });
+            } else {
+                fetch('Header/header.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        headerContainer.innerHTML = data;
+                    });
+            }
+        }
+
+        // Load header when the page loads
+        document.addEventListener('DOMContentLoaded', loadHeader);
+
+        // Reload header when window is resized
+        window.addEventListener('resize', loadHeader);
+    </script>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="banner-content">
+            <h1>Fee Structure</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> &gt; Fees Structure
+            </div>
+        </div>
+    </section>
+
+    <!-- Fees Intro -->
+    <section class="fees-intro">
+        <div class="container">
+            <div class="section-title center">
+                <span class="subtitle">Academic Year 2024-25</span>
+                <h2>Fee Structure and Payment Information</h2>
+            </div>
+            <p class="intro-text">
+                Our institution is committed to providing quality education at affordable rates. The fee structure is designed to be transparent and comprehensive, covering all essential academic and co-curricular activities. We offer various payment options for your convenience.
+            </p>
+        </div>
+    </section>
+
+    <!-- Fees Structure Cards -->
+    <section class="fees-structure">
+        <div class="container">
+            <div class="section-title center">
+                <h2>Class-wise Fee Structure</h2>
+            </div>
+            
+            <div class="fees-cards">
+                <!-- Pre-Primary Section -->
+                <!-- PG Class -->
+                <div class="fee-card">
+                    <div class="fee-card-header">
+                        <h3>Play Group (PG)</h3>
+                    </div>
+                    <div class="fee-card-body">
+                        <div class="fee-item">
+                            <span class="fee-item-label">Monthly fee</span>
+                            <span class="fee-item-value">â‚¹1,100</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Computer</span>
+                            <span class="fee-item-value">â‚¹0</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Term Fee</span>
+                            <span class="fee-item-value">â‚¹350</span>
+                        </div>
+                    </div>
+                    <div class="fee-card-footer">
+                        <div class="fee-total">
+                            <span class="fee-total-label">Total Fee</span>
+                            <span class="fee-total-value">â‚¹1,450</span>
+                        </div>
+                        <p class="fee-note">* One-time admission fee: â‚¹2,500 for new students</p>
+                    </div>
+                </div>
+                
+                <!-- Nursery Class -->
+                <div class="fee-card">
+                    <div class="fee-card-header">
+                        <h3>Nursery</h3>
+                    </div>
+                    <div class="fee-card-body">
+                        <div class="fee-item">
+                            <span class="fee-item-label">Monthly fee</span>
+                            <span class="fee-item-value">â‚¹1,150</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Computer</span>
+                            <span class="fee-item-value">â‚¹0</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Term Fee</span>
+                            <span class="fee-item-value">â‚¹350</span>
+                        </div>
+                    </div>
+                    <div class="fee-card-footer">
+                        <div class="fee-total">
+                            <span class="fee-total-label">Total Fee</span>
+                            <span class="fee-total-value">â‚¹1,500</span>
+                        </div>
+                        <p class="fee-note">* One-time admission fee: â‚¹2,800 for new students</p>
+                    </div>
+                </div>
+                
+                <!-- KG Class -->
+                <div class="fee-card">
+                    <div class="fee-card-header">
+                        <h3>Kindergarten (KG)</h3>
+                    </div>
+                    <div class="fee-card-body">
+                        <div class="fee-item">
+                            <span class="fee-item-label">Monthly Fee</span>
+                            <span class="fee-item-value">â‚¹1,150</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Computer Fee</span>
+                            <span class="fee-item-value">â‚¹0</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Term Fee</span>
+                            <span class="fee-item-value">â‚¹350</span>
+                        </div>
+                    </div>
+                    <div class="fee-card-footer">
+                        <div class="fee-total">
+                            <span class="fee-total-label">Total Fee</span>
+                            <span class="fee-total-value">â‚¹1500</span>
+                        </div>
+                        <p class="fee-note">* One-time admission fee: â‚¹3,100 for new students</p>
+                    </div>
+                </div>
+                
+                <!-- Primary Section (Individual Classes) -->
+                <!-- Class 1 -->
+                <div class="fee-card">
+                    <div class="fee-card-header">
+                        <h3>Class 1</h3>
+                    </div>
+                    <div class="fee-card-body">
+                        <div class="fee-item">
+                            <span class="fee-item-label">Monthly Fee</span>
+                            <span class="fee-item-value">â‚¹1,200</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Computer Fee</span>
+                            <span class="fee-item-value">â‚¹250</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Term Fee</span>
+                            <span class="fee-item-value">â‚¹450</span>
+                        </div>
+                    </div>
+                    <div class="fee-card-footer">
+                        <div class="fee-total">
+                            <span class="fee-total-label">Total Fee</span>
+                            <span class="fee-total-value">â‚¹1,600</span>
+                        </div>
+                        <p class="fee-note">* One-time admission fee: â‚¹3,500 for new students</p>
+                    </div>
+                </div>
+                
+                <!-- Class 2 -->
+                <div class="fee-card">
+                    <div class="fee-card-header">
+                        <h3>Class 2</h3>
+                    </div>
+                    <div class="fee-card-body">
+                        <div class="fee-item">
+                            <span class="fee-item-label">Monthly Fee</span>
+                            <span class="fee-item-value">â‚¹3,600</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Computer Fee</span>
+                            <span class="fee-item-value">â‚¹250</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Term Fee</span>
+                            <span class="fee-item-value">â‚¹450</span>
+                        </div>
+                    </div>
+                    <div class="fee-card-footer">
+                        <div class="fee-total">
+                            <span class="fee-total-label">Total Fee</span>
+                            <span class="fee-total-value">â‚¹4,300</span>
+                        </div>
+                        <p class="fee-note">* One-time admission fee: â‚¹3,600 for new students</p>
+                    </div>
+                </div>
+                
+                <!-- Class 3 -->
+                <div class="fee-card">
+                    <div class="fee-card-header">
+                        <h3>Class 3</h3>
+                    </div>
+                    <div class="fee-card-body">
+                        <div class="fee-item">
+                            <span class="fee-item-label">Monthly Fee</span>
+                            <span class="fee-item-value">â‚¹1,200</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Computer Fee</span>
+                            <span class="fee-item-value">â‚¹250</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Term Fee</span>
+                            <span class="fee-item-value">â‚¹450</span>
+                        </div>
+                    </div>
+                    <div class="fee-card-footer">
+                        <div class="fee-total">
+                            <span class="fee-total-label">Total Fee</span>
+                            <span class="fee-total-value">â‚¹2,100</span>
+                        </div>
+                        <p class="fee-note">* One-time admission fee: â‚¹3,700 for new students</p>
+                    </div>
+                </div>
+                
+                <!-- Class 4 -->
+                <div class="fee-card">
+                    <div class="fee-card-header">
+                        <h3>Class 4</h3>
+                    </div>
+                    <div class="fee-card-body">
+                        <div class="fee-item">
+                            <span class="fee-item-label">Monthly Fee</span>
+                            <span class="fee-item-value">â‚¹1,300</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Computer Fee</span>
+                            <span class="fee-item-value">â‚¹500</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Term Fee</span>
+                            <span class="fee-item-value">â‚¹500</span>
+                        </div>                    </div>
+                    <div class="fee-card-footer">
+                        <div class="fee-total">
+                            <span class="fee-total-label">Total Fee</span>
+                            <span class="fee-total-value">â‚¹3,000</span>
+                        </div>
+                        <p class="fee-note">* One-time admission fee: â‚¹5,000 for new students</p>
+                    </div>
+                </div>
+                
+                <!-- Class 5 -->
+                <div class="fee-card">
+                    <div class="fee-card-header">
+                        <h3>Class 5</h3>
+                    </div>
+                    <div class="fee-card-body">
+                        <div class="fee-item">
+                            <span class="fee-item-label">Monthly Fee</span>
+                            <span class="fee-item-value">â‚¹1,300</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Computer Fee</span>
+                            <span class="fee-item-value">â‚¹250</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Term Fee</span>
+                            <span class="fee-item-value">â‚¹500</span>
+                        </div>
+                    </div>
+                    <div class="fee-card-footer">
+                        <div class="fee-total">
+                            <span class="fee-total-label">Total Fee</span>
+                            <span class="fee-total-value">â‚¹3,000</span>
+                        </div>
+                        <p class="fee-note">* One-time admission fee: â‚¹5,200 for new students</p>
+                    </div>
+                </div>
+
+                <!-- Class 6 -->
+                <div class="fee-card">
+                    <div class="fee-card-header">
+                        <h3>Class 6</h3>
+                    </div>
+                    <div class="fee-card-body">
+                        <div class="fee-item">
+                            <span class="fee-item-label">Monthly Fee</span>
+                            <span class="fee-item-value">â‚¹1,350</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Computer Fee</span>
+                            <span class="fee-item-value">â‚¹250</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Term Fee</span>
+                            <span class="fee-item-value">â‚¹550</span>
+                        </div>
+                    </div>
+                    <div class="fee-card-footer">
+                        <div class="fee-total">
+                            <span class="fee-total-label">Total Fee</span>
+                            <span class="fee-total-value">â‚¹3,100</span>
+                        </div>
+                        <p class="fee-note">* One-time admission fee: â‚¹5,400 for new students</p>
+                    </div>
+                </div>
+
+                <!-- Class 7 -->
+                <div class="fee-card">
+                    <div class="fee-card-header">
+                        <h3>Class 7</h3>
+                    </div>
+                    <div class="fee-card-body">
+                        <div class="fee-item">
+                            <span class="fee-item-label">Monthly Fee</span>
+                            <span class="fee-item-value">â‚¹1,350</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Computer Fee</span>
+                            <span class="fee-item-value">â‚¹250</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Term Fee</span>
+                            <span class="fee-item-value">â‚¹550</span>
+                        </div>
+                    </div>
+                    <div class="fee-card-footer">
+                        <div class="fee-total">
+                            <span class="fee-total-label">Total Fee</span>
+                            <span class="fee-total-value">â‚¹3,200</span>
+                        </div>
+                        <p class="fee-note">* One-time admission fee: â‚¹5,600 for new students</p>
+                    </div>
+                </div>
+                
+                <!-- Class 8 -->
+                <div class="fee-card">
+                    <div class="fee-card-header">
+                        <h3>Class 8</h3>
+                    </div>
+                    <div class="fee-card-body">
+                        <div class="fee-item">
+                            <span class="fee-item-label">Monthly Fee</span>
+                            <span class="fee-item-value">â‚¹1,350</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Computer Fee</span>
+                            <span class="fee-item-value">â‚¹250</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Term Fee</span>
+                            <span class="fee-item-value">â‚¹550</span>
+                        </div>
+                    </div>
+                    <div class="fee-card-footer">
+                        <div class="fee-total">
+                            <span class="fee-total-label">Total Fee</span>
+                               <span class="fee-total-value">â‚¹3,400</span>
+                        </div>
+                        <p class="fee-note">* One-time admission fee: â‚¹5,800 for new students</p>
+                    </div>
+                </div>
+
+                <!-- Class 9 -->
+                <div class="fee-card">
+                    <div class="fee-card-header">
+                        <h3>Class 9</h3>
+                    </div>
+                    <div class="fee-card-body">
+                        <div class="fee-item">
+                            <span class="fee-item-label">Monthly Fee</span>
+                            <span class="fee-item-value">â‚¹1,550</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Computer Fee</span>
+                            <span class="fee-item-value">â‚¹270</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Term Fee</span>
+                            <span class="fee-item-value">â‚¹900</span>
+                        </div>
+                    </div>
+                    <div class="fee-card-footer">
+                        <div class="fee-total">
+                            <span class="fee-total-label">Total Fee</span>
+                            <span class="fee-total-value">â‚¹4,200</span>
+                        </div>
+                        <p class="fee-note">* One-time admission fee: â‚¹6,300 for new students</p>
+                    </div>
+                </div>
+
+                <!-- Class 10 -->
+                <div class="fee-card">
+                    <div class="fee-card-header">
+                        <h3>Class 10</h3>
+                    </div>
+                    <div class="fee-card-body">
+                        <div class="fee-item">
+                            <span class="fee-item-label">Monthly Fee</span>
+                            <span class="fee-item-value">â‚¹1,550</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Computer Fee</span>
+                            <span class="fee-item-value">â‚¹270</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Term Fee</span>
+                            <span class="fee-item-value">â‚¹900</span>
+                        </div>
+                    </div>
+                    <div class="fee-card-footer">
+                        <div class="fee-total">
+                            <span class="fee-total-label">Total Fee</span>
+                            <span class="fee-total-value">â‚¹4,400</span>
+                        </div>
+                        <p class="fee-note">* One-time admission fee: â‚¹6,600 for new students</p>
+                    </div>
+                </div>
+
+                <!-- Class 11 -->
+                <div class="fee-card">
+                    <div class="fee-card-header">
+                        <h3>Class 11</h3>
+                    </div>
+                    <div class="fee-card-body">
+                        <div class="fee-item">
+                            <span class="fee-item-label">Monthly Fee</span>
+                            <span class="fee-item-value">â‚¹1,700</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Computer Fee</span>
+                            <span class="fee-item-value">â‚¹270</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Term Fee</span>
+                            <span class="fee-item-value">â‚¹1000</span>
+                        </div>
+                    </div>
+                    <div class="fee-card-footer">
+                        <div class="fee-total">
+                            <span class="fee-total-label">Total Fee</span>
+                            <span class="fee-total-value">â‚¹4,700</span>
+                        </div>
+                        <p class="fee-note">* One-time admission fee: â‚¹7,100 for new students</p>
+                    </div>
+                </div>
+
+                <!-- Class 12 -->
+                <div class="fee-card">
+                    <div class="fee-card-header">
+                        <h3>Class 12</h3>
+                    </div>
+                    <div class="fee-card-body">
+                        <div class="fee-item">
+                            <span class="fee-item-label">Monthly Fee</span>
+                            <span class="fee-item-value">â‚¹1,700</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Computer Fee</span>
+                            <span class="fee-item-value">â‚¹270</span>
+                        </div>
+                        <div class="fee-item">
+                            <span class="fee-item-label">Term Fee</span>
+                            <span class="fee-item-value">â‚¹1000</span>
+                        </div>
+                    </div>
+                    <div class="fee-card-footer">
+                        <div class="fee-total">
+                            <span class="fee-total-label">Total Fee</span>
+                            <span class="fee-total-value">â‚¹4,800</span>
+                        </div>
+                        <p class="fee-note">* One-time admission fee: â‚¹7,500 for new students</p>
+                        <p class="fee-note">* Additional board exam fees will apply</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fee Policies -->
+    <section class="fee-info">
+        <div class="container">
+            <div class="section-title center">
+                <span class="subtitle">Important Information</span>
+                <h2>Fee Policies</h2>
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-card-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Payment Schedule</h3>
+                    <p>Fees are payable on a monthly basis with the following schedule:</p>
+                    <ul>
+                        <li>Monthly payments: April - October</li>
+                        <li>Two-month payments: Starting from November</li>
+                        <li>Fees must be paid on Time</li>
+                        <li>All fees must be cleared by March for the academic year</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods -->
+    <section class="payment-methods">
+        <div class="container">
+            <div class="section-title center">
+                <span class="subtitle">Convenient Options</span>
+                <h2>Payment Methods</h2>
+            </div>
+            
+            <div class="methods-container">
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>UPI Payment</h3>
+                    <p>Pay instantly using any UPI app:</p>
+                    <ul class="method-steps">
+                        <li>Scan the QR code using any UPI app (Google Pay, PhonePe, Paytm, etc.)</li>
+                        <li>Enter the amount and your student details</li>
+                        <li>Complete the payment</li>
+                        <li>Save the payment confirmation</li>
+                    </ul>
+                    <a href="payment.html" class="payment-btn">
+                        <i class="fas fa-qrcode"></i> Pay Now
+                    </a>
+                </div>
+                
+                <div class="method-card">
+                    <div class="method-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>School Office</h3>
+                    <p>Pay directly at the school office:</p>
+                    <ul class="method-steps">
+                        <li>Visit the fee counter during office hours (9:00 AM - 2:00 PM)</li>
+                        <li>Make payment by cash, cheque, or demand draft</li>
+                        <li>Cheques should be made in favor of "Saraswati Gyan Mandir Inter College"</li>
+                        <li>Collect the official receipt immediately</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="fees-faq">
+        <div class="container">
+            <div class="section-title center">
+                <span class="subtitle">Have Questions?</span>
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is there any additional fee for school transportation?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, transportation fee is separate from the regular school fee. It varies based on the distance from school to your residence. The fee ranges from â‚¹1,500 to â‚¹3,000 per quarter depending on the route. Please contact the transportation department for specific details and route information.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Are there any additional charges for extracurricular activities?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Basic extracurricular activities are covered in the regular fee structure. However, specialized training programs like advanced music, dance, sports coaching, and educational trips may have additional charges. Parents will be informed in advance about any such programs and their associated costs.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is the policy for fee revision?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The school reviews the fee structure annually before the beginning of each academic year. Any fee revision is communicated to parents at least two months in advance. The revision is typically in line with inflation and increasing operational costs. We strive to keep fee hikes reasonable and justified.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I pay the whole year's fee in advance?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, parents can choose to pay the entire year's fee in advance. This option is available during the first quarter payment window.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is there any additional fee for board examination?</h3>
+                        <div class="faq-icon">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, for classes 10 and 12, there are additional examination fees as prescribed by the UP Board. These fees are collected separately approximately three months before the board examinations. The exact amount is communicated based on the current UP Board fee structure for that particular academic year.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="fees-cta">
+        <div class="container">
+            <div class="section-title center">
+                <h2>Need More Information?</h2>
+            </div>
+            <div class="cta-content">
+                <p class="intro-text">If you have any questions regarding our fee structure or payment process, please don't hesitate to contact our accounts department. We're here to help you understand our fee policies better.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="cta-btn primary">
+                        <i class="fas fa-envelope"></i> Contact Us
+                    </a>
+                    <a href="tel:+919839148124" class="cta-btn secondary">
+                        <i class="fas fa-phone"></i> Call Finance Office
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Replace the footer with the footer container div -->
+    <div id="footer-container"></div>
+
+    <script src="js/script.js"></script>
+    <script src="js/fees.js"></script>
+    <script src="js/header-loader.js"></script>
+    <script>
+        // Load footer; header handled by header-loader.jsdocument.addEventListener('DOMContentLoaded', function() {
+            fetch('Footer/footer.html')
+                .then(response => response.text())
+                .then(data => { document.getElementById('footer-container').innerHTML = data; });
+
+            // Hide preloader after page loads
+            window.addEventListener('load', function() {
+                const preloader = document.querySelector('.preloader');
+                preloader.classList.add('fade-out');
+                setTimeout(() => { preloader.style.display = 'none'; }, 500);
+
+                // Animate sections on scroll
+                const sections = document.querySelectorAll('.page-banner, .fees-intro, .fees-structure, .fee-info, .payment-methods, .fees-faq, .fees-cta');
+                const feeCards = document.querySelectorAll('.fee-card');
+                const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            if (entry.target.classList.contains('fees-structure')) {
+                                feeCards.forEach((card, index) => {
+                                    setTimeout(() => { card.classList.add('visible'); }, index * 100);
+                                });
+                            }
+                        }
+                    });
+                }, observerOptions);
+                sections.forEach(section => { observer.observe(section); });
+            });
+        });
+    </script>
+</body>
+</html> 
+

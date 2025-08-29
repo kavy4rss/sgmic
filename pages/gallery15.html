@@ -1,0 +1,436 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namami Gange Awareness Drive - Saraswati Gyan Mandir Inter College</title>
+    <link rel="icon" href="../image/Logo/favicon.webp" type="image/png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header-styles.css">
+    <link rel="stylesheet" href="../css/gallery-styles.css">
+    <link rel="stylesheet" href="../css/footer-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add this to ensure proper spacing for the content */
+        body {
+            padding-top: 130px; /* Adjusted for taller header (top bar + navbar) */
+        }
+        
+        @media (max-width: 992px) {
+            body {
+                padding-top: 80px; /* Only navbar height since top bar is hidden */
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                padding-top: 70px; /* Smaller navbar height on mobile */
+            }
+        }
+        
+        /* Fix for logo display */
+        .logo-container img {
+            height: 60px !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+        
+        /* Fix for navigation path issues */
+        .navbar-container .nav-links a {
+            cursor: pointer;
+        }
+        
+        /* Styles for Namami Gange initiatives */
+        .gange-initiatives {
+            background-color: #e8f5fb;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .gange-initiatives h3 {
+            color: #0277bd;
+            margin-top: 0;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #b3e5fc;
+            padding-bottom: 10px;
+        }
+        
+        .initiatives-list {
+            margin: 0;
+            padding: 0 0 0 20px;
+        }
+        
+        .initiatives-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 5px;
+        }
+        
+        .initiatives-list li::before {
+            content: "•";
+            color: #039be5;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        /* Video gallery styles */
+        .video-gallery-section {
+            padding: 30px 0 50px;
+            background-color: #f0f7fa;
+        }
+        
+        .video-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .video-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .video-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .video-container {
+            width: 100%;
+            background-color: #000;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .video-item video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .video-item h4 {
+            padding: 15px;
+            margin: 0;
+            font-size: 1.1rem;
+            color: #333;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Header -->
+    <div id="header-container"></div>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="banner-content">
+            <h1>Namami Gange Awareness Drive</h1>
+            <div class="breadcrumbs">
+                <a href="../index.html">Home</a> &gt; <a href="../gallery.html">Gallery</a> &gt; Namami Gange Awareness Drive
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Intro -->
+    <section class="gallery-intro">
+        <div class="container">
+            <div class="section-title center">
+                <span class="subtitle">Environmental Conservation</span>
+                <h2>Namami Gange Awareness Drive</h2>
+            </div>
+            <p class="intro-text">
+                On July 25, 2024, Saraswati Gyan Mandir Inter College organized a special Namami Gange Awareness Drive to educate students about the importance of preserving our national river and its ecosystem. This initiative, aligned with the Government of India's Namami Gange Programme, aimed to create awareness about river conservation, water pollution, and the cultural significance of the Ganga River among our students.
+            </p>
+        </div>
+        <p class="intro-text">
+            Date: May 3, 2025
+        </p>
+        <div class="back-to-gallery">
+            <a href="../gallery.html"><i class="fas fa-arrow-left"></i> Back to All Categories</a>
+        </div>
+    </section>
+
+    <!-- Namami Gange Initiatives Section -->
+    <section class="gange-initiatives">
+        <div class="container">
+            <h3><i class="fas fa-water"></i> Key Awareness Initiatives</h3>
+            <ul class="initiatives-list">
+                <li>Educational presentations on the significance of the Ganga River ecosystem</li>
+                <li>Interactive sessions on preventing water pollution and waste management</li>
+                <li>Drawing and poster-making competition on river conservation themes</li>
+                <li>Pledge-taking ceremony to protect water bodies and reduce plastic usage</li>
+                <li>Documentary screening about the Namami Gange Programme's achievements</li>
+                <li>Distribution of informational pamphlets to spread awareness in the community</li>
+            </ul>
+        </div>
+    </section>
+
+
+
+    <!-- Add styles for maintaining original image aspect ratios -->
+    <style>
+        /* Fix for gallery thumbnails to maintain original aspect ratio */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background-color: #f5f5f5;
+            height: 0;
+            padding-bottom: 66.67%; /* Standard 3:2 aspect ratio container */
+        }
+        
+        .gallery-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Fill the container while maintaining aspect ratio */
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+    </style>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- Gallery Items -->
+                <div class="gallery-item">
+                    <img src="../image/gallery15/494622885_3032683220221953_1598461882746247910_n.webp" data-src="../image/gallery15/494622885_3032683220221953_1598461882746247910_n.webp">
+                    <div class="gallery-overlay">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery15/495567731_3032683410221934_7429042007534104216_n.webp" data-src="../image/gallery15/495567731_3032683410221934_7429042007534104216_n.webp">
+                    <div class="gallery-overlay">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery15/494676504_3032683366888605_449909307988864203_n.webp" data-src="../image/gallery15/494676504_3032683366888605_449909307988864203_n.webp">
+                    <div class="gallery-overlay">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery15/495455361_3032683326888609_8653084724883213147_n.webp" data-src="../image/gallery15/495455361_3032683326888609_8653084724883213147_n.webp">
+                    <div class="gallery-overlay">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery15/495355177_3032683266888615_1967769906710990599_n.webp" data-src="../image/gallery15/495355177_3032683266888615_1967769906710990599_n.webp">
+                    <div class="gallery-overlay">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery15/495318212_3032683173555291_3005848050226472613_n.webp" data-src="../image/gallery15/495318212_3032683173555291_3005848050226472613_n.webp">
+                    <div class="gallery-overlay">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery15/494744636_3032683116888630_4760391402045253538_n.webp" data-src="../image/gallery15/494744636_3032683116888630_4760391402045253538_n.webp">
+                    <div class="gallery-overlay">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery15/494676508_3032682983555310_1129411482944185168_n.webp" data-src="../image/gallery15/494676508_3032682983555310_1129411482944185168_n.webp">
+                    <div class="gallery-overlay">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery15/495378325_3032682940221981_3081501641919203311_n.webp" data-src="../image/gallery15/495378325_3032682940221981_3081501641919203311_n.webp">
+                    <div class="gallery-overlay">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery15/495359881_3032682883555320_3280351621137902340_n.webp" data-src="../image/gallery15/495359881_3032682883555320_3280351621137902340_n.webp">
+                    <div class="gallery-overlay">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery15/495568977_3032682836888658_5332808283489889099_n.webp" data-src="../image/gallery15/495568977_3032682836888658_5332808283489889099_n.webp">
+                    <div class="gallery-overlay">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery15/495088934_3032682790221996_4433914520877426448_n.webp" data-src="../image/gallery15/495088934_3032682790221996_4433914520877426448_n.webp">
+                    <div class="gallery-overlay">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add styles for lightbox images to maintain original aspect ratio -->
+    <style>
+        /* Lightbox fixes for aspect ratio */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        .lightbox-image {
+            max-width: 90%;
+            max-height: 85vh;
+            object-fit: contain;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            background-color: #000;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 10000;
+        }
+        
+        .lightbox-navigation {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .lightbox-nav-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            font-size: 20px;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 20px;
+            transition: background 0.3s;
+        }
+        
+        .lightbox-nav-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .lightbox-caption {
+            color: white;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+    </style>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <div class="lightbox-close">&times;</div>
+        <div class="lightbox-navigation">
+            <button class="lightbox-nav-btn lightbox-prev">&laquo;</button>
+            <button class="lightbox-nav-btn lightbox-next">&raquo;</button>
+        </div>
+        <img class="lightbox-image" src="" alt="">
+        <div class="lightbox-caption"></div>
+    </div>
+
+    <!-- Back to Gallery -->
+    <div class="back-to-gallery">
+        <a href="../gallery.html"><i class="fas fa-arrow-left"></i> Back to All Galleries</a>
+    </div>
+
+    <!-- Include Footer -->
+    <div id="footer-container"></div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/lightbox.js"></script>
+    <script src="../js/gallery-basic.js"></script>
+    <script src="../js/header-loader.js"></script>
+    <script>
+        // Load footer only; header handled by header-loader.jsdocument.addEventListener('DOMContentLoaded', function() {
+            fetch('../Footer/footer.html')
+                .then(r => r.text())
+                .then(html => {
+                    const fixed = html.replace(/src="(?!http|\/\/|#)/g, 'src="../');
+                    document.getElementById('footer-container').innerHTML = fixed;
+                });
+        });
+    </script>
+</body>
+</html> 
+
+

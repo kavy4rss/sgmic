@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter's Day Celebration - Saraswati Gyan Mandir Inter College</title>
+    <link rel="icon" href="../image/Logo/favicon.webp" type="image/png">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header-styles.css">
+    <link rel="stylesheet" href="../css/gallery-styles.css">
+    <link rel="stylesheet" href="../css/footer-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add this to ensure proper spacing for the content */
+        body {
+            padding-top: 130px; /* Adjusted for taller header (top bar + navbar) */
+        }
+        
+        @media (max-width: 992px) {
+            body {
+                padding-top: 80px; /* Only navbar height since top bar is hidden */
+            }
+        }
+        
+        @media (max-width: 576px) {
+            body {
+                padding-top: 70px; /* Smaller navbar height on mobile */
+            }
+        }
+        
+        /* Fix for logo display */
+        .logo-container img {
+            height: 60px !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+        
+        /* Fix for navigation path issues */
+        .navbar-container .nav-links a {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Header -->
+    <div id="header-container"></div>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="banner-content">
+            <h1>Voter's Day Celebration</h1>
+            <div class="breadcrumbs">
+                <a href="../index.html">Home</a> &gt; <a href="../gallery.html">Gallery</a> &gt; Voter's Day Celebration
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Intro -->
+    <section class="gallery-intro">
+        <div class="container">
+            <div class="section-title center">
+                <span class="subtitle">Civic Awareness</span>
+                <h2>National Voter's Day Celebration</h2>
+            </div>
+            <p class="intro-text">
+                Our school celebrated National Voter's Day to promote civic responsibility and democratic participation among our students. The event featured various activities emphasizing the importance of voting in a democracy and encouraged students to become informed and active citizens.
+            </p>        
+        </div>
+        <p class="intro-text">
+            Date: January 25, 2024
+        </p>        
+            <div class="back-to-gallery">
+                <a href="../gallery.html"><i class="fas fa-arrow-left"></i> Back to All Categories</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- Gallery Items -->
+                <div class="gallery-item">
+                    <img src="../image/gallery4/474758674_2934281723395437_1815323789884104355_n.webp" data-src="../image/gallery4/474758674_2934281723395437_1815323789884104355_n.webp">
+                    <div class="gallery-overlay">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery4/474759932_2934281746728768_9078981691677141575_n.webp" data-src="../image/gallery4/474759932_2934281746728768_9078981691677141575_n.webp">
+                    <div class="gallery-overlay">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery4/474790868_2934281680062108_719965596286681712_n.webp" data-src="../image/gallery4/474790868_2934281680062108_719965596286681712_n.webp">
+                    <div class="gallery-overlay">
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="../image/gallery4/474905320_2934281683395441_8718818820067574931_n.webp" data-src="../image/gallery4/474905320_2934281683395441_8718818820067574931_n.webp">
+                    <div class="gallery-overlay">
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../image/gallery4/474947923_2934281716728771_7001014808916352262_n.webp" data-src="../image/gallery4/474947923_2934281716728771_7001014808916352262_n.webp">
+                    <div class="gallery-overlay">
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="../image/gallery4/475195123_2934281826728760_3510420647159144334_n.webp" data-src="../image/gallery4/475195123_2934281826728760_3510420647159144334_n.webp">
+                    <div class="gallery-overlay">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <div class="lightbox-close">&times;</div>
+        <div class="lightbox-navigation">
+            <button class="lightbox-nav-btn lightbox-prev">&laquo;</button>
+            <button class="lightbox-nav-btn lightbox-next">&raquo;</button>
+        </div>
+        <img class="lightbox-image" src="" alt="">
+        <div class="lightbox-caption"></div>
+    </div>
+
+    <!-- Back to Gallery -->
+    <div class="back-to-gallery">
+        <a href="../gallery.html"><i class="fas fa-arrow-left"></i> Back to All Galleries</a>
+    </div>
+
+    <!-- Include Footer -->
+    <div id="footer-container"></div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/lightbox.js"></script>
+    <script src="../js/gallery-basic.js"></script>
+    <script src="../js/header-loader.js"></script>
+    <script>
+        // Load footer
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('../Footer/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    const modifiedData = data.replace(/src=\"(?!http:\/\/|https:\/\/|#)/g, 'src=\"../');
+                    document.getElementById('footer-container').innerHTML = modifiedData;
+                });
+        });
+    </script>
+</body>
+</html> 
+
+
