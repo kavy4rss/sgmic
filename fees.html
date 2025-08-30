@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fee Structure - Saraswati Gyan Mandir Inter College</title>
     <link rel="icon" href="image/Logo/Favicon.webp" type="image/webp">
@@ -9,7 +10,7 @@
     <link rel="stylesheet" href="css/header-styles.css">
     <link rel="stylesheet" href="css/fees-styles.css">
     <link rel="stylesheet" href="css/footer-styles.css">
-    <link rel="stylesheet" href="css/loading-styles.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -30,39 +31,7 @@
             }
         }
 
-        /* Preloader Styles */
-        .preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-        
-        .preloader.fade-out {
-            opacity: 0;
-            pointer-events: none;
-        }
-        
-        .loader {
-            width: 80px;
-            height: 80px;
-            border: 5px solid #f5f5f5;
-            border-top: 5px solid #f5a623;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+
 
         /* Page Transition Effects */
         .page-banner,
@@ -72,8 +41,8 @@
         .payment-methods,
         .fees-faq,
         .fees-cta {
-            opacity: 0;
-            transform: translateY(20px);
+            opacity: 1; /* Start visible instead of hidden */
+            transform: translateY(0); /* Start in position instead of offset */
             transition: all 0.6s ease;
         }
 
@@ -90,14 +59,49 @@
 
         /* Staggered Animation for Fee Cards */
         .fee-card {
-            opacity: 0;
-            transform: translateY(20px);
+            opacity: 1; /* Start visible instead of hidden */
+            transform: translateY(0); /* Start in position instead of offset */
             transition: all 0.5s ease;
         }
 
         .fee-card.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+        
+        /* Fallback: Ensure content is visible even if JavaScript fails */
+        @media (prefers-reduced-motion: reduce) {
+            .page-banner,
+            .fees-intro,
+            .fees-structure,
+            .fee-info,
+            .payment-methods,
+            .fees-faq,
+            .fees-cta,
+            .fee-card {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+        }
+        
+        /* Force visibility after 3 seconds as fallback */
+        .page-banner,
+        .fees-intro,
+        .fees-structure,
+        .fee-info,
+        .payment-methods,
+        .fees-faq,
+        .fees-cta,
+        .fee-card {
+            animation: forceVisible 3s forwards;
+        }
+        
+        @keyframes forceVisible {
+            to {
+                opacity: 1 !important;
+                transform: none !important;
+            }
         }
 
         /* Payment Button Styles */
@@ -129,18 +133,21 @@
     </style>
 </head>
 <body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="loader"></div>
-    </div>
+
 
     <!-- Replace the header with the header container div -->
     <div id="header-container"></div>
+    
+    <!-- Loading Status Indicator -->
+    <div id="loading-status" style="position: fixed; top: 20px; right: 20px; background: #126e82; color: white; padding: 10px 15px; border-radius: 5px; z-index: 10000; font-size: 12px; display: none;">
+        Loading...
+    </div>
 
     <script>
         function loadHeader() {
             const isMobile = window.innerWidth <= 900;
             const headerContainer = document.getElementById('header-container');
+            
             if (isMobile) {
                 fetch('Header/hamburger-header.html')
                     .then(response => response.text())
@@ -160,12 +167,18 @@
                             script.id = 'hamburger-menu-js';
                             document.body.appendChild(script);
                         }
+                    })
+                    .catch(error => {
+                        console.error('Error loading mobile header:', error);
                     });
             } else {
                 fetch('Header/header.html')
                     .then(response => response.text())
                     .then(data => {
                         headerContainer.innerHTML = data;
+                    })
+                    .catch(error => {
+                        console.error('Error loading desktop header:', error);
                     });
             }
         }
@@ -217,23 +230,23 @@
                     <div class="fee-card-body">
                         <div class="fee-item">
                             <span class="fee-item-label">Monthly fee</span>
-                            <span class="fee-item-value">â‚¹1,100</span>
+                            <span class="fee-item-value">₹1,100</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Computer</span>
-                            <span class="fee-item-value">â‚¹0</span>
+                            <span class="fee-item-value">₹0</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Term Fee</span>
-                            <span class="fee-item-value">â‚¹350</span>
+                            <span class="fee-item-value">₹350</span>
                         </div>
                     </div>
                     <div class="fee-card-footer">
                         <div class="fee-total">
                             <span class="fee-total-label">Total Fee</span>
-                            <span class="fee-total-value">â‚¹1,450</span>
+                            <span class="fee-total-value">₹1,450</span>
                         </div>
-                        <p class="fee-note">* One-time admission fee: â‚¹2,500 for new students</p>
+                        <p class="fee-note">* One-time admission fee: ₹2,500 for new students</p>
                     </div>
                 </div>
                 
@@ -245,23 +258,23 @@
                     <div class="fee-card-body">
                         <div class="fee-item">
                             <span class="fee-item-label">Monthly fee</span>
-                            <span class="fee-item-value">â‚¹1,150</span>
+                            <span class="fee-item-value">₹1,150</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Computer</span>
-                            <span class="fee-item-value">â‚¹0</span>
+                            <span class="fee-item-value">₹10</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Term Fee</span>
-                            <span class="fee-item-value">â‚¹350</span>
+                            <span class="fee-item-value">₹350</span>
                         </div>
                     </div>
                     <div class="fee-card-footer">
                         <div class="fee-total">
                             <span class="fee-total-label">Total Fee</span>
-                            <span class="fee-total-value">â‚¹1,500</span>
+                            <span class="fee-total-value">₹1,500</span>
                         </div>
-                        <p class="fee-note">* One-time admission fee: â‚¹2,800 for new students</p>
+                        <p class="fee-note">* One-time admission fee: ₹2,800 for new students</p>
                     </div>
                 </div>
                 
@@ -273,23 +286,23 @@
                     <div class="fee-card-body">
                         <div class="fee-item">
                             <span class="fee-item-label">Monthly Fee</span>
-                            <span class="fee-item-value">â‚¹1,150</span>
+                            <span class="fee-item-value">₹1,150</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Computer Fee</span>
-                            <span class="fee-item-value">â‚¹0</span>
+                            <span class="fee-item-value">₹10</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Term Fee</span>
-                            <span class="fee-item-value">â‚¹350</span>
+                            <span class="fee-item-value">₹350</span>
                         </div>
                     </div>
                     <div class="fee-card-footer">
                         <div class="fee-total">
                             <span class="fee-total-label">Total Fee</span>
-                            <span class="fee-total-value">â‚¹1500</span>
+                            <span class="fee-total-value">₹1,500</span>
                         </div>
-                        <p class="fee-note">* One-time admission fee: â‚¹3,100 for new students</p>
+                        <p class="fee-note">* One-time admission fee: ₹3,100 for new students</p>
                     </div>
                 </div>
                 
@@ -302,23 +315,23 @@
                     <div class="fee-card-body">
                         <div class="fee-item">
                             <span class="fee-item-label">Monthly Fee</span>
-                            <span class="fee-item-value">â‚¹1,200</span>
+                            <span class="fee-item-value">₹1,200</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Computer Fee</span>
-                            <span class="fee-item-value">â‚¹250</span>
+                            <span class="fee-item-value">₹250</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Term Fee</span>
-                            <span class="fee-item-value">â‚¹450</span>
+                            <span class="fee-item-value">₹450</span>
                         </div>
                     </div>
                     <div class="fee-card-footer">
                         <div class="fee-total">
                             <span class="fee-total-label">Total Fee</span>
-                            <span class="fee-total-value">â‚¹1,600</span>
+                            <span class="fee-total-value">₹1,600</span>
                         </div>
-                        <p class="fee-note">* One-time admission fee: â‚¹3,500 for new students</p>
+                        <p class="fee-note">* One-time admission fee: ₹3,500 for new students</p>
                     </div>
                 </div>
                 
@@ -330,23 +343,23 @@
                     <div class="fee-card-body">
                         <div class="fee-item">
                             <span class="fee-item-label">Monthly Fee</span>
-                            <span class="fee-item-value">â‚¹3,600</span>
+                            <span class="fee-item-value">₹1,200</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Computer Fee</span>
-                            <span class="fee-item-value">â‚¹250</span>
+                            <span class="fee-item-value">₹250</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Term Fee</span>
-                            <span class="fee-item-value">â‚¹450</span>
+                            <span class="fee-item-value">₹450</span>
                         </div>
                     </div>
                     <div class="fee-card-footer">
                         <div class="fee-total">
                             <span class="fee-total-label">Total Fee</span>
-                            <span class="fee-total-value">â‚¹4,300</span>
+                            <span class="fee-total-value">₹1,900</span>
                         </div>
-                        <p class="fee-note">* One-time admission fee: â‚¹3,600 for new students</p>
+                        <p class="fee-note">* One-time admission fee: ₹3,600 for new students</p>
                     </div>
                 </div>
                 
@@ -358,23 +371,23 @@
                     <div class="fee-card-body">
                         <div class="fee-item">
                             <span class="fee-item-label">Monthly Fee</span>
-                            <span class="fee-item-value">â‚¹1,200</span>
+                            <span class="fee-item-value">₹1,200</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Computer Fee</span>
-                            <span class="fee-item-value">â‚¹250</span>
+                            <span class="fee-item-value">₹250</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Term Fee</span>
-                            <span class="fee-item-value">â‚¹450</span>
+                            <span class="fee-item-value">₹450</span>
                         </div>
                     </div>
                     <div class="fee-card-footer">
                         <div class="fee-total">
                             <span class="fee-total-label">Total Fee</span>
-                            <span class="fee-total-value">â‚¹2,100</span>
+                            <span class="fee-total-value">₹1,900</span>
                         </div>
-                        <p class="fee-note">* One-time admission fee: â‚¹3,700 for new students</p>
+                        <p class="fee-note">* One-time admission fee: ₹3,700 for new students</p>
                     </div>
                 </div>
                 
@@ -386,22 +399,23 @@
                     <div class="fee-card-body">
                         <div class="fee-item">
                             <span class="fee-item-label">Monthly Fee</span>
-                            <span class="fee-item-value">â‚¹1,300</span>
+                            <span class="fee-item-value">₹1,300</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Computer Fee</span>
-                            <span class="fee-item-value">â‚¹500</span>
+                            <span class="fee-item-value">₹500</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Term Fee</span>
-                            <span class="fee-item-value">â‚¹500</span>
-                        </div>                    </div>
+                            <span class="fee-item-value">₹500</span>
+                        </div>
+                    </div>
                     <div class="fee-card-footer">
                         <div class="fee-total">
                             <span class="fee-total-label">Total Fee</span>
-                            <span class="fee-total-value">â‚¹3,000</span>
+                            <span class="fee-total-value">₹2,300</span>
                         </div>
-                        <p class="fee-note">* One-time admission fee: â‚¹5,000 for new students</p>
+                        <p class="fee-note">* One-time admission fee: ₹5,000 for new students</p>
                     </div>
                 </div>
                 
@@ -413,23 +427,23 @@
                     <div class="fee-card-body">
                         <div class="fee-item">
                             <span class="fee-item-label">Monthly Fee</span>
-                            <span class="fee-item-value">â‚¹1,300</span>
+                            <span class="fee-item-value">₹1,300</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Computer Fee</span>
-                            <span class="fee-item-value">â‚¹250</span>
+                            <span class="fee-item-value">₹250</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Term Fee</span>
-                            <span class="fee-item-value">â‚¹500</span>
+                            <span class="fee-item-value">₹500</span>
                         </div>
                     </div>
                     <div class="fee-card-footer">
                         <div class="fee-total">
                             <span class="fee-total-label">Total Fee</span>
-                            <span class="fee-total-value">â‚¹3,000</span>
+                            <span class="fee-total-value">₹2,050</span>
                         </div>
-                        <p class="fee-note">* One-time admission fee: â‚¹5,200 for new students</p>
+                        <p class="fee-note">* One-time admission fee: ₹5,200 for new students</p>
                     </div>
                 </div>
 
@@ -441,23 +455,23 @@
                     <div class="fee-card-body">
                         <div class="fee-item">
                             <span class="fee-item-label">Monthly Fee</span>
-                            <span class="fee-item-value">â‚¹1,350</span>
+                            <span class="fee-item-value">₹1,350</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Computer Fee</span>
-                            <span class="fee-item-value">â‚¹250</span>
+                            <span class="fee-item-value">₹250</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Term Fee</span>
-                            <span class="fee-item-value">â‚¹550</span>
+                            <span class="fee-item-value">₹550</span>
                         </div>
                     </div>
                     <div class="fee-card-footer">
                         <div class="fee-total">
                             <span class="fee-total-label">Total Fee</span>
-                            <span class="fee-total-value">â‚¹3,100</span>
+                            <span class="fee-total-value">₹2,150</span>
                         </div>
-                        <p class="fee-note">* One-time admission fee: â‚¹5,400 for new students</p>
+                        <p class="fee-note">* One-time admission fee: ₹5,400 for new students</p>
                     </div>
                 </div>
 
@@ -469,23 +483,23 @@
                     <div class="fee-card-body">
                         <div class="fee-item">
                             <span class="fee-item-label">Monthly Fee</span>
-                            <span class="fee-item-value">â‚¹1,350</span>
+                            <span class="fee-item-value">₹1,350</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Computer Fee</span>
-                            <span class="fee-item-value">â‚¹250</span>
+                            <span class="fee-item-value">₹250</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Term Fee</span>
-                            <span class="fee-item-value">â‚¹550</span>
+                            <span class="fee-item-value">₹550</span>
                         </div>
                     </div>
                     <div class="fee-card-footer">
                         <div class="fee-total">
                             <span class="fee-total-label">Total Fee</span>
-                            <span class="fee-total-value">â‚¹3,200</span>
+                            <span class="fee-total-value">₹2,150</span>
                         </div>
-                        <p class="fee-note">* One-time admission fee: â‚¹5,600 for new students</p>
+                        <p class="fee-note">* One-time admission fee: ₹5,600 for new students</p>
                     </div>
                 </div>
                 
@@ -497,23 +511,23 @@
                     <div class="fee-card-body">
                         <div class="fee-item">
                             <span class="fee-item-label">Monthly Fee</span>
-                            <span class="fee-item-value">â‚¹1,350</span>
+                            <span class="fee-item-value">₹1,350</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Computer Fee</span>
-                            <span class="fee-item-value">â‚¹250</span>
+                            <span class="fee-item-value">₹250</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Term Fee</span>
-                            <span class="fee-item-value">â‚¹550</span>
+                            <span class="fee-item-value">₹550</span>
                         </div>
                     </div>
                     <div class="fee-card-footer">
                         <div class="fee-total">
                             <span class="fee-total-label">Total Fee</span>
-                               <span class="fee-total-value">â‚¹3,400</span>
+                            <span class="fee-total-value">₹2,150</span>
                         </div>
-                        <p class="fee-note">* One-time admission fee: â‚¹5,800 for new students</p>
+                        <p class="fee-note">* One-time admission fee: ₹5,800 for new students</p>
                     </div>
                 </div>
 
@@ -525,23 +539,23 @@
                     <div class="fee-card-body">
                         <div class="fee-item">
                             <span class="fee-item-label">Monthly Fee</span>
-                            <span class="fee-item-value">â‚¹1,550</span>
+                            <span class="fee-item-value">₹1,550</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Computer Fee</span>
-                            <span class="fee-item-value">â‚¹270</span>
+                            <span class="fee-item-value">₹270</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Term Fee</span>
-                            <span class="fee-item-value">â‚¹900</span>
+                            <span class="fee-item-value">₹900</span>
                         </div>
                     </div>
                     <div class="fee-card-footer">
                         <div class="fee-total">
                             <span class="fee-total-label">Total Fee</span>
-                            <span class="fee-total-value">â‚¹4,200</span>
+                            <span class="fee-total-value">₹2,720</span>
                         </div>
-                        <p class="fee-note">* One-time admission fee: â‚¹6,300 for new students</p>
+                        <p class="fee-note">* One-time admission fee: ₹6,300 for new students</p>
                     </div>
                 </div>
 
@@ -553,23 +567,23 @@
                     <div class="fee-card-body">
                         <div class="fee-item">
                             <span class="fee-item-label">Monthly Fee</span>
-                            <span class="fee-item-value">â‚¹1,550</span>
+                            <span class="fee-item-value">₹1,550</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Computer Fee</span>
-                            <span class="fee-item-value">â‚¹270</span>
+                            <span class="fee-item-value">₹270</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Term Fee</span>
-                            <span class="fee-item-value">â‚¹900</span>
+                            <span class="fee-item-value">₹900</span>
                         </div>
                     </div>
                     <div class="fee-card-footer">
                         <div class="fee-total">
                             <span class="fee-total-label">Total Fee</span>
-                            <span class="fee-total-value">â‚¹4,400</span>
+                            <span class="fee-total-value">₹2,720</span>
                         </div>
-                        <p class="fee-note">* One-time admission fee: â‚¹6,600 for new students</p>
+                        <p class="fee-note">* One-time admission fee: ₹6,600 for new students</p>
                     </div>
                 </div>
 
@@ -581,23 +595,23 @@
                     <div class="fee-card-body">
                         <div class="fee-item">
                             <span class="fee-item-label">Monthly Fee</span>
-                            <span class="fee-item-value">â‚¹1,700</span>
+                            <span class="fee-item-value">₹1,700</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Computer Fee</span>
-                            <span class="fee-item-value">â‚¹270</span>
+                            <span class="fee-item-value">₹270</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Term Fee</span>
-                            <span class="fee-item-value">â‚¹1000</span>
+                            <span class="fee-item-value">₹1,000</span>
                         </div>
                     </div>
                     <div class="fee-card-footer">
                         <div class="fee-total">
                             <span class="fee-total-label">Total Fee</span>
-                            <span class="fee-total-value">â‚¹4,700</span>
+                            <span class="fee-total-value">₹2,970</span>
                         </div>
-                        <p class="fee-note">* One-time admission fee: â‚¹7,100 for new students</p>
+                        <p class="fee-note">* One-time admission fee: ₹7,100 for new students</p>
                     </div>
                 </div>
 
@@ -609,23 +623,23 @@
                     <div class="fee-card-body">
                         <div class="fee-item">
                             <span class="fee-item-label">Monthly Fee</span>
-                            <span class="fee-item-value">â‚¹1,700</span>
+                            <span class="fee-item-value">₹1,700</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Computer Fee</span>
-                            <span class="fee-item-value">â‚¹270</span>
+                            <span class="fee-item-value">₹270</span>
                         </div>
                         <div class="fee-item">
                             <span class="fee-item-label">Term Fee</span>
-                            <span class="fee-item-value">â‚¹1000</span>
+                            <span class="fee-item-value">₹1,000</span>
                         </div>
                     </div>
                     <div class="fee-card-footer">
                         <div class="fee-total">
                             <span class="fee-total-label">Total Fee</span>
-                            <span class="fee-total-value">â‚¹4,800</span>
+                            <span class="fee-total-value">₹2,970</span>
                         </div>
-                        <p class="fee-note">* One-time admission fee: â‚¹7,500 for new students</p>
+                        <p class="fee-note">* One-time admission fee: ₹7,500 for new students</p>
                         <p class="fee-note">* Additional board exam fees will apply</p>
                     </div>
                 </div>
@@ -801,34 +815,73 @@
     <script src="js/fees.js"></script>
     <script src="js/header-loader.js"></script>
     <script>
-        // Load footer; header handled by header-loader.jsdocument.addEventListener('DOMContentLoaded', function() {
+        // Debug: Check if page is loading properly
+        console.log('Fees page loaded successfully');
+        
+        // Check for any JavaScript errors
+        window.addEventListener('error', function(e) {
+            console.error('JavaScript error on fees page:', e.error);
+        });
+        
+        // Show loading status
+        const loadingStatus = document.getElementById('loading-status');
+        if (loadingStatus) {
+            loadingStatus.style.display = 'block';
+            loadingStatus.textContent = 'Loading page...';
+            
+            // Hide loading status after page loads
+            window.addEventListener('load', function() {
+                setTimeout(() => {
+                    loadingStatus.textContent = 'Page loaded successfully!';
+                    setTimeout(() => {
+                        loadingStatus.style.display = 'none';
+                    }, 2000);
+                }, 1000);
+            });
+        }
+    </script>
+    <script>
+        // Load footer; header handled by header-loader.js
+        document.addEventListener('DOMContentLoaded', function() {
             fetch('Footer/footer.html')
                 .then(response => response.text())
-                .then(data => { document.getElementById('footer-container').innerHTML = data; });
+                .then(data => { 
+                    document.getElementById('footer-container').innerHTML = data; 
+                })
+                .catch(error => {
+                    console.error('Error loading footer:', error);
+                });
 
-            // Hide preloader after page loads
+            // Animate sections on scroll
             window.addEventListener('load', function() {
-                const preloader = document.querySelector('.preloader');
-                preloader.classList.add('fade-out');
-                setTimeout(() => { preloader.style.display = 'none'; }, 500);
-
-                // Animate sections on scroll
                 const sections = document.querySelectorAll('.page-banner, .fees-intro, .fees-structure, .fee-info, .payment-methods, .fees-faq, .fees-cta');
                 const feeCards = document.querySelectorAll('.fee-card');
-                const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('visible');
-                            if (entry.target.classList.contains('fees-structure')) {
-                                feeCards.forEach((card, index) => {
-                                    setTimeout(() => { card.classList.add('visible'); }, index * 100);
-                                });
+                
+                if (sections.length > 0) {
+                    const observerOptions = { 
+                        threshold: 0.1, 
+                        rootMargin: '0px 0px -50px 0px' 
+                    };
+                    
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                                if (entry.target.classList.contains('fees-structure')) {
+                                    feeCards.forEach((card, index) => {
+                                        setTimeout(() => { 
+                                            card.classList.add('visible'); 
+                                        }, index * 100);
+                                    });
+                                }
                             }
-                        }
+                        });
+                    }, observerOptions);
+                    
+                    sections.forEach(section => { 
+                        observer.observe(section); 
                     });
-                }, observerOptions);
-                sections.forEach(section => { observer.observe(section); });
+                }
             });
         });
     </script>
